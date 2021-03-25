@@ -1,0 +1,148 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/react';
+import { graphql /* , Link */ } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
+
+import { space } from '../../theme/space';
+
+import SEO from '../../components/SEO';
+import Layout from '../../components/Layout/Layout';
+
+import PostTags from '../../components/blog/PostTags';
+import LastUpdated from '../../components/blog/LastUpdated';
+
+const styleImage = {
+  marginBottom: space[8],
+};
+
+const styleHtml = {
+  marginBottom: space[8],
+};
+
+const PostTemplate = ({ data }) => {
+  const {
+    translations,
+    address,
+    mainNav,
+    footerNav,
+    socialLinks,
+    post: {
+      title,
+      metaTitle,
+      headline,
+      metaDescription,
+      cover,
+      noindex,
+      datePublished,
+      dateModified,
+      tags,
+      html,
+      locale,
+      slug,
+    },
+  } = data;
+
+  return (
+    <Layout
+      title={title}
+      headline={headline}
+      context={{ translations, address, mainNav, footerNav, socialLinks }}
+    >
+      <SEO
+        locale={locale}
+        title={metaTitle}
+        description={metaDescription}
+        headline={headline}
+        pathname={slug}
+        noindex={noindex}
+        datePublished={datePublished}
+        dateModified={dateModified}
+        pageType="BlogPosting"
+        imgPath={cover?.sm?.publicURL}
+      />
+      {cover && cover.sm && (
+        <GatsbyImage
+          image={cover.sm.childImageSharp.gatsbyImageData}
+          alt={cover.alt}
+          title={cover.title}
+          css={styleImage}
+        />
+      )}
+      {html && <div css={styleHtml} dangerouslySetInnerHTML={{ __html: html }} />}
+      <PostTags tags={tags} />
+      <LastUpdated date={dateModified} />
+    </Layout>
+  );
+};
+
+export default PostTemplate;
+
+export const postQuery = graphql`
+  query PostQuery($id: String!, $locale: String!) {
+    post: mdPost(id: { eq: $id }) {
+      ...MdPostFragment
+    }
+    recentPosts: allMdPost(
+      sort: { fields: [datePublished], order: DESC }
+      limit: 10
+      filter: { locale: { eq: $locale } }
+    ) {
+      edges {
+        node {
+          ...MdPostShortInfoFragment
+        }
+      }
+    }
+    featuredPosts: allMdPost(
+      sort: { fields: [datePublished], order: DESC }
+      limit: 10
+      filter: { featured: { eq: true }, locale: { eq: $locale } }
+    ) {
+      edges {
+        node {
+          ...MdPostShortInfoFragment
+        }
+      }
+    }
+    address: address(locale: { eq: $locale }) {
+      ...AddressFragment
+    }
+    mainNav: allMainNav(filter: { locale: { eq: $locale } }) {
+      edges {
+        node {
+          title
+          to
+          submenu {
+            title
+            to
+          }
+        }
+      }
+    }
+    footerNav: allFooterNav(filter: { locale: { eq: $locale } }) {
+      edges {
+        node {
+          title
+          to
+        }
+      }
+    }
+    socialLinks: allSocialLink(filter: { locale: { eq: $locale } }) {
+      edges {
+        node {
+          code
+          to
+          title
+        }
+      }
+    }
+    translations: allTranslation(filter: { locale: { eq: $locale } }, limit: 1000) {
+      edges {
+        node {
+          key
+          value
+        }
+      }
+    }
+  }
+`;
