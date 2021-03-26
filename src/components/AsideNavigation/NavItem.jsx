@@ -7,6 +7,7 @@ import fontWeights from '../../theme/font-weights';
 
 const NavItem = ({ title, to, active }) => {
   const linkStyle = {
+    width: 'min-content',
     padding: '1rem 0',
 
     whiteSpace: 'nowrap',

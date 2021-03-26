@@ -19,11 +19,11 @@ const AsideNavigation = () => {
   return (
     <Location>
       {({ location: { pathname } }) => (
-        <div css={styleWrap}>
-          {navItems.map(({ title, to }, i) => (
-            <NavItem key={i} to={to} active={to === pathname} title={title} />
+        <nav css={styleWrap}>
+          {navItems.map(({ title, to }) => (
+            <NavItem key={to} to={to} active={to === pathname} title={title} />
           ))}
-        </div>
+        </nav>
       )}
     </Location>
   );

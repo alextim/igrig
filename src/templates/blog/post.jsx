@@ -8,8 +8,9 @@ import { space } from '../../theme/space';
 import SEO from '../../components/SEO';
 import Layout from '../../components/Layout/Layout';
 
-import PostTags from '../../components/blog/PostTags';
+import PostInfo from '../../components/blog/PostInfo';
 import LastUpdated from '../../components/blog/LastUpdated';
+import PostTags from '../../components/blog/PostTags';
 
 const styleImage = {
   marginBottom: space[8],
@@ -35,6 +36,7 @@ const PostTemplate = ({ data }) => {
       noindex,
       datePublished,
       dateModified,
+      timeToRead,
       tags,
       html,
       locale,
@@ -68,6 +70,7 @@ const PostTemplate = ({ data }) => {
           css={styleImage}
         />
       )}
+      <PostInfo datePublished={datePublished} timeToRead={timeToRead} />
       {html && <div css={styleHtml} dangerouslySetInnerHTML={{ __html: html }} />}
       <PostTags tags={tags} />
       <LastUpdated date={dateModified} />

@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import { space } from '../../theme/space';
 import colors from '../../theme/colors';
 import sizes from '../../theme/sizes';
 import mq from '../../theme/media-queries';
@@ -14,35 +13,28 @@ import container from '../../theme/container';
 import Navbar from '../Navbar';
 
 const styleHeader = {
+  display: 'flex',
+  alignItems: 'center',
   position: 'fixed',
   top: 0,
   left: 0,
   width: '100%',
-  backgroundColor: colors.header.bg,
   height: sizes.header.sm,
+  padding: `0 ${container.p.sm}`,
+  color: colors.header.text,
+  backgroundColor: colors.header.bg,
   boxShadow: shadows.raised,
-  padding: `${space[2]} 0`,
   contain: 'layout',
   zIndex: 200,
   [mq.lg]: {
     height: sizes.header.lg,
+    padding: `0 ${container.p.lg}`,
   },
-};
-
-const styleInnerWrap = {
-  // display: 'flex',
-  // alignItems: 'center',
-  // width: '100%',
-  backgroundColor: 'inherit',
-  color: colors.header.text,
-  ...container.header,
 };
 
 const Header = () => (
   <header css={styleHeader}>
-    <div css={styleInnerWrap}>
-      <Navbar />
-    </div>
+    <Navbar />
   </header>
 );
 

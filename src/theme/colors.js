@@ -14,8 +14,8 @@ const grey90 = '#232129';
 
 const black = '#000';
 const white = '#fff';
-const darkWhite = 'rgba(190, 190, 190, 0.9)';
-const lightWhite = 'rgba(255, 255, 255, 0.9)';
+const darkWhite = 'rgba(180, 180, 180, 0.9)';
+const lightWhite = 'rgba(210, 210, 210, 0.9)';
 // const opaqueLightYellow = 'rgba(255, 229, 100, 0.2)';
 const opaqueLightWhite = 'hsla(0, 0%, 100%, 0.2)';
 // const lightGray = 'hsla(0, 0%, 0%, 0.2)';

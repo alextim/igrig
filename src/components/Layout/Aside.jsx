@@ -13,28 +13,34 @@ import AsideNavigation from '../AsideNavigation';
 const styleAside = {
   display: 'none',
   [mq.lg]: {
+    overflow: 'hidden',
+    position: 'fixed',
+    top: size.header.lg,
+    left: 0,
+    bottom: size.footer,
+    // height: `calc(100vh - ${size.header.lg} - ${size.footer})`,
+
     display: 'grid',
     gridTemplateRows: 'repeat(9, 1fr)',
     gridTemplateAreas: `
-    "s"
-    "."
-    "."
-    "a"
-    "a"
-    "a"
-    "."
-    "."
-    "."
-    `,
+  "s"
+  "."
+  "."
+  "a"
+  "a"
+  "a"
+  "."
+  "."
+  "."
+  `,
     width: size.aside,
-    padding: `${space[4]} ${container.p.lg} ${space[4]} 0`,
+    padding: `${space[4]} ${container.p.lg} ${space[4]} ${container.p.lg}`,
   },
 };
-
 const styleDescription = {
   gridArea: 's',
-  selfJustify: 'start',
 };
+
 const Aside = () => {
   const siteDescription = useSiteDescription();
 

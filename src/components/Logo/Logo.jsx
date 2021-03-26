@@ -10,7 +10,9 @@ import colors from '../../theme/colors';
 import fonts from '../../theme/fonts';
 import { space } from '../../theme/space';
 
-const SITE_LOGO = '/assets/images/logo.svg';
+import LogoSvg from '../../assets/images/logo-igrig.svg';
+
+// const SITE_LOGO = '/assets/images/logo-igrig.svg';
 
 const styleWrap = {
   display: 'flex',
@@ -51,24 +53,20 @@ const styleWord = {
 const styleImg = {
   width: '2rem',
   height: '2rem',
+  background: 'white',
   [mq.lg]: {
     width: '2rem',
     height: '2rem',
   },
 };
 
+//       <img src="" alt={i18n.locales[locale].siteTitle} height="32" width="32" css={styleImg} />
 const Logo = ({ onClick }) => {
   const { locale } = useLocale();
   const to = i18n.localizePath('/', locale);
   return (
     <Link css={styleWrap} to={to} onClick={onClick}>
-      <img
-        src={SITE_LOGO}
-        alt={i18n.locales[locale].siteTitle}
-        height="32"
-        width="32"
-        css={styleImg}
-      />
+      <LogoSvg css={styleImg} />
       <div css={styleTextWrap}>
         {i18n.locales[locale].siteTitle.split(' ').map((w) => (
           <span key={w} css={styleWord}>

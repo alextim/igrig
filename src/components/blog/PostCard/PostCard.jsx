@@ -9,9 +9,10 @@ import { fontSizes } from '../../../theme/font-sizes';
 import { useTranslation } from '../../../i18n';
 
 import getCardSchema from '../../SEO/getCardSchema';
+import Published from '../Published';
 
 const excerptStyle = {
-  paddingTop: space[2],
+  marginTop: space[2],
 };
 
 const styleReadMore = {
@@ -50,11 +51,10 @@ const PostCard = ({
         </a>
       )}
       <div css={card.textWrap}>
-        <h2 css={card.heading}>
-          <a href={to} css={card.link}>
-            {title}
-          </a>
-        </h2>
+        <a href={to} css={card.link}>
+          <h2 css={card.heading}>{title}</h2>
+        </a>
+        <Published date={datePublished} />
         <p css={excerptStyle}>{excerpt}</p>
         <a href={to} css={styleReadMore}>
           {t('post.readMore')}

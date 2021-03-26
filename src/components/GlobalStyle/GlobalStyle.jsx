@@ -266,35 +266,29 @@ const GlobalStyle = () => (
         }
       }
 
-
       h1, h2, h3, h4 {
+        font-family: ${fonts.heading};
+        font-weight: ${fontWeights.heading};
         line-height: ${lineHeights.heading};
-      }
-      h1 {
-        text-align: center;
+        color: ${colors.heading};
+        margin-bottom: ${space[4]};
       }
 
       h1, h2, h3 {
         text-transform: uppercase;
       }
 
-      h1, h2 {
-        font-family: inherit;
-        font-size: ${fontSizes[3]};
-        font-weight: inherit;
+      h1 {
+        font-size: ${fontSizes[8]};
         margin-bottom: ${space[4]};
+        text-align: center;
+        ${mq.lg} {
+          font-size: ${fontSizes[9]};
+        }
       }
 
-      h3 {
-        font-family: ${fonts.heading};
-        font-size: ${fontSizes[5]};
-        font-weight: ${fontWeights.heading};
-        margin-bottom: ${space[2]};
-      }
-
-      /*
       h2 {
-        font-size: ${fontSizes[6]};
+        font-size: ${fontSizes[5]};
         margin-bottom: ${space[4]};
         ${mq.lg} {
           font-size: ${fontSizes[6]};
@@ -302,16 +296,16 @@ const GlobalStyle = () => (
       }
 
       h3 {
-        font-size: ${fontSizes[5]};
+        font-size: ${fontSizes[4]};
         margin-bottom: ${space[2]};
         ${mq.lg} {
           font-size: ${fontSizes[5]};
         }
       }
-      */
+
       h4 {
-        margin-bottom: ${space[2]};
         font-size: ${fontSizes[2]};
+        margin-bottom: ${space[2]};
       }
 
 

@@ -6,6 +6,7 @@ import { useTranslation } from '../../../i18n';
 
 const wrapperStyle = (t) => ({
   marginTop: t.space[5],
+  marginBottom: t.space[5],
   fontSize: t.fontSizes[0],
 });
 const sepStyle = (t) => ({

@@ -30,6 +30,7 @@ const styleWrap = {
     "s    s"
   `,
   alignItems: 'center',
+  width: '100%',
   [mq.lg]: {
     gridTemplateColumns: `${sizes.aside} 1fr`,
     gridTemplateAreas: '"aside main"',

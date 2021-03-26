@@ -14,11 +14,11 @@ const Menu = ({ pathname, onClick }) => {
   const navItems = useMainNavItems();
 
   return (
-    <div css={styleWrap}>
-      {navItems.map(({ title, to }, i) => (
-        <MenuItem key={i} to={to} title={title} active={to === pathname} onClick={onClick} />
+    <nav css={styleWrap}>
+      {navItems.map(({ title, to }) => (
+        <MenuItem key={to} to={to} title={title} active={to === pathname} onClick={onClick} />
       ))}
-    </div>
+    </nav>
   );
 };
 

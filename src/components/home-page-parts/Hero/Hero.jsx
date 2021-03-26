@@ -2,10 +2,11 @@ import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import mq from '../../../theme/media-queries';
-import sizes from '../../../theme/sizes';
+// import sizes from '../../../theme/sizes';
 
 const styleWrap = {
   display: 'grid',
+  height: '100%',
   [mq.lg]: {
     display: 'none',
   },
@@ -25,7 +26,7 @@ const styleTextWrap = {
 const styleImage = {
   gridArea: '1/1',
   // minHeight: `calc(100 * var(--vh, 1vh) - ${sizes.header.sm} - ${sizes.footer})`,
-  minHeight: `calc(100vh - ${sizes.header.sm} - ${sizes.footer})`,
+  // minHeight: `calc(100vh - ${sizes.header.sm} - ${sizes.footer})`,
 };
 
 const Hero = ({ cover, items }) => (

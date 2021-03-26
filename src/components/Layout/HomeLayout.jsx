@@ -5,7 +5,6 @@ import { jsx, ThemeProvider } from '@emotion/react';
 import theme from '../../theme';
 import mq from '../../theme/media-queries';
 import sizes from '../../theme/sizes';
-import container from '../../theme/container';
 
 import AppContextProvider from '../../context';
 import GlobalStyle from '../GlobalStyle';
@@ -13,48 +12,51 @@ import GlobalStyle from '../GlobalStyle';
 import Footer from '../Footer';
 
 import Header from './Header';
-// import Main from './Main';
 import Aside from './Aside';
 
 const styleRoot = {
   minHeight: '100vh',
-  // minHeight: 'calc(100 * var(--vh, 1vh));',
+  minWidth: '320px',
+  // minHeight: 'calc(100 * var(--vh, 1vh))',
   // minHeight: '-webkit-fill-available',
   display: 'flex',
   flexDirection: 'column',
 };
 
-const styleContentWrap = {
-  width: '100%',
-  ...container.main,
-  flex: '1 1 auto',
-  marginTop: sizes.header.sm,
-  padding: 0,
-  display: 'flex',
-  flexDirection: 'column',
-  //  height: `calc(100 * var(--vh, 1vh) - ${sizes.footer})`,
-  // height: `calc(100vh - ${sizes.footer})`,
-
-  [mq.lg]: {
-    ...container.main[mq.lg],
-    marginTop: sizes.header.lg,
-    flexDirection: 'row',
-  },
-};
-
 const styleMain = {
-  flex: 1,
+  width: '100%',
+  flex: '1 1 auto',
+  // marginTop: sizes.header.sm,
+
+  position: 'fixed',
+  top: sizes.header.sm,
+  right: 0,
+  bottom: sizes.footer,
+  left: 0,
+  margin: 0,
+  // width: 'auto',
   [mq.lg]: {
-    order: 2,
+    position: 'fixed',
+    top: sizes.header.lg,
+    right: 0,
+    bottom: sizes.footer,
+    left: sizes.aside,
+    margin: 0,
+    width: 'auto',
     /**
-     * https://github.com/nolimits4web/swiper/issues/2914#issuecomment-493384617
+     * HACK: https://github.com/nolimits4web/swiper/issues/2914#issuecomment-493384617
      *
      */
-    overflow: 'hidden',
+    // overflow: 'hidden',
+    // marginTop: sizes.header.lg,
+    // paddingLeft: sizes.aside,
   },
 };
 
-const Content = ({ children }) => <div css={styleContentWrap}>{children}</div>;
+const styleSpacer = {
+  width: '100%',
+  flex: '1 1 auto',
+};
 
 const HomeLayout = ({ context, children }) => {
   /**
@@ -62,7 +64,6 @@ const HomeLayout = ({ context, children }) => {
    * https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
    *
    */
-
   /*
   const handleResize = () => {
     const root = document.querySelector(':root');
@@ -83,10 +84,9 @@ const HomeLayout = ({ context, children }) => {
         <GlobalStyle />
         <div css={styleRoot}>
           <Header />
-          <Content>
-            <div css={styleMain}>{children}</div>
-            <Aside />
-          </Content>
+          <div css={styleSpacer} />
+          <div css={styleMain}>{children}</div>
+          <Aside />
           <Footer />
         </div>
       </ThemeProvider>

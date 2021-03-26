@@ -6,7 +6,8 @@ import { jsx } from '@emotion/react';
 
 const styleRoot = {
   minHeight: '100vh',
-  maxWidth: '100vw',
+  minWidth: '320px',
+  // maxWidth: '100vw',
   // minHeight: '-webkit-fill-available',
   display: 'flex',
   flexDirection: 'column',
