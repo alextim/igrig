@@ -2,6 +2,7 @@ import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import mq from '../../../theme/media-queries';
+import fonts from '../../../theme/fonts';
 // import sizes from '../../../theme/sizes';
 
 const styleWrap = {
@@ -21,6 +22,8 @@ const styleTextWrap = {
   alignItems: 'center',
   justifyItems: 'center',
   textTransform: 'uppercase',
+  fontFamily: fonts.heading,
+  fontSize: '3rem',
 };
 
 const styleImage = {

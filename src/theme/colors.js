@@ -28,7 +28,7 @@ const red = 'red';
 // const quickSilver = '#a5a39d';
 const nickel = '#7F7D76';
 const nickelDark = '#454440';
-const cardinal90 = '#a10c2d';
+// const cardinal90 = '#a10c2d';
 // const platinum = '#EBEBEB';
 // const silver = '#C0C0C0';
 // const queenBlue = '#3A6EA5';
@@ -37,7 +37,7 @@ const cardinal90 = '#a10c2d';
 const brand = {
   main: darkWhite,
   secondLight: white,
-  secondDark: cardinal90,
+  secondDark: red,
 };
 
 const text = lightWhite;

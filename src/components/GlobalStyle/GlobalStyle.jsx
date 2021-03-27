@@ -59,30 +59,23 @@ const GlobalStyle = () => (
         font-style: normal;
         font-weight: 700;
         src: local('Oswald Bold'), local('Oswald-Bold'), local('OswaldBold'),
-          url('/assets/fonts/oswald-v36-cyrillic-700.woff2') format('woff2');
+          url('/assets/fonts/oswald-v36-latin_cyrillic-700.woff2') format('woff2');
       }
       @font-face {
         font-family: 'fallback-heading-font';
         advance-override: -0.0923828125; // Letter spacing: -1.5px
         src: local('Arial');
       }
-      /*
-      // open-sans-regular - latin_cyrillic
-      @font-face {
-        font-family: 'Open Sans';
-        font-display: optional;
-        font-style: normal;
-        font-weight: 400;
-        src: local('Open Sans'), local('OpenSans'), local('Open Sans Regular'), local('OpenSans-Regular'), local('OpenSansRegular'),
-          url('/assets/fonts/open-sans-v18-latin_cyrillic-regular.woff2') format('woff2');
-      }
 
       @font-face {
-        font-family: 'fallback-body-font';
-        advance-override: 0.021875; // 0.35 / 16, Letter spacing: 0.35px
-        src: local('Arial');
+        font-family: 'Oswald';
+        font-display: swap;
+        font-style: normal;
+        font-weight: 400;
+        src: local('Oswald Regular'), local('Oswald-Regular'), local('OswaldRegular'),
+          url('/assets/fonts/oswald-v36-latin_cyrillic-regular.woff2') format('woff2');
       }
-      */
+
       body {
         font-family: ${fonts.body};
         line-height: ${lineHeights.body};

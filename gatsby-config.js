@@ -252,6 +252,7 @@ module.exports = {
     {
       resolve: '@alextim/at-blog',
       options: {
+        defaultTranslitLocale: 'ru',
         templatesDir: `${__dirname}/src/${config.templatesDir}blog/`,
         cardsPerPage,
         postsDir,

@@ -65,3 +65,9 @@ tag
 tag-list
 years
 year-list
+
+
+https://css-tricks.com/adaptive-photo-layout-with-flexbox/
+https://css-tricks.com/seamless-responsive-photo-grid/
+
+https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/
