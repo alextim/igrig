@@ -10,15 +10,15 @@ organizationType: LocalBusiness
 
 phone: [123456789012]
 
-#voice:
+voice:
 #skype: sample,
-#whatsapp: 123456789012
-#telegram:
+  whatsapp: 123456789012
+  telegram: 123456789012
 #viber: 123456789012
 
 #fax:
 
-email: [igrig@gmail.com]
+email: [igrig@gmail.com, igrig2@gmail.com]
 
 #openingHours:
   #- ['mo-sa', '09:00', '18:00']

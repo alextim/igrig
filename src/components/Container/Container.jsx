@@ -28,7 +28,7 @@ import container from '../../theme/container';
  * Nationa Geographic
  * --------
  * 12 636 12
- *
+ * 1280 -for pictures
  */
 export const ContainerHero = ({ children }) => children;
 

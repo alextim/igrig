@@ -1,50 +1,102 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import utils from '@alextim/utils';
+
+import useOrgContacts from '../hooks/useOrgContacts';
 
 import SEO from '../components/SEO';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/LayoutFullWidth';
+
+import mq from '../theme/media-queries';
 import Section from '../components/Section';
+import Icon from '../components/Icon';
+import styleHtmlDef from '../components/styles/styleHtml';
+// import sizes from '../../../theme/sizes';
 
-const styleContactItemTitle = {
-  marginBottom: '0.5rem',
-  fontWeight: 'bold',
-};
-const styleAddressWrap = {
-  marginBottom: '0.5rem',
-};
-const styleItemSeparator = {
-  marginBottom: '0.5rem',
-};
+const styleHtml = (t) => ({
+  ...styleHtmlDef,
+  ':first-letter': {
+    color: 'red',
+    float: 'left',
+    fontSize: '3em',
+    lineHeight: 1,
+    // marginTop: t.space[0],
+    padding: `0 ${t.space[2]} 0`,
+  },
+});
 
-const ContactItemHeading = ({ title }) => <div css={styleContactItemTitle}>{title}</div>;
+const styleImage = (t) => ({
+  float: 'none',
+  [mq.lg]: {
+    float: 'left',
+    width: '25%',
+    marginRight: t.space[5],
+  },
+});
 
-const Address = ({ data }) => {
-  const {
-    legalName,
-    postalAddress: { addressCountry, addressLocality, postalCode, streetAddress },
-  } = data;
-  return (
-    <div css={styleItemSeparator}>
-      <ContactItemHeading title={legalName} />
-      <div css={styleAddressWrap}>
-        <div>{streetAddress}</div>
-        <div>
-          {addressLocality} {postalCode}
-        </div>
-        <div>{addressCountry}</div>
-      </div>
-    </div>
-  );
-};
-
-const styleWrap3 = (t) => ({
+const styleWrap = (t) => ({
   display: 'grid',
   gridGap: t.space[8],
   [t.mq.lg]: {
-    gridTemplateColumns: 'repeat(3, 1fr)',
+    gridAutoFlow: 'column',
   },
 });
+
+const styleItemWrap = {
+  display: 'grid',
+  gridTemplateRows: '4rem repeat(auto-fill, 2rem)',
+  justifyItems: 'center',
+  alignItems: 'center',
+};
+
+const styleIcon = {
+  width: '3em',
+  height: '3em',
+};
+
+const ContactItems = ({ icon, items, formatTitle, formatTo }) => {
+  if (!items) {
+    return null;
+  }
+  return (
+    <div css={styleItemWrap}>
+      <Icon name={icon} css={styleIcon} />
+      {items.map((el) => (
+        <a key={el} href={formatTo(el)} target="_blank" rel="noindex noopener noreferrer">
+          {formatTitle(el)}
+        </a>
+      ))}
+    </div>
+  );
+};
+const Contacts = () => {
+  const { email, voice } = useOrgContacts();
+  const { whatsapp, telegram } = voice || {};
+  return (
+    <div css={styleWrap}>
+      <ContactItems
+        icon="envelope"
+        items={email}
+        formatTo={(x) => `mailto:${x}`}
+        formatTitle={(x) => x}
+      />
+      <ContactItems
+        icon="whatsapp"
+        items={whatsapp ? [whatsapp] : null}
+        formatTo={utils.whatsappUrl}
+        formatTitle={utils.formatPhone}
+      />
+      <ContactItems
+        icon="telegram"
+        items={telegram ? [telegram] : null}
+        formatTo={utils.telegramUrl}
+        formatTitle={(x) => x}
+      />
+    </div>
+  );
+};
 
 const ContactsTemplate = ({ data }) => {
   const {
@@ -53,12 +105,11 @@ const ContactsTemplate = ({ data }) => {
     mainNav,
     footerNav,
     socialLinks,
-    page: { cover, title, metaTitle, headline, metaDescription, noindex, locale, slug },
+    page: { cover, title, metaTitle, headline, metaDescription, noindex, locale, slug, html },
   } = data;
 
   return (
     <Layout
-      cover={cover}
       title={title}
       headline={headline}
       context={{ translations, address, mainNav, footerNav, socialLinks }}
@@ -70,11 +121,12 @@ const ContactsTemplate = ({ data }) => {
         pathname={slug}
         noindex={noindex}
       />
-
       <Section>
-        <div css={styleWrap3}>
-          <Address data={address} />
-        </div>
+        {cover && <GatsbyImage css={styleImage} image={getImage(cover.sm)} alt={cover.alt} />}
+        {html && <div css={styleHtml} dangerouslySetInnerHTML={{ __html: html }} />}
+      </Section>
+      <Section>
+        <Contacts />
       </Section>
     </Layout>
   );
