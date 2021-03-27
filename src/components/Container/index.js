@@ -1,1 +1,1 @@
-export { ContainerFullWidth, default } from './Container';
+export { ContainerHero, ContainerFullWidth, ContainerHeading, default } from './Container';

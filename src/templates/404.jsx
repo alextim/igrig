@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 import { graphql } from 'gatsby';
 
 import SEO from '../components/SEO';
-import Layout from '../components/Layout/Layout';
+import Layout from '../components/Layout';
 
 const wrapStyle = (t) => ({
   textAlign: 'center',

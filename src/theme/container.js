@@ -1,16 +1,13 @@
 import mq from './media-queries';
 
-const minWidth = '320px';
 const margin = '0 auto';
 
 const hero = {
-  minWidth,
   maxWidth: '1280px',
   margin,
 };
 
 const body = {
-  minWidth,
   maxWidth: '1280px',
   margin,
   padding: '0 1rem',
@@ -24,6 +21,14 @@ const p = {
   lg: '2rem',
 };
 
+const heading = {
+  maxWidth: '800px',
+};
+
+const content = {
+  maxWidth: '800px',
+};
+
 const header = body;
 const main = body;
 const footer = body;
@@ -34,6 +39,9 @@ const container = {
   header,
   main,
   footer,
+
+  heading,
+  content,
 };
 
 export default container;

@@ -6,7 +6,8 @@ import { prevLink, nextLink } from '../../helpers/pagination';
 
 import styleCardsWrap from '../styles/styleCardsWrap';
 
-import Layout from '../Layout';
+import LayoutBase from '../Layout/LayoutBase';
+import Container, { ContainerFullWidth } from '../Container';
 import SEO from '../SEO';
 import styleHtml from '../styles/styleHtml';
 
@@ -19,7 +20,7 @@ import PostPagination from './PostPagination';
 const PostList = ({
   data,
   /**
-   * keep it fot the future!
+   * keep it for the future!
    */
   /*
   pageContext: { locale, currentPage, numPages, categories, tags, years },
@@ -36,6 +37,7 @@ const PostList = ({
     socialLinks,
     page: {
       html,
+      cover,
       title: defaultTitle,
       metaTitle,
       headline,
@@ -68,7 +70,8 @@ const PostList = ({
   }
 
   return (
-    <Layout
+    <LayoutBase
+      cover={cover}
       title={title || defaultTitle}
       headline={headline}
       context={{ translations, address, mainNav, footerNav, socialLinks }}
@@ -88,16 +91,20 @@ const PostList = ({
       <YearsWidget items={years} />
       */}
 
-      {isFirst && html && <div css={styleHtml} dangerouslySetInnerHTML={{ __html: html }} />}
-
-      <div css={styleCardsWrap}>
-        {posts.edges.map(({ node }) => (
-          <PostCard key={node.slug} data={node} />
-        ))}
-      </div>
-
-      <PostPagination currentPage={currentPage} numPages={numPages} slug={subpath || slug} />
-    </Layout>
+      {isFirst && html && (
+        <Container>
+          <div css={styleHtml} dangerouslySetInnerHTML={{ __html: html }} />
+        </Container>
+      )}
+      <ContainerFullWidth>
+        <div css={styleCardsWrap}>
+          {posts.edges.map(({ node }) => (
+            <PostCard key={node.slug} data={node} />
+          ))}
+        </div>
+        <PostPagination currentPage={currentPage} numPages={numPages} slug={subpath || slug} />
+      </ContainerFullWidth>
+    </LayoutBase>
   );
 };
 

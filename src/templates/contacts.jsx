@@ -53,11 +53,12 @@ const ContactsTemplate = ({ data }) => {
     mainNav,
     footerNav,
     socialLinks,
-    page: { title, metaTitle, headline, metaDescription, noindex, locale, slug },
+    page: { cover, title, metaTitle, headline, metaDescription, noindex, locale, slug },
   } = data;
 
   return (
     <Layout
+      cover={cover}
       title={title}
       headline={headline}
       context={{ translations, address, mainNav, footerNav, socialLinks }}

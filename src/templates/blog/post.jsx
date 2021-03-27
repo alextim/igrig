@@ -1,20 +1,15 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { graphql /* , Link */ } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { graphql } from 'gatsby';
 
 import { space } from '../../theme/space';
 
 import SEO from '../../components/SEO';
-import Layout from '../../components/Layout/Layout';
+import Layout from '../../components/Layout';
 
 import PostInfo from '../../components/blog/PostInfo';
 import LastUpdated from '../../components/blog/LastUpdated';
 import PostTags from '../../components/blog/PostTags';
-
-const styleImage = {
-  marginBottom: space[8],
-};
 
 const styleHtml = {
   marginBottom: space[8],
@@ -46,6 +41,7 @@ const PostTemplate = ({ data }) => {
 
   return (
     <Layout
+      cover={cover}
       title={title}
       headline={headline}
       context={{ translations, address, mainNav, footerNav, socialLinks }}
@@ -62,14 +58,6 @@ const PostTemplate = ({ data }) => {
         pageType="BlogPosting"
         imgPath={cover?.sm?.publicURL}
       />
-      {cover && cover.sm && (
-        <GatsbyImage
-          image={cover.sm.childImageSharp.gatsbyImageData}
-          alt={cover.alt}
-          title={cover.title}
-          css={styleImage}
-        />
-      )}
       <PostInfo datePublished={datePublished} timeToRead={timeToRead} />
       {html && <div css={styleHtml} dangerouslySetInnerHTML={{ __html: html }} />}
       <PostTags tags={tags} />
