@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { GatsbyImage, withArtDirection, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
+import getArtImages from '../../../helpers/getArtImages';
 import mq from '../../../theme/media-queries';
 import colors from '../../../theme/colors';
 import { fontSizes } from '../../../theme/font-sizes';
@@ -35,19 +36,8 @@ const styleTitle = {
 };
 
 const SliderItem = ({ title, image }) => {
-  let images;
-  if (image) {
-    if (image.sm && image.xl) {
-      images = withArtDirection(getImage(image.sm), [
-        {
-          media: '(min-width: 480px)',
-          image: getImage(image.xl),
-        },
-      ]);
-    } else {
-      images = getImage(image.sm || image.xl);
-    }
-  }
+  const images = getArtImages(image);
+
   return (
     <div css={styleWrap}>
       {images && (

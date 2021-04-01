@@ -6,8 +6,6 @@ import SEO from '../components/SEO';
 import HomeLayout from '../components/Layout/HomeLayout';
 
 import Hero from '../components/home-page-parts/Hero';
-// eslint-disable-next-line no-unused-vars
-import Slider from '../components/home-page-parts/Slider';
 
 const HomeTemplate = ({ data }) => {
   const {
@@ -30,7 +28,6 @@ const HomeTemplate = ({ data }) => {
         article={false}
       />
       <Hero cover={cover} items={mainNav.edges} />
-      <Slider items={sections[0].items} />
     </HomeLayout>
   );
 };
@@ -48,6 +45,13 @@ export const pageQuery = graphql`
         alt
         title
         sm {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+        xl {
+          publicURL
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
@@ -56,22 +60,6 @@ export const pageQuery = graphql`
       noindex
       slug
       locale
-      sections {
-        items {
-          title
-          subtitle
-          text
-          image {
-            alt
-            title
-            sm {
-              childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
-              }
-            }
-          }
-        }
-      }
     }
     address: address(locale: { eq: $locale }) {
       ...AddressFragment

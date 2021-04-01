@@ -39,7 +39,7 @@ const Footer = () => {
   const socialLinks = useSocialLinks();
 
   return (
-    <footer css={footerStyle}>
+    <footer id="footer" css={footerStyle}>
       <LegalInfo foundingDate={foundingDate} name={address ? address.name : undefined} />
       {socialLinks && <SocialLinks items={socialLinks} />}
     </footer>

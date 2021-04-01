@@ -25,17 +25,20 @@ const styleRoot = {
 };
 
 const styleMain = {
-  // flex: '1 1 auto',
-  position: 'fixed',
-  top: sizes.header.sm,
-  bottom: sizes.footer,
-  left: 0,
-  right: 0,
   width: '100%',
-  overflow: 'hidden',
+  flex: '1 1 auto',
+  marginTop: sizes.header.sm,
+  /*
+  top: sizes.header.sm,
+  // width: 'auto',
+  */
   [mq.lg]: {
+    position: 'fixed',
     top: sizes.header.lg,
+    bottom: sizes.footer,
     left: sizes.aside,
+    right: 0,
+    margin: 0,
     width: 'auto',
     /**
      * HACK: https://github.com/nolimits4web/swiper/issues/2914#issuecomment-493384617

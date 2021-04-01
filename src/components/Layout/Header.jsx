@@ -33,7 +33,7 @@ const styleHeader = {
 };
 
 const Header = () => (
-  <header css={styleHeader}>
+  <header id="header" css={styleHeader}>
     <Navbar />
   </header>
 );

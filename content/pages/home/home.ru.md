@@ -5,6 +5,7 @@ metaTitle:
 metaDescription: 
 cover: 
   sm: ./images/hero.jpg
+  xl: ./images/1.jpg
   alt: alt hero
   title: title hero
 template: home

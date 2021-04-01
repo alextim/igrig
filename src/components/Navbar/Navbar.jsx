@@ -33,7 +33,10 @@ const styleWrap = {
   width: '100%',
   [mq.lg]: {
     gridTemplateColumns: `${sizes.aside} 1fr`,
-    gridTemplateAreas: '"aside main"',
+    gridTemplateAreas: `
+      "aside main"
+      "aside s"
+    `,
   },
 };
 
@@ -42,10 +45,10 @@ const styleL = {
 };
 
 const styleR = {
-  display: 'inline-flex',
-  alignItems: 'center',
   gridArea: 'main',
   justifySelf: 'end',
+  display: 'inline-flex',
+  alignItems: 'center',
   fontFamily: fonts.heading,
   fontSize: '10px',
 };
@@ -56,8 +59,7 @@ const styleSlogan = {
   fontSize: fontSizes[1],
   margin: `${space[1]} 0 ${space[2]}`,
   [mq.lg]: {
-    justifySelf: 'center',
-    gridArea: 'main',
+    justifySelf: 'end',
     padding: 0,
   },
 };
