@@ -8,7 +8,7 @@ const locales = require('./config/locales');
 
 const manifestIconSrc = `${__dirname}/src/assets/images/icon.png`;
 
-const { contentDir, postsDir, pageDirs, cardsPerPage } = config;
+const { contentDir, postsDir, pageDirs, cardsPerPage, noRobots } = config;
 
 const CSP = {
   'default-src': "'self'",
@@ -29,6 +29,18 @@ const CSP = {
 
 const getContentSecurityPolicy = () =>
   Object.keys(CSP).reduce((acc, curr) => `${acc}${acc ? '; ' : ''}${curr} ${CSP[curr]}`, '');
+
+const headerForAll = [`Content-Security-Policy: ${getContentSecurityPolicy()}`];
+if (config.noRobots) {
+  headerForAll.push('X-Robots-Tag: noindex, nofollow');
+}
+
+const headers = {
+  '/*': headerForAll,
+  '/assets/*': ['Cache-Control: public, max-age=31536000, immutable'],
+  '/404.html': ['Cache-Control: max-age=300'],
+  '/ru/404.html': ['Cache-Control: max-age=300'],
+};
 
 const pageSources = Object.keys(pageDirs).map((name) => ({
   resolve: 'gatsby-source-filesystem',
@@ -158,6 +170,7 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
     // 'gatsby-plugin-remove-serviceworker',
+    /*
     {
       resolve: 'gatsby-plugin-portal',
       options: {
@@ -165,20 +178,13 @@ module.exports = {
         id: 'portal',
       },
     },
+    */
     {
       resolve: 'gatsby-plugin-netlify',
       options: {
         mergeSecurityHeaders: true,
         mergeCachingHeaders: true,
-        headers: {
-          '/*': [
-            `Content-Security-Policy: ${getContentSecurityPolicy()}`,
-            // 'X-Robots-Tag: noindex, nofollow',
-          ],
-          '/assets/*': ['Cache-Control: public, max-age=31536000, immutable'],
-          '/404.html': ['Cache-Control: max-age=300'],
-          '/ru/404.html': ['Cache-Control: max-age=300'],
-        },
+        headers,
       },
     },
     // 'gatsby-plugin-sass',
@@ -236,7 +242,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: 'S-Bars RSS Feed',
+            title: `${i18n.defaultLocale.siteShortName} RSS Feed`,
           },
         ],
       },
@@ -252,19 +258,20 @@ module.exports = {
     {
       resolve: '@alextim/at-blog',
       options: {
-        defaultTranslitLocale: 'ru',
         templatesDir: `${__dirname}/src/${config.templatesDir}blog/`,
         cardsPerPage,
         postsDir,
-        CREATE_TAG_PAGES: true,
-        CREATE_CATEGORY_PAGES: true,
-        CREATE_YEAR_PAGES: true,
+        CREATE_TAG_PAGES: false,
+        CREATE_CATEGORY_PAGES: false,
+        CREATE_YEAR_PAGES: false,
         i18n,
       },
     },
     {
       resolve: '@alextim/at-sitemap',
       options: {
+        createRobotsTxt: true,
+        noRobots,
         ignoreImagesWithoutAlt: false,
       },
     },

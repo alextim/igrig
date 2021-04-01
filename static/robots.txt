@@ -1,5 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://igrig.netlify.app/sitemap.xml
-Sitemap: https://igrig.netlify.app/image-sitemap.xml

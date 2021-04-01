@@ -55,6 +55,7 @@ const PostTemplate = ({ data }) => {
         noindex={noindex}
         datePublished={datePublished}
         dateModified={dateModified}
+        tags={tags}
         pageType="BlogPosting"
         imgPath={cover?.sm?.publicURL}
       />

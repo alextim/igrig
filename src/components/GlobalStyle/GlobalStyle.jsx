@@ -296,7 +296,7 @@ const GlobalStyle = () => (
         }
       }
 
-      h4 {
+      h4, h5, h6 {
         font-size: ${fontSizes[2]};
         margin-bottom: ${space[2]};
       }
@@ -335,7 +335,18 @@ const GlobalStyle = () => (
           }
           */
       }
-
+      p, ul, ol {
+        + h2 {
+          margin-top: ${space[7]};
+        }
+        + h3 {
+          margin-top: ${space[7]};
+        }
+        + h4 {
+          margin-top: ${space[7]};
+        }
+      }
+      
       input,
       select,
       textarea {
@@ -369,20 +380,94 @@ const GlobalStyle = () => (
         appearance: none;
       }
 
-      .grid_2-col,
-      .grid_3-col {
+      .left,
+      .right {
+        width: 100%;
+        margin-bottom: ${space[2]}
+      }
+
+      .left {
+        ${mq.lg} {
+          float: left;
+          margin-right: ${space[2]}
+        }
+      }
+
+      .right {
+        ${mq.lg} {
+          float: right;
+          margin-left: ${space[2]}
+        }
+      }
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+
+      .w-10 {
+        ${mq.lg} {
+          width: 10%;
+        }
+      }
+      .w-20 {
+        ${mq.lg} {
+          width: 20%;
+        }
+      }
+      .w-30 {
+        ${mq.lg} {
+          width: 30%;
+        }
+      }
+      .w-40 {
+        ${mq.lg} {
+          width: 40%;
+        }
+      }
+      .w-50 {
+        ${mq.lg} {
+          width: 50%;
+        }
+      }
+      .w-60 {
+        ${mq.lg} {
+          width: 60%;
+        }
+      }
+      .w-70 {
+        ${mq.lg} {
+          width: 70%;
+        }
+      }
+      .w-80 {
+        ${mq.lg} {
+          width: 80%;
+        }
+      }
+      .w-90 {
+        ${mq.lg} {
+          width: 90%;
+        }
+      }
+      .w-100{
+        width: 100%;
+      }
+
+      .grid-2,
+      .grid-3 {
         display: grid;
         grid-gap: ${space[4]};
         margin-bottom: ${space[4]};
       }
 
-      .grid_2-col {
+      .grid-2 {
         ${mq.lg} {
           grid-template-columns: 1fr 1fr;
         }
       }
 
-      .grid_3-col {
+      .grid-3 {
         ${mq.lg} {
           grid-template-columns: 1fr 1fr 1fr;
         }

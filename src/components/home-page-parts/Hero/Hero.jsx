@@ -1,4 +1,5 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import mq from '../../../theme/media-queries';

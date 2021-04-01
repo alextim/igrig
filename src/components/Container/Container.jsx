@@ -29,6 +29,13 @@ import container from '../../theme/container';
  * --------
  * 12 636 12
  * 1280 -for pictures
+ *
+ * nat-geo.ru
+ * 20 644 20
+ *
+ * 500px
+ * --------
+ * 20 740 20
  */
 export const ContainerHero = ({ children }) => children;
 
