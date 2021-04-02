@@ -29,14 +29,14 @@ const styleTextWrap = {
   textTransform: 'uppercase',
   fontFamily: fonts.heading,
   fontSize: '10px',
-  ':first-letter': {
+  '::first-letter': {
     fontSize: '12px',
   },
 };
 
 const styleWord = {
   marginRight: space[1],
-  ':first-letter': {
+  '::first-letter': {
     fontSize: '12px',
   },
   ':last-type-of': {

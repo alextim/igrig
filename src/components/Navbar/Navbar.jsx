@@ -57,6 +57,7 @@ const styleSlogan = {
   gridArea: 's',
   textAlign: 'center',
   fontSize: fontSizes[1],
+  fontFamily: fonts.slogan,
   margin: `${space[1]} 0 ${space[2]}`,
   [mq.lg]: {
     justifySelf: 'end',

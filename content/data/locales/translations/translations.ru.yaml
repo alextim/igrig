@@ -2,6 +2,8 @@
   value: мин чтения
 - key: post.readMore
   value: Читать дальше...
+- key: post.read
+  value: Читать
 - key: post.lastUpdated
   value: Последнее обновление
 - key: post.share

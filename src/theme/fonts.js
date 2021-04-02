@@ -22,6 +22,7 @@ const fonts = {
   // body: '"Open Sans", fallback-body-font, sans-serif',
   body: webSafeFont,
   heading: 'Oswald, fallback-heading-font, sans-serif',
+  slogan: `Aclonica, ${webSafeFont}`,
   monospace: 'Menlo, monospace',
 };
 

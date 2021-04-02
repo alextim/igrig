@@ -17,22 +17,21 @@ import styleHtmlDef from '../components/styles/styleHtml';
 
 const styleHtml = (t) => ({
   ...styleHtmlDef,
-  ':first-letter': {
-    color: 'red',
+  'p:first-of-type::first-letter': {
     float: 'left',
+    padding: `0 ${t.space[2]} 0`,
+    color: 'red',
     fontSize: '3em',
     lineHeight: 1,
-    // marginTop: t.space[0],
-    padding: `0 ${t.space[2]} 0`,
   },
 });
 
 const styleImage = (t) => ({
-  float: 'none',
   [mq.lg]: {
     float: 'left',
     width: '25%',
     marginRight: t.space[5],
+    marginBottom: t.space[2],
   },
 });
 

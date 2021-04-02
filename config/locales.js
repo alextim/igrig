@@ -17,10 +17,9 @@ module.exports = {
     shortLocalName: 'En',
 
     dateFormat: 'dd/MM/yyyy',
-
-    siteTitle: 'Inna Grygorashchenko',
+    siteTitle: 'Inna Grygoraschenko',
     siteDescription: 'Adventurer, photographer, inspirer, extreme sportswoman',
-    siteHeadline: 'Where your desire is, the path will be there',
+    siteHeadline: 'Where`s there`s a will, there`s a way…',
     siteShortName: 'IGRIG',
   },
 
@@ -37,7 +36,7 @@ module.exports = {
 
     siteTitle: 'Инна Григоращенко',
     siteDescription: 'Авантюрист, фотограф, вдохновительница, экстремальная спортсменка',
-    siteHeadline: 'Где желание, там и путь',
+    siteHeadline: 'Where`s there`s a will, there`s a way…', // гДЕ ЖЕЛАНИЕ, ТАМ И ПУТЬ…
     siteShortName: 'ИГРИГ',
   },
 };

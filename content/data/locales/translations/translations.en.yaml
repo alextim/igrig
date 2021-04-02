@@ -2,6 +2,8 @@
   value: min read
 - key: post.readMore
   value: Read more...
+- key: post.read
+  value: Read
 - key: post.lastUpdated
   value: Last updated
 - key: post.share

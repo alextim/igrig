@@ -18,6 +18,7 @@ const excerptStyle = {
 const styleReadMore = {
   paddingTop: space[5],
   fontSize: fontSizes[0],
+  textTransform: 'uppercase',
 };
 
 const PostCard = ({
@@ -57,7 +58,7 @@ const PostCard = ({
         <Published date={datePublished} />
         <p css={excerptStyle}>{excerpt}</p>
         <a href={to} css={styleReadMore}>
-          {t('post.readMore')}
+          {t('post.read')}
         </a>
       </div>
     </article>

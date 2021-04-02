@@ -13,6 +13,7 @@ import PostTags from '../../components/blog/PostTags';
 
 const styleHtml = {
   marginBottom: space[8],
+  textAlign: 'justify',
 };
 
 const PostTemplate = ({ data }) => {

@@ -76,6 +76,15 @@ const GlobalStyle = () => (
           url('/assets/fonts/oswald-v36-latin_cyrillic-regular.woff2') format('woff2');
       }
 
+      @font-face {
+        font-family: 'Aclonica';
+        font-display: swap;
+        font-style: normal;
+        font-weight: 400;
+        src: local('Aclonica'),
+          url('/assets/fonts/aclonica-v11-latin-regular.woff2') format('woff2');
+      }
+
       body {
         font-family: ${fonts.body};
         line-height: ${lineHeights.body};
@@ -346,7 +355,7 @@ const GlobalStyle = () => (
           margin-top: ${space[7]};
         }
       }
-      
+
       input,
       select,
       textarea {

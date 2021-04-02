@@ -30,6 +30,13 @@ export default function HTML(props) {
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        <link
+          rel="preload"
+          href="/assets/fonts/aclonica-v11-latin-regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
         {headComponents}
       </head>
 
