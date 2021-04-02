@@ -1,5 +1,5 @@
 ---
-title: Серия «Трансформация»
+title: Пример Поста
 headline: 
 metaTitle: 
 metaDescription:

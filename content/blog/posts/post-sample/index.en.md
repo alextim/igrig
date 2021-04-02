@@ -1,12 +1,12 @@
 ---
-title: Series "Transformation"
+title: Post Sample
 headline: 
 metaTitle: 
 metaDescription:
 cover:
-  sm:
+  sm: ./images/7.jpg
   xl: 
-  alt: 
+  alt: sample
 datePublished: 2019-05-01T16:22:00Z
 dateModified: 2021-03-14T16:22:00Z
 tags: 

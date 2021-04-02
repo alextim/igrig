@@ -1,8 +1,10 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { GatsbyImage } from 'gatsby-plugin-image';
 
-import getArtImages from '../../../helpers/getArtImages';
+import React from 'react';
+import debounce from 'lodash/debounce';
+
+import getImgSources from '../../../helpers/getImgSources';
 
 import mq from '../../../theme/media-queries';
 import fonts from '../../../theme/fonts';
@@ -11,15 +13,13 @@ import fonts from '../../../theme/fonts';
 const styleWrap = {
   display: 'grid',
   overflow: 'hidden',
-  height: '100%',
+  // height: '100%',
 };
 
 const styleTextWrap = {
   gridArea: '1/1',
-  // position: 'relative',
-  // This centers the other elements inside the hero component
   display: 'grid',
-  gridTemplateRows: 'repeat(5, 10%) 50%',
+  gridTemplateRows: 'repeat(5, 10%) 50% ',
   alignItems: 'center',
   justifyItems: 'center',
   textTransform: 'uppercase',
@@ -32,34 +32,60 @@ const styleTextWrap = {
 
 const styleImage = {
   gridArea: '1/1',
-  // objectFit: 'cover',
+  objectFit: 'cover',
   // height: '100%',
   // marginBottom: sizes.footer,
   // height: `calc(100 * var(--vh, 1vh) - ${sizes.header.sm} - ${sizes.footer})`,
   // minHeight: `calc(100vh - ${sizes.header.sm} - ${sizes.footer})`,
 };
-/*
 
-const styleImage = {
-  gridArea: '1/1',
-  // minHeight: `calc(100 * var(--vh, 1vh) - ${sizes.header.sm} - ${sizes.footer})`,
-  // minHeight: `calc(100vh - ${sizes.header.sm} - ${sizes.footer})`,
-};      <GatsbyImage
-        style={styleImage}
-        image={getImage(cover.sm)}
-        layout="fullWidth"
-        alt={cover.alt}
-      />
-        <img ref={hero} src={cover.sm.publicURL} alt={cover.alt} css={styleImage} />
-
-      */
 const Hero = ({ cover, items }) => {
-  const images = getArtImages(cover);
+  const hero = React.createRef();
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (!hero || !hero.current) {
+        return;
+      }
+      const header = document.getElementById('header');
+      const footer = document.getElementById('footer');
+      hero.current.style.height = `${
+        window.innerHeight - (header.offsetHeight + footer.offsetHeight)
+      }px`;
+    };
+
+    const debouncedResize = debounce(() => {
+      handleResize();
+    }, 500);
+
+    window.addEventListener('resize', debouncedResize);
+
+    return () => {
+      debounce.cancel();
+      window.removeEventListener('resize', debouncedResize);
+    };
+  }, []);
+
+  const src = {
+    320: 280,
+    480: 440,
+    800: 760,
+    1024: 980,
+    1920: '',
+  };
+
+  const { srcset, sizes, defaultSrc } = getImgSources(src, '/assets/images/hero/hero-', 'jpg');
+
   return (
     <div css={styleWrap}>
-      {images && (
-        <GatsbyImage style={styleImage} image={images} layout="fullWidth" alt={cover.alt} />
-      )}
+      <img
+        ref={hero}
+        srcSet={srcset}
+        sizes={sizes}
+        src={defaultSrc}
+        alt={cover.alt}
+        css={styleImage}
+      />
       <div css={styleTextWrap}>
         {items.map(({ node: { title: navItemTitle, to } }, i) => (
           <a key={to} href={to} style={{ gridRow: i + 2 }}>

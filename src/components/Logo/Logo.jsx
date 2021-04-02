@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import i18n from '../../i18n';
 import { useLocale } from '../../i18n/i18n-context';
 
-import mq from '../../theme/media-queries';
+// import mq from '../../theme/media-queries';
 import colors from '../../theme/colors';
 import fonts from '../../theme/fonts';
 import { space } from '../../theme/space';
@@ -21,10 +21,6 @@ const styleWrap = {
 
   ':hover, :active, :focus': {
     textDecoration: 'none',
-  },
-
-  [mq.lg]: {
-    // marginRight: '3rem',
   },
 };
 
@@ -51,11 +47,6 @@ const styleWord = {
 const styleImg = {
   width: '2rem',
   height: '2rem',
-  // background: 'white',
-  [mq.lg]: {
-    width: '2rem',
-    height: '2rem',
-  },
 };
 
 const Logo = ({ onClick }) => {
