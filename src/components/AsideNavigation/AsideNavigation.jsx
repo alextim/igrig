@@ -10,7 +10,8 @@ const styleWrap = {
   gridArea: 'a',
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'space-around;',
+  justifyContent: 'center',
+  alignItems: 'center',
 };
 
 const AsideNavigation = () => {

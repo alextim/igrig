@@ -53,7 +53,6 @@ const Hero = ({ cover, items }) => {
         window.innerHeight - (header.offsetHeight + footer.offsetHeight)
       }px`;
     };
-
     const debouncedResize = debounce(() => {
       handleResize();
     }, 500);
@@ -61,7 +60,7 @@ const Hero = ({ cover, items }) => {
     window.addEventListener('resize', debouncedResize);
 
     return () => {
-      debounce.cancel();
+      // debounce.cancel();
       window.removeEventListener('resize', debouncedResize);
     };
   }, []);
