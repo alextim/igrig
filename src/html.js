@@ -1,6 +1,14 @@
 /* eslint-disable jsx-a11y/html-has-lang */
 import React from 'react';
-
+/*
+        <link
+          rel="preload"
+          href="/assets/fonts/oswald-v36-latin_cyrillic-700.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+*/
 export default function HTML(props) {
   const {
     htmlAttributes,
@@ -19,13 +27,6 @@ export default function HTML(props) {
         <link
           rel="preload"
           href="/assets/fonts/oswald-v36-latin_cyrillic-regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/assets/fonts/oswald-v36-latin_cyrillic-700.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"

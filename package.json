@@ -45,7 +45,6 @@
     "upd": "scripts/content-update.bat"
   },
   "dependencies": {
-    "@alextim/at-blog": "^0.1.2",
     "@alextim/at-seo": "^0.1.10",
     "@alextim/at-site-core": "^0.1.1",
     "@alextim/at-sitemap": "^0.1.1",

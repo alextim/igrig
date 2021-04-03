@@ -26,7 +26,7 @@ const styleWrap = {
 const styleTextWrap = {
   display: 'inline-flex',
   textTransform: 'uppercase',
-  fontFamily: fonts.heading,
+  fontFamily: fonts.logo,
   marginLeft: '0.225rem',
   fontSize: '1.125rem',
   [mq.lg]: {

@@ -6,11 +6,9 @@ const styleCardsWrap = {
   display: 'grid',
   gridGap: space[7],
   [mq.md]: {
-    display: 'grid',
     gridTemplateColumns: `repeat(${card.perRow.md}, 1fr)`,
   },
   [mq.lg]: {
-    display: 'grid',
     gridTemplateColumns: `repeat(${card.perRow.lg}, 1fr)`,
   },
 };

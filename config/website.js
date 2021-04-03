@@ -23,7 +23,7 @@ module.exports = {
     `${siteUrl}/assets/images/organization/4x3/business-photo.jpg`,
     `${siteUrl}/assets/images/organization/16x9/business-photo.jpg`,
   ],
-  siteLogo: `${siteUrl}/assets/images/logo.svg`,
+  siteLogo: `${siteUrl}/assets/images/logo.png`,
 
   /**
    * Open Graph Image
@@ -88,7 +88,9 @@ module.exports = {
   themeColor: '#3498DB',
   backgroundColor: '#2e3246',
 
-  postsDir: 'blog/posts',
+  postDirs: {
+    post: 'blog/posts',
+  },
 
   pageDirs: {
     page: 'pages',
@@ -97,7 +99,7 @@ module.exports = {
 
   cardsPerPage: 6,
 
-  templatesDir: '/templates/',
+  templatesDir: 'templates',
 };
 
 module.exports = {
@@ -187,11 +189,15 @@ module.exports = {
   themeColor: '#3498DB',
   backgroundColor: '#2e3246',
 
-  postsDir: 'blog/posts',
+  postDirs: {
+    blog: 'blog/posts',
+    photography: 'photography/posts',
+  },
 
   pageDirs: {
     page: 'pages',
     blogPage: 'blog/pages',
+    photographyPage: 'photography/pages',
   },
 
   cardsPerPage: 6,

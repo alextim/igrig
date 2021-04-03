@@ -10,15 +10,14 @@ const YearTemplate = ({ data, pageContext }) => {
   } = data;
 
   const title = `${defaultTitle} ${year}`;
-  const subpath = `/years/${year}/`;
 
-  return <PostList data={data} pageContext={pageContext} title={title} subpath={subpath} />;
+  return <PostList data={data} pageContext={pageContext} title={title} />;
 };
 
 export default YearTemplate;
 
 export const pageQuery = graphql`
-  query yearQuery($locale: String!, $year: Int, $skip: Int!, $limit: Int!) {
+  query yearQuery($locale: String!, $year: Int, $skip: Int!, $limit: Int!, $type: String!) {
     page: mdPage(slug: { regex: "//years//" }, locale: { eq: $locale }) {
       ...MdPageFragment
     }
@@ -26,7 +25,7 @@ export const pageQuery = graphql`
       limit: $limit
       skip: $skip
       sort: { fields: [datePublished], order: DESC }
-      filter: { year: { eq: $year }, locale: { eq: $locale } }
+      filter: { year: { eq: $year }, locale: { eq: $locale }, type: { eq: $type } }
     ) {
       edges {
         node {

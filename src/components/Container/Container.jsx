@@ -43,6 +43,7 @@ const styleFW = {
   display: 'flex',
   flexDirection: 'column',
   margin: '0 auto',
+  width: '100%',
   padding: `0 ${container.p.sm}`,
   [mq.lg]: {
     padding: `0 ${container.p.lg}`,

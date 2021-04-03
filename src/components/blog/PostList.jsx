@@ -26,9 +26,8 @@ const PostList = ({
   /*
   pageContext: { locale, currentPage, numPages, categories, tags, years },
   */
-  pageContext: { currentPage, numPages },
+  pageContext: { to, currentPage, numPages },
   title,
-  subpath,
 }) => {
   const {
     translations,
@@ -45,7 +44,6 @@ const PostList = ({
       metaDescription,
       noindex,
       locale,
-      slug,
     },
     posts,
   } = data;
@@ -54,18 +52,19 @@ const PostList = ({
   const isLast = currentPage === numPages;
 
   const links = [];
-
+  // eslint-disable-next-line no-console
+  console.log(to, currentPage);
   if (numPages > 1) {
     if (!isFirst) {
       links.push({
         rel: 'prev',
-        href: siteUrl + prevLink(currentPage, slug),
+        href: siteUrl + prevLink(currentPage, to),
       });
     }
     if (!isLast) {
       links.push({
         rel: 'next',
-        href: siteUrl + nextLink(currentPage, slug),
+        href: siteUrl + nextLink(currentPage, to),
       });
     }
   }
@@ -81,7 +80,7 @@ const PostList = ({
         locale={locale}
         title={metaTitle}
         description={metaDescription}
-        pathname={currentLink(currentPage, slug)}
+        pathname={currentLink(currentPage, to)}
         noindex={noindex}
         pageType="Blog"
         links={links}
@@ -104,7 +103,7 @@ const PostList = ({
             <PostCard key={node.slug} data={node} />
           ))}
         </div>
-        <PostPagination currentPage={currentPage} numPages={numPages} slug={subpath || slug} />
+        <PostPagination currentPage={currentPage} numPages={numPages} slug={to} />
       </ContainerFullWidth>
     </LayoutBase>
   );

@@ -17,7 +17,13 @@ const CategoryTemplate = ({ data, pageContext }) => {
 export default CategoryTemplate;
 
 export const pageQuery = graphql`
-  query categoryQuery($locale: String!, $category: String, $skip: Int!, $limit: Int!) {
+  query categoryQuery(
+    $locale: String!
+    $category: String
+    $skip: Int!
+    $limit: Int!
+    $type: String!
+  ) {
     page: mdPage(slug: { regex: "//category//" }, locale: { eq: $locale }) {
       ...MdPageFragment
     }
@@ -25,7 +31,11 @@ export const pageQuery = graphql`
       limit: $limit
       skip: $skip
       sort: { fields: [datePublished], order: DESC }
-      filter: { category: { elemMatch: { title: { in: [$category] } } }, locale: { eq: $locale } }
+      filter: {
+        category: { elemMatch: { title: { in: [$category] } } }
+        locale: { eq: $locale }
+        type: { eq: $type }
+      }
     ) {
       edges {
         node {

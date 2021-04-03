@@ -51,7 +51,7 @@ const GlobalStyle = () => (
       /**
       * https://google-webfonts-helper.herokuapp.com/fonts
       */
-
+      /*
       // oswald-700 - cyrillic
       @font-face {
         font-family: 'Oswald';
@@ -66,7 +66,7 @@ const GlobalStyle = () => (
         advance-override: -0.0923828125; // Letter spacing: -1.5px
         src: local('Arial');
       }
-
+      */
       @font-face {
         font-family: 'Oswald';
         font-display: swap;
@@ -265,10 +265,13 @@ const GlobalStyle = () => (
 
       h1, h2, h3, h4 {
         font-family: ${fonts.heading};
-        font-weight: ${fontWeights.heading};
         line-height: ${lineHeights.heading};
         color: ${colors.heading};
         margin-bottom: ${space[4]};
+      }
+      
+      h2, h3, h4 {
+        font-weight: ${fontWeights.heading};
       }
 
       h1, h2, h3 {

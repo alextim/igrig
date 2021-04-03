@@ -63,6 +63,7 @@ const styleSlogan = {
   marginTop: '0.84375rem',
   [mq.lg]: {
     justifySelf: 'end',
+    alignSelf: 'flex-end',
     margin: '0 2rem 0',
     fontSize: '1.625rem',
   },

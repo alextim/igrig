@@ -21,7 +21,9 @@ const webSafeFont = 'Segoe UI,system-ui,-apple-system,sans-serif';
 const fonts = {
   // body: '"Open Sans", fallback-body-font, sans-serif',
   body: webSafeFont,
-  heading: 'Oswald, fallback-heading-font, sans-serif',
+  heading: webSafeFont,
+  // heading: 'Oswald, fallback-heading-font, sans-serif',
+  logo: 'Oswald, fallback-heading-font, sans-serif',
   slogan: `Aclonica, ${webSafeFont}`,
   monospace: 'Menlo, monospace',
 };

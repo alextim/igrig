@@ -17,7 +17,7 @@ const TagTemplate = ({ data, pageContext }) => {
 export default TagTemplate;
 
 export const pageQuery = graphql`
-  query tagQuery($locale: String!, $tag: String, $skip: Int!, $limit: Int!) {
+  query tagQuery($locale: String!, $tag: String, $skip: Int!, $limit: Int!, $type: String!) {
     page: mdPage(slug: { regex: "//tags//" }, locale: { eq: $locale }) {
       ...MdPageFragment
     }
@@ -25,7 +25,11 @@ export const pageQuery = graphql`
       limit: $limit
       skip: $skip
       sort: { fields: [datePublished], order: DESC }
-      filter: { tags: { elemMatch: { title: { in: [$tag] } } }, locale: { eq: $locale } }
+      filter: {
+        type: { eq: $type }
+        locale: { eq: $locale }
+        tags: { elemMatch: { title: { in: [$tag] } } }
+      }
     ) {
       edges {
         node {
