@@ -32,7 +32,7 @@ export default function HTML(props) {
         />
         <link
           rel="preload"
-          href="/assets/fonts/aclonica-v11-latin-regular.woff2"
+          href="/assets/fonts/aclonica-v11-latin-regular-webfont.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"

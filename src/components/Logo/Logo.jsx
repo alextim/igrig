@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import i18n from '../../i18n';
 import { useLocale } from '../../i18n/i18n-context';
 
-// import mq from '../../theme/media-queries';
+import mq from '../../theme/media-queries';
 import colors from '../../theme/colors';
 import fonts from '../../theme/fonts';
 import { space } from '../../theme/space';
@@ -13,9 +13,8 @@ import { space } from '../../theme/space';
 const SITE_LOGO = '/assets/images/logo.png';
 
 const styleWrap = {
-  display: 'flex',
-  flexDirection: 'column',
-  textAlign: 'left',
+  display: 'inline-flex',
+  alignItems: 'baseline',
 
   color: colors.header.nav.item.text,
 
@@ -28,25 +27,36 @@ const styleTextWrap = {
   display: 'inline-flex',
   textTransform: 'uppercase',
   fontFamily: fonts.heading,
-  fontSize: '10px',
-  '::first-letter': {
-    fontSize: '12px',
+  marginLeft: '0.225rem',
+  fontSize: '1.125rem',
+  [mq.lg]: {
+    marginLeft: '0.3rem',
+    fontSize: '1.5rem',
   },
 };
 
 const styleWord = {
   marginRight: space[1],
   '::first-letter': {
-    fontSize: '12px',
+    fontSize: '1.21875rem',
   },
   ':last-type-of': {
     marginRight: 0,
   },
+  [mq.lg]: {
+    '::first-letter': {
+      fontSize: '1.625rem',
+    },
+  },
 };
 
 const styleImg = {
-  width: '2rem',
-  height: '2rem',
+  width: '1.59375rem',
+  height: '1.59375rem',
+  [mq.lg]: {
+    width: '2.125rem',
+    height: '2.125rem',
+  },
 };
 
 const Logo = ({ onClick }) => {
@@ -57,8 +67,8 @@ const Logo = ({ onClick }) => {
       <img
         src={SITE_LOGO}
         alt={i18n.locales[locale].siteTitle}
-        height="32"
-        width="32"
+        height="26"
+        width="26"
         css={styleImg}
       />
       <div css={styleTextWrap}>

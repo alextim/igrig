@@ -11,6 +11,7 @@ import Container, { ContainerFullWidth } from '../Container';
 import SEO from '../SEO';
 import styleHtml from '../styles/styleHtml';
 
+import IconDefinitions from '../IconDefinitions';
 import PostCard from './PostCard';
 // import loadable from '@loadable/component';
 
@@ -85,6 +86,7 @@ const PostList = ({
         pageType="Blog"
         links={links}
       />
+      <IconDefinitions />
       {/*
       <CategoryWidget items={categories} />
       <TagsWidget items={tags} />

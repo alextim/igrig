@@ -4,33 +4,45 @@ import utils from '@alextim/utils';
 
 import mq from '../../theme/media-queries';
 import SocialLink from './SocialLink';
-// import useSocialLinks from '../../hooks/useSocialLinks';
+import useSocialLinks from '../../hooks/useSocialLinks';
 
 import Icon from '../Icon';
 
-const wrapStyle = {
-  justifySelf: 'end',
+const styleWrap = {
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center',
+  justifyContent: 'space-between',
   [mq.lg]: {
     gridArea: 'aside',
-    justifySelf: 'center',
+    justifyContent: 'space-evenly',
+    margin: '0 1rem',
   },
 };
 
-const SocialLinks = ({ items }) => (
-  <div css={wrapStyle}>
-    {Object.keys(items).map((key) => (
-      <SocialLink
-        key={key}
-        icon={<Icon name={key} />}
-        name={utils.upperFirst(key)}
-        to={items[key].to}
-        title={items[key].title}
-      />
-    ))}
-  </div>
-);
+const styleIcon = {
+  height: '1.2rem',
+  width: '1.2rem',
+};
+
+const SocialLinks = () => {
+  const items = useSocialLinks();
+  if (!items) {
+    return null;
+  }
+
+  return (
+    <div css={styleWrap}>
+      {Object.keys(items).map((key) => (
+        <SocialLink
+          key={key}
+          icon={<Icon name={key} css={styleIcon} />}
+          name={utils.upperFirst(key)}
+          to={items[key].to}
+          title={items[key].title}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default SocialLinks;

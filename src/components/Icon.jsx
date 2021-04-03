@@ -19,25 +19,29 @@ import FaWhatsapp from '../assets/fa/brand/whatsapp.svg';
 // import { FaViber } from 'react-icons/fa';
 // import { FaSkype } from 'react-icons/fa';
 
-const Icon = ({ name, ...rest }) => {
+const style = {
+  width: '1em',
+  height: '1em',
+};
+const Icon = ({ name, css = {}, ...rest }) => {
   if (!name) {
     return null;
   }
   const icons = {
-    f500px: <Fa500px className="fa" {...rest} />,
-    facebook: <FaFacebookF className="fa" {...rest} />,
-    instagram: <FaInstagram className="fa" {...rest} />,
-    // link: <FaLink className="fa" {...rest} />,
-    phone: <FaPhone className="fa" {...rest} />,
-    envelope: <FaEnvelope className="fa" {...rest} />,
-    // exclamationTriangle: <FaExclamationTriangle className="fa" {...rest} />,
-    // checkCircle: <FaCheckCircle className="fa" {...rest} />,
-    // thumbsUp: <FaThumbsUp className="fa" {...rest} />,
-    // check: <FaCheck className="fa" {...rest} />,
-    // plane: <FaPlane className="fa" {...rest} />,
-    // users: <FaUsers className="fa" {...rest} />,
-    whatsapp: <FaWhatsapp className="fa" {...rest} />,
-    telegram: <FaTelegram className="fa" {...rest} />,
+    f500px: <Fa500px css={{ ...style, ...css }} {...rest} />,
+    facebook: <FaFacebookF css={{ ...style, ...css }} {...rest} />,
+    instagram: <FaInstagram css={{ ...style, ...css }} {...rest} />,
+    // link: <FaLink css={{...style, ...css}} {...rest} />,
+    phone: <FaPhone css={{ ...style, ...css }} {...rest} />,
+    envelope: <FaEnvelope css={{ ...style, ...css }} {...rest} />,
+    // exclamationTriangle: <FaExclamationTriangle css={{...style, ...css}} {...rest} />,
+    // checkCircle: <FaCheckCircle css={{...style, ...css}} {...rest} />,
+    // thumbsUp: <FaThumbsUp css={{...style, ...css}} {...rest} />,
+    // check: <FaCheck css={{...style, ...css}} {...rest} />,
+    // plane: <FaPlane css={{...style, ...css}} {...rest} />,
+    // users: <FaUsers css={{...style, ...css}} {...rest} />,
+    whatsapp: <FaWhatsapp css={{ ...style, ...css }} {...rest} />,
+    telegram: <FaTelegram css={{ ...style, ...css }} {...rest} />,
     // viber: <FaViber />,
     // skype: <FaSkype />,
   };

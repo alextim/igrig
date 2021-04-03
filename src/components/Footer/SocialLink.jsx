@@ -1,18 +1,27 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-const style = (t) => ({
-  color: t.colors.footer.text,
-  textDecoration: 'none',
-  margin: `0 ${t.space[2]}`,
+// import { space } from '../../theme/space';
+import colors from '../../theme/colors';
+import mq from '../../theme/media-queries';
+
+const style = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  color: colors.footer.text,
+  textDecoration: 'none',
   ':hover': {
-    color: t.colors.footer.highlight,
+    color: colors.footer.highlight,
     transition: 'all 0.4s ease-out 0s',
   },
-});
+  ':last-of-type': {
+    margin: 0,
+  },
+  [mq.lg]: {
+    // marginRight: space[4],
+  },
+};
 
 const SocialLink = ({ icon, name, title, to }) => (
   <a css={style} href={to} target="_blank" rel="noreferrer" aria-label={name} title={title}>

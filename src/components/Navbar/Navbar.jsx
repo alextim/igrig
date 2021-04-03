@@ -11,7 +11,6 @@ import i18n from '../../i18n';
 import mq from '../../theme/media-queries';
 import sizes from '../../theme/sizes';
 import { space } from '../../theme/space';
-import { fontSizes } from '../../theme/font-sizes';
 import fonts from '../../theme/fonts';
 
 import useSiteHeadline from '../../hooks/useSiteHeadline';
@@ -21,47 +20,51 @@ import LanguageSwitch from '../LanguageSwitch';
 import Hamburger from '../Hamburger';
 
 import Menu from './Menu';
+import { fontSizes } from '../../theme/font-sizes';
 
 const styleWrap = {
   display: 'grid',
   gridTemplateColumns: 'auto 1fr',
   gridTemplateAreas: `
-    "aside main"
-    "s    s"
+    "logo   main"
+    "slogan slogan"
   `,
   alignItems: 'center',
+  lineHeight: 1,
   width: '100%',
   [mq.lg]: {
-    gridTemplateColumns: `${sizes.aside} 1fr`,
+    gridTemplateColumns: 'auto 1fr auto',
     gridTemplateAreas: `
-      "aside main"
-      "aside s"
+      "logo slogan main"
     `,
   },
 };
 
 const styleL = {
-  gridArea: 'aside',
+  gridArea: 'logo',
 };
 
 const styleR = {
   gridArea: 'main',
   justifySelf: 'end',
+  alignSelf: 'center',
   display: 'inline-flex',
   alignItems: 'center',
-  fontFamily: fonts.heading,
-  fontSize: '10px',
+  // fontFamily: fonts.heading,
+  fontSize: fontSizes[0],
 };
 
 const styleSlogan = {
-  gridArea: 's',
+  gridArea: 'slogan',
   textAlign: 'center',
-  fontSize: fontSizes[1],
+  // fontSize: fontSizes[1],
+  fontSize: '0.9rem',
   fontFamily: fonts.slogan,
-  margin: `${space[1]} 0 ${space[2]}`,
+  marginTop: '0.84375rem',
   [mq.lg]: {
     justifySelf: 'end',
-    padding: 0,
+    margin: '0 2rem 0',
+    fontSize: '1.625rem',
   },
 };
 

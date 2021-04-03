@@ -82,7 +82,7 @@ const GlobalStyle = () => (
         font-style: normal;
         font-weight: 400;
         src: local('Aclonica'),
-          url('/assets/fonts/aclonica-v11-latin-regular.woff2') format('woff2');
+          url('/assets/fonts/aclonica-v11-latin-regular-webfont.woff2') format('woff2');
       }
 
       body {
@@ -254,11 +254,6 @@ const GlobalStyle = () => (
       /* BUTTONS */
       button {
         min-width: 2rem;
-      }
-
-      .fa {
-        width: 1em;
-        height: 1em;
       }
 
       @media (max-width: ${breakpoints.lg}) {

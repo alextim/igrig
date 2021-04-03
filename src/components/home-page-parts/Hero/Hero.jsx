@@ -24,7 +24,7 @@ const styleTextWrap = {
   justifyItems: 'center',
   textTransform: 'uppercase',
   fontFamily: fonts.heading,
-  fontSize: '3rem',
+  fontSize: '2.5rem',
   [mq.lg]: {
     display: 'none',
   },
