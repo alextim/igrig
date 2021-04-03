@@ -264,14 +264,14 @@ const GlobalStyle = () => (
       }
 
       h1, h2, h3, h4 {
+        &:not(:first-of-type) { /* first-child */
+          margin-top: 3rem;
+        }
+        margin-bottom: ${space[4]};
         font-family: ${fonts.heading};
+        font-weight: ${fontWeights.heading};
         line-height: ${lineHeights.heading};
         color: ${colors.heading};
-        margin-bottom: ${space[4]};
-      }
-      
-      h2, h3, h4 {
-        font-weight: ${fontWeights.heading};
       }
 
       h1, h2, h3 {
@@ -280,7 +280,6 @@ const GlobalStyle = () => (
 
       h1 {
         font-size: ${fontSizes[8]};
-        margin-bottom: ${space[4]};
         text-align: center;
         ${mq.lg} {
           font-size: ${fontSizes[9]};
@@ -289,7 +288,6 @@ const GlobalStyle = () => (
 
       h2 {
         font-size: ${fontSizes[5]};
-        margin-bottom: ${space[4]};
         ${mq.lg} {
           font-size: ${fontSizes[6]};
         }
@@ -297,15 +295,17 @@ const GlobalStyle = () => (
 
       h3 {
         font-size: ${fontSizes[4]};
-        margin-bottom: ${space[2]};
         ${mq.lg} {
           font-size: ${fontSizes[5]};
         }
       }
 
-      h4, h5, h6 {
+      h5, h6 {
         font-size: ${fontSizes[2]};
         margin-bottom: ${space[2]};
+        &:not(:first-of-type) { /* first-child */
+          margin-top: 2rem;
+        }
       }
 
 

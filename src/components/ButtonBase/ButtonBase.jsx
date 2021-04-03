@@ -6,9 +6,8 @@ import { space } from '../../theme/space';
 import transition from '../../theme/transition';
 import fonts from '../../theme/fonts';
 import { fontSizes } from '../../theme/font-sizes';
+import fontWeights from '../../theme/font-weights';
 import buttons from '../../theme/buttons';
-
-const semibold = 500;
 
 const focusStyle = {
   outline: 'none',
@@ -44,7 +43,7 @@ const buttonStyles = {
     cursor: 'pointer',
 
     fontFamily: fonts.body,
-    fontWeight: semibold,
+    fontWeight: fontWeights.semibold,
     fontSize: fontSizes[2],
     // lineHeight: 'solid',
     textDecoration: 'none',

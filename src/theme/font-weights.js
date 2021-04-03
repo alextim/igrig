@@ -1,6 +1,6 @@
 const fontWeights = {
   body: 400,
-  heading: 700,
+  heading: 500,
   semibold: 500,
   bold: 700,
 };

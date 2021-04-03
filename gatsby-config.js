@@ -91,10 +91,12 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 590,
+              maxWidth: 800,
               quality: 50,
+              linkImagesToOriginal: false, // Important!
             },
           },
+          'gatsby-remark-images-zoom',
         ],
       },
     },

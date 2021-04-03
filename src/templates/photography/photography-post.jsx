@@ -1,6 +1,9 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
+import React from 'react';
 import { graphql } from 'gatsby';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 import { space } from '../../theme/space';
 
@@ -14,6 +17,13 @@ const styleHtml = {
   marginBottom: space[8],
   textAlign: 'justify',
 };
+
+const images = [
+  '//placekitten.com/1500/500',
+  '//placekitten.com/4000/3000',
+  '//placekitten.com/800/1200',
+  '//placekitten.com/1500/1500',
+];
 
 const PhotographyPostTemplate = ({ data }) => {
   const {
@@ -37,6 +47,9 @@ const PhotographyPostTemplate = ({ data }) => {
     },
   } = data;
 
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [photoIndex, setPhotoIndex] = React.useState(0);
+
   return (
     <Layout
       title={title}
@@ -55,9 +68,19 @@ const PhotographyPostTemplate = ({ data }) => {
         pageType="BlogPosting"
         imgPath={cover?.sm?.publicURL}
       />
-      <PostInfo datePublished={datePublished} />
+      <PostInfo datePublished={datePublished} onClick={() => setIsOpen(true)} />
       {html && <div css={styleHtml} dangerouslySetInnerHTML={{ __html: html }} />}
       <LastUpdated date={dateModified} />
+      {isOpen && (
+        <Lightbox
+          mainSrc={images[photoIndex]}
+          nextSrc={images[(photoIndex + 1) % images.length]}
+          prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+          onCloseRequest={() => setIsOpen(false)}
+          onMovePrevRequest={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}
+          onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % images.length)}
+        />
+      )}
     </Layout>
   );
 };
