@@ -52,14 +52,6 @@ export const pageQuery = graphql`
         }
       }
     }
-    footerNav: allFooterNav(filter: { locale: { eq: $locale } }) {
-      edges {
-        node {
-          title
-          to
-        }
-      }
-    }
     socialLinks: allSocialLink(filter: { locale: { eq: $locale } }) {
       edges {
         node {

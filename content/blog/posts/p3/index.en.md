@@ -7,7 +7,7 @@ cover:
   sm: ./images/2.jpg
   xl: 
   alt: sample
-datePublished: 2019-05-01T16:22:00Z
+datePublished: 2018-05-01T16:22:00Z
 dateModified: 2021-03-14T16:22:00Z
 tags: 
   - pain

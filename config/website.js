@@ -190,17 +190,21 @@ module.exports = {
   backgroundColor: '#2e3246',
 
   postDirs: {
+    'photo-serie': 'photo-series/posts',
+    'photo-project': 'photo-projects/posts',
     blog: 'blog/posts',
-    photography: 'photography/posts',
   },
 
   pageDirs: {
     page: 'pages',
+    photoSeriePage: 'photo-series/pages',
+    photoProjectPage: 'photo-projects/pages',
     blogPage: 'blog/pages',
-    photographyPage: 'photography/pages',
   },
 
   cardsPerPage: 6,
 
   templatesDir: '/templates/',
+
+  readMore: 'post.read',
 };

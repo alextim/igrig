@@ -11,7 +11,6 @@ const PageTemplate = ({ data }) => {
     translations,
     address,
     mainNav,
-    footerNav,
     socialLinks,
     page: {
       title,
@@ -32,7 +31,7 @@ const PageTemplate = ({ data }) => {
       title={title}
       headline={headline}
       cover={cover}
-      context={{ translations, address, mainNav, footerNav, socialLinks }}
+      context={{ translations, address, mainNav, socialLinks }}
     >
       <SEO
         locale={locale}
@@ -66,14 +65,6 @@ export const pageQuery = graphql`
             title
             to
           }
-        }
-      }
-    }
-    footerNav: allFooterNav(filter: { locale: { eq: $locale } }) {
-      edges {
-        node {
-          title
-          to
         }
       }
     }

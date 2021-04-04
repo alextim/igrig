@@ -4,6 +4,8 @@
   value: Читать дальше...
 - key: post.read
   value: Читать
+- key: post.see
+  value: Смотреть
 - key: post.lastUpdated
   value: Последнее обновление
 - key: post.share

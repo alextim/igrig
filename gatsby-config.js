@@ -6,6 +6,7 @@ const path = require('path');
 const i18n = require('./src/i18n/i18n');
 const config = require('./config/website');
 const locales = require('./config/locales');
+const colors = require('./src/theme/colors');
 
 const manifestIconSrc = `${__dirname}/src/assets/images/icon.png`;
 
@@ -93,10 +94,19 @@ module.exports = {
             options: {
               maxWidth: 800,
               quality: 50,
+              /**
+               * Doesn't wok properly if TRUE
+               *
+               */
               linkImagesToOriginal: false, // Important!
             },
           },
-          'gatsby-remark-images-zoom',
+          {
+            resolve: 'gatsby-remark-images-zoom',
+            options: {
+              background: colors.background,
+            },
+          },
         ],
       },
     },
@@ -260,8 +270,8 @@ module.exports = {
         cardsPerPage,
         postDirs,
         CREATE_TAG_PAGES: true,
-        CREATE_CATEGORY_PAGES: true,
-        CREATE_YEAR_PAGES: true,
+        CREATE_CATEGORY_PAGES: false,
+        CREATE_YEAR_PAGES: false,
         i18n,
       },
     },

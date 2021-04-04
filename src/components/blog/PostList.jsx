@@ -1,8 +1,10 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import { siteUrl } from '../../../config/website';
+import config from '../../../config/website';
+
 import { prevLink, nextLink, currentLink } from '../../helpers/pagination';
+import { useTranslation } from '../../i18n';
 
 import styleCardsWrap from '../styles/styleCardsWrap';
 
@@ -18,6 +20,18 @@ import PostCard from './PostCard';
 import PostPagination from './PostPagination';
 // import { CategoryWidget, TagsWidget, YearsWidget } from '../components/post-widgets';
 
+const Cards = ({ posts, readMore }) => {
+  const { t } = useTranslation();
+  const readMoreText = t(readMore || config.readMore);
+  return (
+    <div css={styleCardsWrap}>
+      {posts.edges.map(({ node }) => (
+        <PostCard key={node.slug} data={node} readMore={readMoreText} />
+      ))}
+    </div>
+  );
+};
+
 const PostList = ({
   data,
   /**
@@ -28,12 +42,12 @@ const PostList = ({
   */
   pageContext: { to, currentPage, numPages },
   title,
+  readMore,
 }) => {
   const {
     translations,
     address,
     mainNav,
-    footerNav,
     socialLinks,
     page: {
       html,
@@ -52,19 +66,18 @@ const PostList = ({
   const isLast = currentPage === numPages;
 
   const links = [];
-  // eslint-disable-next-line no-console
-  console.log(to, currentPage);
+
   if (numPages > 1) {
     if (!isFirst) {
       links.push({
         rel: 'prev',
-        href: siteUrl + prevLink(currentPage, to),
+        href: config.siteUrl + prevLink(currentPage, to),
       });
     }
     if (!isLast) {
       links.push({
         rel: 'next',
-        href: siteUrl + nextLink(currentPage, to),
+        href: config.siteUrl + nextLink(currentPage, to),
       });
     }
   }
@@ -74,7 +87,7 @@ const PostList = ({
       cover={cover}
       title={title || defaultTitle}
       headline={headline}
-      context={{ translations, address, mainNav, footerNav, socialLinks }}
+      context={{ translations, address, mainNav, socialLinks }}
     >
       <SEO
         locale={locale}
@@ -98,11 +111,7 @@ const PostList = ({
         </Container>
       )}
       <ContainerFullWidth>
-        <div css={styleCardsWrap}>
-          {posts.edges.map(({ node }) => (
-            <PostCard key={node.slug} data={node} />
-          ))}
-        </div>
+        <Cards posts={posts} readMore={readMore} />
         <PostPagination currentPage={currentPage} numPages={numPages} slug={to} />
       </ContainerFullWidth>
     </LayoutBase>

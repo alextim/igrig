@@ -4,6 +4,8 @@
   value: Read more...
 - key: post.read
   value: Read
+- key: post.see
+  value: See
 - key: post.lastUpdated
   value: Last updated
 - key: post.share

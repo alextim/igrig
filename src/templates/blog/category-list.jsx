@@ -12,7 +12,6 @@ const CategoryListTemplate = ({ data, pageContext: { categories } }) => {
     translations,
     address,
     mainNav,
-    footerNav,
     socialLinks,
     page: { html, title, metaTitle, headline, metaDescription, noindex, slug, locale },
   } = data;
@@ -21,7 +20,7 @@ const CategoryListTemplate = ({ data, pageContext: { categories } }) => {
     <Layout
       title={title}
       headline={headline}
-      context={{ translations, address, mainNav, footerNav, socialLinks }}
+      context={{ translations, address, mainNav, socialLinks }}
     >
       <SEO
         locale={locale}
@@ -55,14 +54,6 @@ export const pageQuery = graphql`
             title
             to
           }
-        }
-      }
-    }
-    footerNav: allFooterNav(filter: { locale: { eq: $locale } }) {
-      edges {
-        node {
-          title
-          to
         }
       }
     }

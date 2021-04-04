@@ -20,27 +20,14 @@ module.exports = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-      posts: allMdPost(
-        limit: 1000
-        filter: { type: { eq: "photography" } }
-        sort: { fields: [datePublished], order: DESC }
-      ) {
+      posts: allMdPost(limit: 1000, sort: { fields: [datePublished], order: DESC }) {
         edges {
           node {
             id
             template
-            tags {
-              title
-              to
-            }
-            category {
-              title
-              to
-            }
             slug
             type
             locale
-            year
           }
         }
       }
@@ -51,24 +38,26 @@ module.exports = async ({ graphql, actions, reporter }) => {
     reporter.panic(result.errors);
     return;
   }
+  ['photo-serie', 'photo-project'].forEach((type) => {
+    const edges = result.data.posts.edges.filter(({ node }) => node.type === type);
+    createPages({
+      locales: result.data.site.siteMetadata.locales,
+      edges,
 
-  createPages({
-    locales: result.data.site.siteMetadata.locales,
-    edges: result.data.posts.edges,
+      type,
 
-    type: 'photography',
+      createPage,
 
-    createPage,
+      cardsPerPage,
 
-    cardsPerPage,
+      blogPath: `/${type}s/`,
 
-    blogPath: '/photography/',
+      templatesDir: path.join(__dirname, '..', templatesDir, type),
 
-    templatesDir: path.join(__dirname, '..', templatesDir, 'photography'),
+      i18n,
 
-    i18n,
-
-    postListTemplateName: 'photography-list',
-    postDefaultTemplateName: 'photography-post',
+      postListTemplateName: `${type}-list`,
+      postDefaultTemplateName: `${type}-post`,
+    });
   });
 };

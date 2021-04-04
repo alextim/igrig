@@ -102,7 +102,6 @@ const ContactsTemplate = ({ data }) => {
     translations,
     address,
     mainNav,
-    footerNav,
     socialLinks,
     page: { cover, title, metaTitle, headline, metaDescription, noindex, locale, slug, html },
   } = data;
@@ -111,7 +110,7 @@ const ContactsTemplate = ({ data }) => {
     <Layout
       title={title}
       headline={headline}
-      context={{ translations, address, mainNav, footerNav, socialLinks }}
+      context={{ translations, address, mainNav, socialLinks }}
     >
       <SEO
         locale={locale}
@@ -150,14 +149,6 @@ export const pageQuery = graphql`
             title
             to
           }
-        }
-      }
-    }
-    footerNav: allFooterNav(filter: { locale: { eq: $locale } }) {
-      edges {
-        node {
-          title
-          to
         }
       }
     }

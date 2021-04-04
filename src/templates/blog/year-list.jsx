@@ -8,7 +8,7 @@ import YearList from '../../components/blog/YearList';
 import styleHtml from '../../components/styles/styleHtml';
 
 const YearsListTemplate = ({ data, pageContext: { years } }) => {
-  const { translations, address, mainNav, footerNav, socialLinks, page } = data;
+  const { translations, address, mainNav, socialLinks, page } = data;
 
   const { html, title, metaTitle, headline, metaDescription, noindex, locale, slug } = page;
 
@@ -16,7 +16,7 @@ const YearsListTemplate = ({ data, pageContext: { years } }) => {
     <Layout
       title={title}
       headline={headline}
-      context={{ translations, address, mainNav, footerNav, socialLinks }}
+      context={{ translations, address, mainNav, socialLinks }}
     >
       <SEO
         locale={locale}
@@ -50,14 +50,6 @@ export const pageQuery = graphql`
             title
             to
           }
-        }
-      }
-    }
-    footerNav: allFooterNav(filter: { locale: { eq: $locale } }) {
-      edges {
-        node {
-          title
-          to
         }
       }
     }

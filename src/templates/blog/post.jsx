@@ -2,71 +2,9 @@
 import { jsx } from '@emotion/react';
 import { graphql } from 'gatsby';
 
-import { space } from '../../theme/space';
+import Post from '../../components/blog/Post';
 
-import SEO from '../../components/SEO';
-import Layout from '../../components/Layout';
-
-import PostInfo from '../../components/blog/PostInfo';
-import LastUpdated from '../../components/blog/LastUpdated';
-import PostTags from '../../components/blog/PostTags';
-
-const styleHtml = {
-  marginBottom: space[8],
-  textAlign: 'justify',
-};
-
-const PostTemplate = ({ data }) => {
-  const {
-    translations,
-    address,
-    mainNav,
-    footerNav,
-    socialLinks,
-    post: {
-      title,
-      metaTitle,
-      headline,
-      metaDescription,
-      cover,
-      noindex,
-      datePublished,
-      dateModified,
-      timeToRead,
-      tags,
-      html,
-      locale,
-      slug,
-    },
-  } = data;
-
-  return (
-    <Layout
-      cover={cover}
-      title={title}
-      headline={headline}
-      context={{ translations, address, mainNav, footerNav, socialLinks }}
-    >
-      <SEO
-        locale={locale}
-        title={metaTitle}
-        description={metaDescription}
-        headline={headline}
-        pathname={slug}
-        noindex={noindex}
-        datePublished={datePublished}
-        dateModified={dateModified}
-        tags={tags}
-        pageType="BlogPosting"
-        imgPath={cover?.sm?.publicURL}
-      />
-      <PostInfo datePublished={datePublished} timeToRead={timeToRead} />
-      {html && <div css={styleHtml} dangerouslySetInnerHTML={{ __html: html }} />}
-      <PostTags tags={tags} />
-      <LastUpdated date={dateModified} />
-    </Layout>
-  );
-};
+const PostTemplate = ({ data }) => <Post data={data} />;
 
 export default PostTemplate;
 
@@ -109,14 +47,6 @@ export const postQuery = graphql`
             title
             to
           }
-        }
-      }
-    }
-    footerNav: allFooterNav(filter: { locale: { eq: $locale } }) {
-      edges {
-        node {
-          title
-          to
         }
       }
     }

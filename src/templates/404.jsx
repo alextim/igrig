@@ -21,13 +21,12 @@ const NotFoundTemplate = ({ data }) => {
     translations,
     address,
     mainNav,
-    footerNav,
     socialLinks,
     page: { title, metaTitle, metaDescription, html, locale, slug },
   } = data;
 
   return (
-    <Layout context={{ translations, address, mainNav, footerNav, socialLinks }}>
+    <Layout context={{ translations, address, mainNav, socialLinks }}>
       <SEO
         locale={locale}
         title={metaTitle}
@@ -62,14 +61,6 @@ export const pageQuery = graphql`
             title
             to
           }
-        }
-      }
-    }
-    footerNav: allFooterNav(filter: { locale: { eq: $locale } }) {
-      edges {
-        node {
-          title
-          to
         }
       }
     }

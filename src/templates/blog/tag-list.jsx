@@ -8,7 +8,7 @@ import TagList from '../../components/blog/TagList';
 import styleHtml from '../../components/styles/styleHtml';
 
 const TagListTemplate = ({ data, pageContext: { tags } }) => {
-  const { translations, address, mainNav, footerNav, socialLinks, page } = data;
+  const { translations, address, mainNav, socialLinks, page } = data;
 
   const { html, title, metaTitle, headline, metaDescription, noindex, slug, locale } = page;
 
@@ -16,7 +16,7 @@ const TagListTemplate = ({ data, pageContext: { tags } }) => {
     <Layout
       title={title}
       headline={headline}
-      context={{ translations, address, mainNav, footerNav, socialLinks }}
+      context={{ translations, address, mainNav, socialLinks }}
     >
       <SEO
         locale={locale}
@@ -50,14 +50,6 @@ export const pageQuery = graphql`
             title
             to
           }
-        }
-      }
-    }
-    footerNav: allFooterNav(filter: { locale: { eq: $locale } }) {
-      edges {
-        node {
-          title
-          to
         }
       }
     }

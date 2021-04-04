@@ -1,21 +1,23 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import card from '../../../theme/card';
 import { space } from '../../../theme/space';
 
 import getCardSchema from '../../SEO/getCardSchema';
-import Published from '../Published';
 
-import ReadMore from './ReadMore';
+import Published from '../Published';
+import ReadMore from '../ReadMore';
 
 const excerptStyle = {
   marginTop: space[2],
+  textAlign: 'justify',
 };
 
 const PostCard = ({
   data: { slug: to, cover, title, excerpt, headline, metaDescription, datePublished, dateModified },
+  readMore,
 }) => (
   <article css={card.wrap}>
     <script type="application/ld+json">
@@ -32,13 +34,9 @@ const PostCard = ({
       )}
     </script>
 
-    {cover && cover.sm && (
+    {cover && (
       <a href={to}>
-        <GatsbyImage
-          image={cover.sm.childImageSharp.gatsbyImageData}
-          alt={cover.alt}
-          title={cover.title}
-        />
+        <GatsbyImage image={getImage(cover.sm)} alt={cover.alt} title={cover.title} />
       </a>
     )}
     <div css={card.textWrap}>
@@ -47,7 +45,7 @@ const PostCard = ({
       </a>
       <Published date={datePublished} />
       <p css={excerptStyle}>{excerpt}</p>
-      <ReadMore to={to} />
+      <ReadMore to={to} title={readMore} />
     </div>
   </article>
 );
