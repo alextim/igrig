@@ -83,13 +83,13 @@ module.exports = ({
     const posts = edges.filter(({ node }) => node.locale === locale && node.type === type);
 
     if (posts.length === 0) {
-      console.warn('\nNo posts');
+      console.warn(`\nNo ${type} posts`);
     } else {
       const tagMap = new Map();
       const categoryMap = new Map();
       const yearMap = new Map();
 
-      console.log(`\nMd posts: ${posts.length}`);
+      console.log(`\nMd ${type} posts: ${posts.length}`);
       console.log('---------------');
       posts.forEach(({ node: { id, category, tags, year, slug } }) => {
         if (CREATE_TAG_PAGES && tags) {

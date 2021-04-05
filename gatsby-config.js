@@ -95,14 +95,14 @@ module.exports = {
               maxWidth: 800,
               quality: 50,
               /**
-               * Doesn't wok properly if TRUE
+               * Doesn't wok properly if linkImagesToOriginal set to TRUE
                *
                */
               linkImagesToOriginal: false, // Important!
             },
           },
           {
-            resolve: 'gatsby-remark-images-zoom',
+            resolve: 'gatsby-remark-images-medium-zoom',
             options: {
               background: colors.background,
             },

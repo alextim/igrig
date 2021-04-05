@@ -1,12 +1,17 @@
 {
-  "name": "gatsby-remark-images-zoom",
+  "name": "gatsby-remark-images-medium-zoom",
   "description": "Add zoom to remark images.",
   "version": "0.0.1",
-  "author": "Premier Octet <hello@premieroctet.com>",
-  "bugs": {
-    "url": "https://github.com/premieroctet/gatsby-remark-images-zoom/issues"
+  "author": "JaeYeopHan (Jbee)",
+  "license": "MIT",
+  "homepage": "https://github.com/JaeYeopHan/gatsby-remark-images-medium-zoom#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaeYeopHan/gatsby-remark-images-medium-zoom.git"
   },
-  "homepage": "https://github.com/premieroctet/gatsby-remark-images-zoom",
+  "bugs": {
+    "url": "https://github.com/JaeYeopHan/gatsby-remark-images-medium-zoom/issues"
+  },
   "keywords": [
     "gatsby",
     "gatsby-plugin",
@@ -15,7 +20,6 @@
     "remark",
     "zoom"
   ],
-  "license": "MIT",
   "main": "index.js",
   "peerDependencies": {
     "@fastly/performance-observer-polyfill": ">=2.0.0",
