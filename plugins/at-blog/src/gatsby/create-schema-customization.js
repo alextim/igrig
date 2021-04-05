@@ -2,6 +2,11 @@ module.exports = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = [
     `
+    type Author {
+      familyName: String
+      givenName: String
+    }
+
     interface Post implements Node {
       id: ID!
       title: String!
@@ -12,6 +17,7 @@ module.exports = ({ actions }) => {
 
       category: [Link]
       tags: [Link]
+      author: Author
 
       featured: Boolean
       datePublished: Date
@@ -24,7 +30,7 @@ module.exports = ({ actions }) => {
       htmlAst: JSON!
       excerpt(pruneLength: Int = 180): String!
       timeToRead: Int
-      
+
       type: String!
       locale: String!
       slug: String!
@@ -40,7 +46,7 @@ module.exports = ({ actions }) => {
 
       category: [Link]
       tags: [Link]
-      
+
       featured: Boolean
       datePublished: Date
       dateModified: Date,
