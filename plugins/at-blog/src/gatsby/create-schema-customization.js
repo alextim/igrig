@@ -17,7 +17,7 @@ module.exports = ({ actions }) => {
 
       category: [Link]
       tags: [Link]
-      author: Author
+      # author: Author
 
       featured: Boolean
       datePublished: Date
