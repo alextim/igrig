@@ -38,8 +38,17 @@ const styleTextWrap = {
   fontFamily: fonts.logo,
   fontSize: '2.4rem',
   lineHeight: 1.5,
+  '@media (orientation: landscape)': {
+    fontSize: '2rem',
+    lineHeight: 1.25,
+  },
   '@media screen and (min-width: 750px)': {
     fontSize: '3rem',
+    paddingRight: '11rem',
+  },
+  '@media screen and (orientation: landscape) and (min-width: 750px)': {
+    color: 'green',
+    fontSize: '2.5rem',
     paddingRight: '11rem',
   },
   [mq.lg]: {
@@ -51,8 +60,16 @@ const Hero = ({ cover, items }) => {
   return (
     <div css={styleWrap}>
       <picture css={styleImage}>
-        <source media="(min-width: 990px)" srcSet="/assets/images/hero/hero-1920w.webp" />
-        <source media="(min-width: 990px)" srcSet="/assets/images/hero/hero-1920w.jpg" />
+        <source media="(min-width: 992px)" srcSet="/assets/images/hero/hero-1920w.webp" />
+        <source media="(min-width: 992px)" srcSet="/assets/images/hero/hero-1920w.jpg" />
+        <source
+          media="(orientation: landscape) and (min-width: 992px)"
+          srcSet="/assets/images/hero/hero-1024w.webp"
+        />
+        <source
+          media="(orientation: landscape) and (min-width: 992px)"
+          srcSet="/assets/images/hero/hero-1024w.jpg"
+        />
         <source media="(min-width: 750px)" srcSet="/assets/images/hero/hero-1024w.webp" />
         <source media="(min-width: 750px)" srcSet="/assets/images/hero/hero-1024w.jpg" />
         <source media="(max-width: 480px)" srcSet="/assets/images/hero/hero-480w.webp" />

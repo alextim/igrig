@@ -55,7 +55,7 @@ const pageSources = Object.keys(allDirs).map((name) => ({
 
 module.exports = {
   flags: {
-    THE_FLAG: false,
+    FAST_DEV: true,
   },
   siteMetadata: {
     siteUrl: config.siteUrl,
