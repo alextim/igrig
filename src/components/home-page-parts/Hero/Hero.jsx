@@ -62,6 +62,11 @@ const styleTextWrap = {
   },
 };
 
+/**
+ * https://cloudfour.com/thinks/responsive-images-101-part-2-img-required/
+ *
+ *
+ */
 const Hero = ({ cover, items }) => {
   return (
     <div css={styleWrap}>

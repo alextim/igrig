@@ -54,9 +54,6 @@ const pageSources = Object.keys(allDirs).map((name) => ({
 }));
 
 module.exports = {
-  flags: {
-    FAST_DEV: true,
-  },
   siteMetadata: {
     siteUrl: config.siteUrl,
     locales: i18n.localeCodes.map((code) => ({ code, ...locales[code] })),

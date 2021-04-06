@@ -20,7 +20,7 @@ export const pageQuery = graphql`
       ...MdPageFragment
     }
     posts: allMdPost(
-      sort: { fields: [datePublished], order: DESC }
+      sort: { fields: [featured, datePublished], order: [ASC, DESC] }
       limit: $limit
       skip: $skip
       filter: { locale: { eq: $locale }, type: { eq: $type } }
