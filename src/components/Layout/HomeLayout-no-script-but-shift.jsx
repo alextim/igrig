@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React from 'react';
+// import React from 'react';
 import { jsx, ThemeProvider } from '@emotion/react';
 
 import theme from '../../theme';
@@ -15,10 +15,10 @@ import Header from './Header';
 import Aside from './Aside';
 
 const styleRoot = {
-  // minHeight: '100vh',
+  minHeight: '100vh',
   // height: '100%',
   minWidth: '320px',
-  minHeight: 'calc(100 * var(--vh, 1vh))',
+  // minHeight: 'calc(100 * var(--vh, 1vh))',
   // minHeight: '-webkit-fill-available',
   display: 'flex',
   flexDirection: 'column',
@@ -59,6 +59,7 @@ const HomeLayout = ({ context, children }) => {
    * https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
    *
    */
+  /*
   const handleResize = () => {
     const root = document.querySelector(':root');
     const vh = window.innerHeight / 100;
@@ -71,7 +72,7 @@ const HomeLayout = ({ context, children }) => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
+  */
   return (
     <AppContextProvider value={context}>
       <ThemeProvider theme={theme}>

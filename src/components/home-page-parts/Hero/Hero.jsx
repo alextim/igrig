@@ -36,7 +36,7 @@ const styleTextWrap = {
   justifyItems: 'end',
   textTransform: 'uppercase',
   fontFamily: fonts.logo,
-  fontSize: '2.4rem',
+  fontSize: '2.3rem',
   lineHeight: 1.5,
   '@media (orientation: landscape)': {
     fontSize: '2rem',
