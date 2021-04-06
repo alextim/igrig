@@ -18,6 +18,7 @@ const styleRoot = {
   // minHeight: '100vh',
   // height: '100%',
   minWidth: '320px',
+  maxHeight: '100vh',
   height: 'calc(100 * var(--vh, 1vh))',
   // minHeight: '-webkit-fill-available',
   display: 'flex',
@@ -64,10 +65,14 @@ const HomeLayout = ({ context, children }) => {
       const vh = window.innerHeight / 100;
       document.querySelector(':root').style.setProperty('--vh', `${vh}px`);
     };
+    window.addEventListener('load', handleResize);
     window.addEventListener('resize', handleResize);
+    window.addEventListener('touchmove', handleResize, false);
 
     return () => {
+      window.removeEventListener('load', handleResize);
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('touchmove', handleResize);
     };
   }, []);
 
