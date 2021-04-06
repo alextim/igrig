@@ -18,7 +18,7 @@ const styleRoot = {
   // minHeight: '100vh',
   // height: '100%',
   minWidth: '320px',
-  minHeight: 'calc(100 * var(--vh, 1vh))',
+  height: 'calc(100 * var(--vh, 1vh))',
   // minHeight: '-webkit-fill-available',
   display: 'flex',
   flexDirection: 'column',
@@ -59,12 +59,11 @@ const HomeLayout = ({ context, children }) => {
    * https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
    *
    */
-  const handleResize = () => {
-    const root = document.querySelector(':root');
-    const vh = window.innerHeight / 100;
-    root.style.setProperty('--vh', `${vh}px`);
-  };
   React.useEffect(() => {
+    const handleResize = () => {
+      const vh = window.innerHeight / 100;
+      document.querySelector(':root').style.setProperty('--vh', `${vh}px`);
+    };
     window.addEventListener('resize', handleResize);
 
     return () => {
