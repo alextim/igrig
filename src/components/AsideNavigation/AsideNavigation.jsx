@@ -7,7 +7,7 @@ import NavItem from './NavItem';
 import useMainNavItems from '../../hooks/useMainNavtems';
 
 const styleWrap = {
-  gridArea: 'a',
+  gridArea: 'nav',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',

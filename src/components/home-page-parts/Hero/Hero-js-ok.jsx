@@ -42,12 +42,6 @@ const styleTextWrap = {
     fontSize: '2rem',
     lineHeight: 1.25,
   },
-  '@media screen and (max-width: 280px)': {
-    fontSize: '1.5rem',
-  },
-  '@media screen and (min-width: 281px) and (max-width: 320px)': {
-    fontSize: '2rem',
-  },
   '@media screen and (min-width: 750px)': {
     fontSize: '3rem',
     paddingRight: '11rem',

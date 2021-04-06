@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import React from 'react';
 import { jsx, ThemeProvider } from '@emotion/react';
 
 import theme from '../../theme';
@@ -14,21 +15,29 @@ import Header from './Header';
 import Aside from './Aside';
 
 const styleRoot = {
-  height: '100%',
+  // minHeight: '100vh',
+  // height: '100%',
   minWidth: '320px',
   maxHeight: '100vh',
+  height: 'calc(100 * var(--vh, 1vh))',
+  // minHeight: '-webkit-fill-available',
+  display: 'flex',
+  flexDirection: 'column',
 };
 
 const styleMain = {
+  // flex: '1 1 auto',
   position: 'fixed',
-  width: '100%',
   top: sizes.header.sm,
   bottom: sizes.footer,
+  left: 0,
+  right: 0,
+  width: '100%',
   overflow: 'hidden',
   [mq.lg]: {
     top: sizes.header.lg,
     left: sizes.aside,
-    // width: 'auto',
+    width: 'auto',
     /**
      * HACK: https://github.com/nolimits4web/swiper/issues/2914#issuecomment-493384617
      *
@@ -39,25 +48,44 @@ const styleMain = {
   },
 };
 
-const styleFooterWrap = {
-  position: 'fixed',
-  left: 0,
-  bottom: 0,
+const styleSpacer = {
   width: '100%',
+  flex: '1 1 auto',
+  // display: 'none',
 };
 
 const HomeLayout = ({ context, children }) => {
+  /**
+   * The trick to viewport units on mobile
+   * https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+   *
+   */
+  React.useEffect(() => {
+    const handleResize = () => {
+      const vh = window.innerHeight / 100;
+      document.querySelector(':root').style.setProperty('--vh', `${vh}px`);
+    };
+    window.addEventListener('load', handleResize);
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('touchmove', handleResize, false);
+
+    return () => {
+      window.removeEventListener('load', handleResize);
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('touchmove', handleResize);
+    };
+  }, []);
+
   return (
     <AppContextProvider value={context}>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <div css={styleRoot}>
           <Header />
+          <div css={styleSpacer} />
           <div css={styleMain}>{children}</div>
           <Aside />
-          <div css={styleFooterWrap}>
-            <Footer />
-          </div>
+          <Footer />
         </div>
       </ThemeProvider>
     </AppContextProvider>
