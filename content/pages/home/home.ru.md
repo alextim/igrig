@@ -5,4 +5,5 @@ metaTitle:
 metaDescription: 
 cover: 
   alt: alt hero
+template: home  
 ---
