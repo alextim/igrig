@@ -6,8 +6,6 @@ import { Location } from '@reach/router';
 
 import BODY_PREVENT_SCROLLING from '../../constants/body-prevent-scrolling';
 
-import i18n from '../../i18n';
-
 import mq from '../../theme/media-queries';
 import sizes from '../../theme/sizes';
 import { space } from '../../theme/space';
@@ -70,6 +68,9 @@ const styleSlogan = {
 };
 
 const styleMenuWrap = {
+  display: 'flex',
+  flexDirection: 'column',
+
   backgroundColor: 'inherit',
 
   position: 'absolute',
@@ -106,6 +107,22 @@ const styleMenuOpen = {
   transform: 'unset',
 };
 
+const styleShowOnDesktop = {
+  display: 'none',
+  [mq.lg]: {
+    display: 'flex',
+  },
+};
+
+const styleShowOnMob = {
+  marginTop: '3rem',
+  '.lang-switch-item': {
+    ':after': {
+      margin: '0 1rem',
+    },
+  },
+};
+
 const Navbar = () => {
   const siteHeadline = useSiteHeadline();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -134,20 +151,19 @@ const Navbar = () => {
               <Logo onClick={close} />
             </div>
             <div css={styleR}>
-              <LanguageSwitch closeMenu={close} />
-              {i18n.purePath(pathname) !== '/' && (
-                <Hamburger
-                  open={isMenuOpen}
-                  bp={mq.lg}
-                  m={`0 -0.75rem 0 ${space[4]}`}
-                  onClick={toggleOpen}
-                />
-              )}
+              <LanguageSwitch extraStyle={styleShowOnDesktop} closeMenu={close} />
+              <Hamburger
+                open={isMenuOpen}
+                bp={mq.lg}
+                m={`0 -0.75rem 0 ${space[4]}`}
+                onClick={toggleOpen}
+              />
             </div>
             <div css={styleSlogan}>{siteHeadline}</div>
           </div>
           <div css={{ ...styleMenuWrap, ...(isMenuOpen ? styleMenuOpen : {}) }}>
             <Menu pathname={pathname} onClick={close} />
+            <LanguageSwitch extraStyle={styleShowOnMob} closeMenu={close} />
           </div>
         </React.Fragment>
       )}

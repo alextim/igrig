@@ -67,7 +67,7 @@ const getSafePath = (pathname, code, allPathes) => {
   return i18n.localizePath('/', code);
 };
 
-const LanguageSwitch = ({ closeMenu }) => {
+const LanguageSwitch = ({ closeMenu, extraStyle = {} }) => {
   const { locale } = useLocale();
   const allPathes = useAllSitePath();
 
@@ -78,12 +78,12 @@ const LanguageSwitch = ({ closeMenu }) => {
   return (
     <Location>
       {({ location: { pathname } }) => (
-        <div css={wrapStyle}>
+        <div css={{ ...wrapStyle, ...extraStyle }}>
           {i18n.localeCodes.map((code) => {
             const { shortName } = i18n.locales[code];
             const isCurrent = locale === code;
             return (
-              <div key={code} css={itemWrapStyle}>
+              <div key={code} className="lang-switch-item" css={itemWrapStyle}>
                 <Link
                   css={{
                     ...itemStyle,
