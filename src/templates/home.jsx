@@ -27,7 +27,7 @@ const HomeTemplate = ({ data }) => {
         noindex={noindex}
         article={false}
       />
-      <Hero cover={cover} items={mainNav.edges} />
+      <Hero alt={cover?.alt} items={mainNav.edges} />
     </HomeLayout>
   );
 };

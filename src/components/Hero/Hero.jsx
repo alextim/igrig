@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import mq from '../../../theme/media-queries';
-import fonts from '../../../theme/fonts';
+import mq from '../../theme/media-queries';
+import fonts from '../../theme/fonts';
 
 const styleWrap = {
   display: 'grid',
@@ -67,7 +67,7 @@ const styleTextWrap = {
  *
  *
  */
-const Hero = ({ cover, items }) => {
+const Hero = ({ alt, items }) => {
   return (
     <div css={styleWrap}>
       <picture css={styleImage}>
@@ -85,7 +85,7 @@ const Hero = ({ cover, items }) => {
         <source media="(min-width: 750px)" srcSet="/assets/images/hero/hero-1024w.jpg" />
         <source media="(max-width: 480px)" srcSet="/assets/images/hero/hero-480w.webp" />
         <source media="(max-width: 480px)" srcSet="/assets/images/hero/hero-480w.jpg" />
-        <img src="/assets/images/hero/hero-480w.jpg" alt={cover?.alt} />
+        <img src="/assets/images/hero/hero-480w.jpg" alt={alt} />
       </picture>
       <div css={styleTextWrap}>
         {items.map(({ node: { title: navItemTitle, to } }, i) => (

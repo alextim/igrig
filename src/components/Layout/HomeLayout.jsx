@@ -17,6 +17,10 @@ const styleRoot = {
   height: '100%',
   minWidth: '320px',
   maxHeight: '100vh',
+  /*
+    height: 'calc(100 * var(--vh, 1vh))',
+    minHeight: '-webkit-fill-available',
+  */
 };
 
 const styleMain = {
@@ -33,9 +37,9 @@ const styleMain = {
      * HACK: https://github.com/nolimits4web/swiper/issues/2914#issuecomment-493384617
      *
      */
-    // overflow: 'hidden',
-    // marginTop: sizes.header.lg,
-    // paddingLeft: sizes.aside,
+    /*
+    overflow: 'hidden',
+    */
   },
 };
 
@@ -47,6 +51,28 @@ const styleFooterWrap = {
 };
 
 const HomeLayout = ({ context, children }) => {
+    /**
+   * The trick to viewport units on mobile
+   * https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+   *
+   */
+  /*
+  React.useEffect(() => {
+    const handleResize = () => {
+      const vh = window.innerHeight / 100;
+      document.querySelector(':root').style.setProperty('--vh', `${vh}px`);
+    };
+    window.addEventListener('load', handleResize);
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('touchmove', handleResize, false);
+
+    return () => {
+      window.removeEventListener('load', handleResize);
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('touchmove', handleResize);
+    };
+  }, []);
+  */
   return (
     <AppContextProvider value={context}>
       <ThemeProvider theme={theme}>

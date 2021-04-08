@@ -2,11 +2,6 @@ module.exports = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = [
     `
-    type Author {
-      familyName: String
-      givenName: String
-    }
-
     interface Post implements Node {
       id: ID!
       title: String!
@@ -17,7 +12,6 @@ module.exports = ({ actions }) => {
 
       category: [Link]
       tags: [Link]
-      # author: Author
 
       featured: Boolean
       datePublished: Date

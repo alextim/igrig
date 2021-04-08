@@ -10,14 +10,14 @@ const hero = {
 const body = {
   maxWidth: '1280px',
   margin,
-  padding: '0 1rem',
+  padding: '0 1.5rem',
   [mq.lg]: {
     padding: '0 2rem',
   },
 };
 
 const p = {
-  sm: '1rem',
+  sm: '1.5rem',
   lg: '2rem',
 };
 
