@@ -16,10 +16,6 @@
   },
   "author": "Author",
   "all_rights_reserved": "All rights reserved",
-  "cookie_warning": {
-    "text": "We serve cookies on this site to analyze traffic, remember your preferences, and optimize your experience.",
-    "details": "More details"
-  },
   "form": {
     "send": "Send",
     "send_message": "Send Message",
@@ -60,20 +56,9 @@
     "thanks": "Thank you for your message!",
     "we_will_response": "We will response you in a nearest time."
   },
-  "nav": {
-    "inquiry": "Send Inquiry"
-  },
   "footer": {
-    "contacts": "Contacts",
-    "call_us": "Contact Us",
-    "opening_time": "Opening Time",
-    "our_address": "Legal Address",
-    "inquiry": {
-      "title": "Inquiry!",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-      "button_title": "Create Inquiry"
-    },
-    "privacyPolicy": "Pricacy Policy"
+    "privacyPolicy": "Pricacy Policy",
+    "policies": "Pricacy / Terms of Use"
   },
   "contacts": {
     "title": "Contact Us",
@@ -94,10 +79,5 @@
     }
   },
   "day_off": "Day off",
-  "days_off": "Days off",
-  "priceList": {
-    "name": "Name",
-    "price": "Price",
-    "description": "Description"
-  }
+  "days_off": "Days off"
 }

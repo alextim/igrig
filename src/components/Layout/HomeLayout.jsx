@@ -27,11 +27,12 @@ const styleMain = {
   position: 'fixed',
   width: '100%',
   top: sizes.header.sm,
-  bottom: sizes.footer,
+  bottom: sizes.footer.sm,
   overflow: 'hidden',
   [mq.lg]: {
     top: sizes.header.lg,
     left: sizes.aside,
+    bottom: sizes.footer.lg,
     // width: 'auto',
     /**
      * HACK: https://github.com/nolimits4web/swiper/issues/2914#issuecomment-493384617
@@ -51,7 +52,7 @@ const styleFooterWrap = {
 };
 
 const HomeLayout = ({ context, children }) => {
-    /**
+  /**
    * The trick to viewport units on mobile
    * https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
    *

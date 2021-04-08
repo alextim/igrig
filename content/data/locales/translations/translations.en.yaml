@@ -24,10 +24,6 @@
   value: Author
 - key: all_rights_reserved
   value: All rights reserved
-- key: cookie_warning.text
-  value: We serve cookies on this site to analyze traffic, remember your preferences, and optimize your experience.
-- key: cookie_warning.details
-  value: More details
 - key: form.send
   value: Send
 - key: form.send_message
@@ -92,24 +88,10 @@
   value: Thank you for your message!
 - key: cf.we_will_response
   value: We will response you in a nearest time.
-- key: nav.inquiry
-  value: Send Inquiry
-- key: footer.contacts
-  value: Contacts
-- key: footer.call_us
-  value: Contact Us
-- key: footer.opening_time
-  value: Opening Time
-- key: footer.our_address
-  value: Legal Address
-- key: footer.inquiry.title
-  value: Inquiry!
-- key: footer.inquiry.text
-  value: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-- key: footer.inquiry.button_title
-  value: Create Inquiry
 - key: footer.privacyPolicy
   value: Pricacy Policy
+- key: footer.policies
+  value: Pricacy / Terms of Use
 - key: contacts.title
   value: Contact Us
 - key: contacts.wait_you_on_address
@@ -138,9 +120,3 @@
   value: Day off
 - key: days_off
   value: Days off
-- key: priceList.name
-  value: Name
-- key: priceList.price
-  value: Price
-- key: priceList.description
-  value: Description

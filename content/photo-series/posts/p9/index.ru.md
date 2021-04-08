@@ -1,5 +1,5 @@
 ---
-title: Фотосерия 9
+title: Фотосерія 9
 headline: 
 metaTitle: 
 metaDescription:

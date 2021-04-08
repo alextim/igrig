@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 
 import mq from '../../theme/media-queries';
 import { space } from '../../theme/space';
-import size from '../../theme/sizes';
+import sizes from '../../theme/sizes';
 import container from '../../theme/container';
 
 import useSiteDescription from '../../hooks/useSiteDescription';
@@ -16,11 +16,11 @@ const styleAside = {
     display: 'block',
     overflow: 'hidden',
     position: 'fixed',
-    top: size.header.lg,
+    top: sizes.header.lg,
     left: 0,
-    bottom: size.footer,
+    bottom: sizes.footer.lg,
 
-    width: size.aside,
+    width: sizes.aside,
     padding: `${space[4]} ${container.p.lg} ${space[4]} ${container.p.lg}`,
   },
 };

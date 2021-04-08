@@ -139,7 +139,7 @@ const Navbar = () => {
                 <Hamburger
                   open={isMenuOpen}
                   bp={mq.lg}
-                  m={`0 -1rem 0 ${space[4]}`}
+                  m={`0 -0.75rem 0 ${space[4]}`}
                   onClick={toggleOpen}
                 />
               )}

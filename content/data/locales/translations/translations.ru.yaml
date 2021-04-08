@@ -24,12 +24,6 @@
   value: Автор
 - key: all_rights_reserved
   value: Все права защищены.
-- key: cookie_warning.text
-  value: Этот сайт использует куки для оптимизации, анализа трафика и сохранения ваших настроек.
-- key: cookie_warning.details
-  value: Подробнее
-- key: home.customer
-  value: Заказщик
 - key: form.send
   value: Отправить
 - key: form.send_message
@@ -94,60 +88,10 @@
   value: Спасибо за ваше сообщение!
 - key: cf.we_will_response
   value: Мы ответим вам в ближайшее время.
-- key: if.subject.title
-  value: Тема
-- key: if.subject.description
-  value: Выберите из списка, или свой вариант
-- key: if.other
-  value: Другое
-- key: if.message.title
-  value: Ваш запрос
-- key: if.message.description
-  value: Опишите вашу потребность, техническое задание, или задайте вопрос нашим специалистам
-- key: if.vc.title
-  value: Ваша визитка
-- key: if.vc.description
-  value: Оставьте Ваши контакты
-- key: if.name
-  value: Имя
-- key: if.position
-  value: Должность
-- key: if.company
-  value: Компания
-- key: if.phone
-  value: Телефон
-- key: if.agree
-  value: Согласие на обработку данных
-- key: if.privacy.agree_with
-  value: согласен с
-- key: if.privacy.policy
-  value: политикой конфиденциальности
-- key: if.sorry
-  value: Извините. Произошла ошибка во время отправки вашего запроса.
-- key: if.try_later
-  value: Пожалуйста, повторите вашу попытку позже.
-- key: if.thanks
-  value: Спасибо за ваш запрос!
-- key: if.we_will_response
-  value: Мы ответим вам в ближайшее время.
-- key: nav.inquiry
-  value: Послать запрос
-- key: footer.contacts
-  value: Контакты
-- key: footer.call_us
-  value: Обращайтесь к нам
-- key: footer.opening_time
-  value: Рабочее время
-- key: footer.our_address
-  value: Юридический адрес
-- key: footer.inquiry.title
-  value: Обращайтесь к нам!
-- key: footer.inquiry.text
-  value: Для уточнения стоимости работ по Вашему техническому заданию, а также по вопросам сотрудничества, заполните эту форму, и наш специалист свяжется с вами.
-- key: footer.inquiry.button_title
-  value: ОТПРАВИТЬ ЗАПРОС
 - key: footer.privacyPolicy
   value: Конфиденциальность
+- key: footer.policies
+  value: Конфиденциальность / Правила пользования
 - key: contacts.title
   value: Контакты
 - key: contacts.wait_you_on_address
@@ -176,9 +120,3 @@
   value: Выходной
 - key: days_off
   value: Выходные
-- key: priceList.name
-  value: Название работ
-- key: priceList.price
-  value: Цена
-- key: priceList.description
-  value: Описание

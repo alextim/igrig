@@ -5,7 +5,7 @@ import SEO from '../components/SEO';
 
 import HomeLayout from '../components/Layout/HomeLayout';
 
-import Hero from '../components/home-page-parts/Hero';
+import Hero from '../components/Hero';
 
 const HomeTemplate = ({ data }) => {
   const {

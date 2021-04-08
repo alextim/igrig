@@ -279,22 +279,25 @@ const GlobalStyle = () => (
       }
 
       h1 {
-        font-size: ${fontSizes[8]};
+        font-size: ${fontSizes[5]};
         text-align: center;
         ${mq.lg} {
-          font-size: ${fontSizes[9]};
+          font-size: ${fontSizes[8]};
         }
+      }
+      h2, h3, h4, h5, h6 {
+        text-align: left;
       }
 
       h2 {
-        font-size: ${fontSizes[5]};
+        font-size: ${fontSizes[4]};
         ${mq.lg} {
           font-size: ${fontSizes[6]};
         }
       }
 
       h3 {
-        font-size: ${fontSizes[4]};
+        font-size: ${fontSizes[3]};
         ${mq.lg} {
           font-size: ${fontSizes[5]};
         }

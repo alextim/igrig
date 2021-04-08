@@ -80,7 +80,7 @@ const LanguageSwitch = ({ closeMenu }) => {
       {({ location: { pathname } }) => (
         <div css={wrapStyle}>
           {i18n.localeCodes.map((code) => {
-            const { shortName, shortLocalName } = i18n.locales[code];
+            const { shortName } = i18n.locales[code];
             const isCurrent = locale === code;
             return (
               <div key={code} css={itemWrapStyle}>
@@ -92,7 +92,7 @@ const LanguageSwitch = ({ closeMenu }) => {
                   to={isCurrent ? pathname : getSafePath(pathname, code, allPathes)}
                   onClick={closeMenu}
                 >
-                  {isCurrent ? shortLocalName : shortName}
+                  {shortName}
                 </Link>
               </div>
             );

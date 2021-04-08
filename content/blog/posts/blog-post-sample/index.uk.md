@@ -1,5 +1,5 @@
 ---
-title: Пример Поста
+title: Приклад Посту
 headline: 
 metaTitle: 
 metaDescription:
@@ -10,10 +10,10 @@ cover:
 datePublished: 2019-05-01T16:22:00Z
 dateModified: 2021-03-14T16:22:00Z
 tags: 
-  - боль
+  - біль
   - щит
   - десктоп
-  - потеря
+  - втрата
 ---
 
 ## Headers

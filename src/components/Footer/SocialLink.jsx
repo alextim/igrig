@@ -3,7 +3,6 @@ import { jsx } from '@emotion/react';
 
 // import { space } from '../../theme/space';
 import colors from '../../theme/colors';
-import mq from '../../theme/media-queries';
 
 const style = {
   display: 'flex',
@@ -17,9 +16,6 @@ const style = {
   },
   ':last-of-type': {
     margin: 0,
-  },
-  [mq.lg]: {
-    // marginRight: space[4],
   },
 };
 

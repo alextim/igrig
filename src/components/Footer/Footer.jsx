@@ -7,39 +7,39 @@ import mq from '../../theme/media-queries';
 import sizes from '../../theme/sizes';
 import container from '../../theme/container';
 
-import { useAppContext } from '../../context';
-import useOrganizationContacts from '../../hooks/useOrgContacts';
-
-import SocialLinks from './SocialLinks';
 import LegalInfo from './LegalInfo';
+import SocialLinks from './SocialLinks';
+import Copyright from './Copyright';
 
 const footerStyle = {
   display: 'grid',
-  gridTemplateColumns: 'auto 6rem',
-  gridTemplateAreas: '"main aside"',
+  gridTemplateColumns: '1fr 6rem',
+  gridTemplateAreas: `
+  "legal aside"
+  "c c"
+  `,
   alignItems: 'center',
   width: '100%',
-  height: sizes.footer,
+  height: sizes.footer.sm,
   color: colors.footer.text,
   backgroundColor: colors.footer.bg,
-  fontSize: fontSizes[1],
+  fontSize: fontSizes[0],
   padding: `0 ${container.p.sm}`,
   [mq.lg]: {
-    gridTemplateColumns: `${sizes.aside} 1fr`,
-    gridTemplateAreas: '"aside main"',
+    height: sizes.footer.lg,
+    gridTemplateColumns: `${sizes.aside} 1fr auto auto 1fr`,
+    gridTemplateAreas: '"aside . legal c ."',
     padding: 0,
+    fontSize: fontSizes[1],
   },
 };
 
-const Footer = () => {
-  const { foundingDate } = useOrganizationContacts();
-  const { address } = useAppContext();
-  return (
-    <footer id="footer" css={footerStyle}>
-      <LegalInfo foundingDate={foundingDate} name={address ? address.name : undefined} />
-      <SocialLinks />
-    </footer>
-  );
-};
+const Footer = () => (
+  <footer css={footerStyle}>
+    <LegalInfo />
+    <SocialLinks />
+    <Copyright />
+  </footer>
+);
 
 export default Footer;

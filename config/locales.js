@@ -14,7 +14,7 @@ module.exports = {
     name: 'English',
     shortName: 'En',
     localName: 'English',
-    shortLocalName: 'En',
+    shortLocalName: 'Eng',
 
     dateFormat: 'dd/MM/yyyy',
     siteTitle: 'Inna Grygoraschenko',
@@ -23,14 +23,31 @@ module.exports = {
     siteShortName: 'IGRIG',
   },
 
+  uk: {
+    htmlLang: 'uk', // uk-ua
+    formatLocale: 'uk-UA',
+    ogLocale: 'uk_UA',
+    name: 'Ukranian',
+    shortName: 'Ua',
+    localName: 'Український',
+    shortLocalName: 'Укр',
+
+    dateFormat: 'dd.MM.yyyy',
+
+    siteTitle: 'Інна Григоращенко',
+    siteDescription: 'Авантюрист, фотограф, натхненниця, екстремальна спортсменка',
+    siteHeadline: 'Where`s there`s a will, there`s a way…',
+    siteShortName: 'ІГРІГ',
+  },
+
   ru: {
     htmlLang: 'ru',
     formatLocale: 'ru-UA',
     ogLocale: 'ru_UA',
     name: 'Russian',
-    shortName: 'Ру',
+    shortName: 'Ru',
     localName: 'Русский',
-    shortLocalName: 'Ру',
+    shortLocalName: 'Руc',
 
     dateFormat: 'dd.MM.yyyy',
 
