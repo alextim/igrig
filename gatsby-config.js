@@ -168,7 +168,7 @@ module.exports = {
       options: {
         stages: ['develop'],
         extensions: ['js', 'jsx'],
-        exclude: ['node_modules', '.cache', 'public', '.netlify', '.vscode'],
+        exclude: ['node_modules', '.cache', 'public', '.netlify', '.vscode', '.husky'],
         // Any eslint-webpack-plugin options below
       },
     },
@@ -263,8 +263,8 @@ module.exports = {
       },
     },
     {
-      // resolve: '@alextim/at-blog',
-      resolve: 'at-blog',
+      resolve: '@alextim/at-blog',
+      // resolve: 'at-blog',
       options: {
         templatesDir: path.join(__dirname, 'src', config.templatesDir, 'blog'),
         cardsPerPage,

@@ -23,7 +23,7 @@ import PostPagination from './PostPagination';
 const Cards = ({ posts, readMore, cardComponent }) => {
   const { t } = useTranslation();
   const readMoreText = t(readMore || config.readMore);
-  return posts.edges.map(({ node }) => cardComponent(node.to, node, readMoreText));
+  return posts.edges.map(({ node }) => cardComponent(node.slug, node, readMoreText));
 };
 
 const PostListBase = ({

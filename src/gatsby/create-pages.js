@@ -4,7 +4,8 @@ const path = require('path');
 const { cardsPerPage, templatesDir } = require('../../config/website');
 const i18n = require('../i18n/i18n');
 
-const { createPages } = require('../../plugins/at-blog');
+// const { createPages } = require('../../plugins/at-blog');
+const { createPages } = require('@alextim/at-blog');
 
 module.exports = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
