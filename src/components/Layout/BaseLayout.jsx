@@ -20,7 +20,7 @@ const styleImage = {
   marginBottom: theme.space[8],
 };
 
-const LayoutBase = ({ cover, title, headline, context, children }) => (
+const BaseLayout = ({ cover, title, headline, context, children }) => (
   <AppContextProvider value={context}>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -45,4 +45,4 @@ const LayoutBase = ({ cover, title, headline, context, children }) => (
   </AppContextProvider>
 );
 
-export default LayoutBase;
+export default BaseLayout;

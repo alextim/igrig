@@ -7,7 +7,7 @@ import utils from '@alextim/utils';
 import useOrgContacts from '../hooks/useOrgContacts';
 
 import SEO from '../components/SEO';
-import Layout from '../components/Layout/LayoutFullWidth';
+import Layout from '../components/Layout/FullWidthLayout';
 
 import mq from '../theme/media-queries';
 import Section from '../components/Section';

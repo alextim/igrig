@@ -19,7 +19,7 @@ import FaWhatsapp from '../assets/fa/brand/whatsapp.svg';
 // import { FaViber } from 'react-icons/fa';
 // import { FaSkype } from 'react-icons/fa';
 
-const style = {
+const defStyle = {
   width: '1em',
   height: '1em',
 };
@@ -27,23 +27,24 @@ const Icon = ({ name, css = {}, ...rest }) => {
   if (!name) {
     return null;
   }
+  const style = { ...defStyle, ...css };
   const icons = {
-    f500px: <Fa500px css={{ ...style, ...css }} {...rest} />,
-    facebook: <FaFacebookF css={{ ...style, ...css }} {...rest} />,
-    instagram: <FaInstagram css={{ ...style, ...css }} {...rest} />,
-    // link: <FaLink css={{...style, ...css}} {...rest} />,
-    phone: <FaPhone css={{ ...style, ...css }} {...rest} />,
-    envelope: <FaEnvelope css={{ ...style, ...css }} {...rest} />,
-    // exclamationTriangle: <FaExclamationTriangle css={{...style, ...css}} {...rest} />,
-    // checkCircle: <FaCheckCircle css={{...style, ...css}} {...rest} />,
-    // thumbsUp: <FaThumbsUp css={{...style, ...css}} {...rest} />,
-    // check: <FaCheck css={{...style, ...css}} {...rest} />,
-    // plane: <FaPlane css={{...style, ...css}} {...rest} />,
-    // users: <FaUsers css={{...style, ...css}} {...rest} />,
-    whatsapp: <FaWhatsapp css={{ ...style, ...css }} {...rest} />,
-    telegram: <FaTelegram css={{ ...style, ...css }} {...rest} />,
-    // viber: <FaViber />,
-    // skype: <FaSkype />,
+    f500px: <Fa500px css={style} {...rest} />,
+    facebook: <FaFacebookF css={style} {...rest} />,
+    instagram: <FaInstagram css={style} {...rest} />,
+    // link: <FaLink css={style} {...rest} />,
+    phone: <FaPhone css={style} {...rest} />,
+    envelope: <FaEnvelope css={style} {...rest} />,
+    // exclamationTriangle: <FaExclamationTriangle css={style} {...rest} />,
+    // checkCircle: <FaCheckCircle css={style} {...rest} />,
+    // thumbsUp: <FaThumbsUp css={style} {...rest} />,
+    // check: <FaCheck css={style} {...rest} />,
+    // plane: <FaPlane css={style} {...rest} />,
+    // users: <FaUsers css={style} {...rest} />,
+    whatsapp: <FaWhatsapp css={style} {...rest} />,
+    telegram: <FaTelegram css={style} {...rest} />,
+    // viber: <FaViber css={style} />,
+    // skype: <FaSkype css={style} />,
   };
   if (!icons[name]) {
     return `Pls, provide icon "${name}"`;

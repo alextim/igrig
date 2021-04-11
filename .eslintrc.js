@@ -58,28 +58,13 @@ module.exports = {
     'jsx-quotes': [2, 'prefer-double'],
     semi: ['error', 'always'],
     'linebreak-style': ['error', 'windows'],
-    'react/prop-types': 'off',
-    'react/display-name': 'off',
     'no-console': ['error', { allow: ['warn', 'error'] }],
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
-    'prettier/prettier': ['error', { endOfLine: 'auto' }],
+    // 'prettier/prettier': ['error', { endOfLine: 'auto' }],
     // Allowing ++ on numbers
     'no-plusplus': 'off',
-    'react/no-danger': 0,
     'react/no-array-index-key': 'warn',
+    'react/no-danger': 0,
     'react/jsx-props-no-spreading': 0,
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
-    'import/prefer-default-export': 'off',
-    // 'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-    'import/no-extraneous-dependencies': 'warn',
-    'jsx-a11y/label-has-associated-control': 'warn',
-    'jsx-a11y/click-events-have-key-events': 'warn',
-    'jsx-a11y/no-static-element-interactions': 'warn',
-    'react/button-has-type': 'warn',
-  },
-  globals: {
-    // globalThis: false, // false means it is not writeable.
-    // See https://github.com/eslint/eslint/issues/11553.
+    'react/prop-types': 'off',
   },
 };

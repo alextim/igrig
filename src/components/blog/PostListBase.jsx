@@ -8,7 +8,7 @@ import { useTranslation } from '../../i18n';
 
 import styleCardsWrap from '../styles/styleCardsWrap';
 
-import LayoutBase from '../Layout/LayoutBase';
+import BaseLayout from '../Layout/BaseLayout';
 import Container, { ContainerFullWidth } from '../Container';
 import SEO from '../SEO';
 import styleHtml from '../styles/styleHtml';
@@ -78,7 +78,7 @@ const PostListBase = ({
   }
 
   return (
-    <LayoutBase
+    <BaseLayout
       cover={cover}
       title={title || defaultTitle}
       headline={headline}
@@ -111,7 +111,7 @@ const PostListBase = ({
         </div>
         <PostPagination currentPage={currentPage} numPages={numPages} slug={to} />
       </ContainerFullWidth>
-    </LayoutBase>
+    </BaseLayout>
   );
 };
 

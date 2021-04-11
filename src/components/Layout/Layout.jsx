@@ -1,13 +1,13 @@
 /* @jsx jsx */
 import { jsx } from '@emotion/react';
-import LayoutBase from './LayoutBase';
+import BaseLayout from './BaseLayout';
 
 import Container from '../Container';
 
 const Layout = ({ cover, title, headline, context, children }) => (
-  <LayoutBase cover={cover} title={title} headline={headline} context={context}>
+  <BaseLayout cover={cover} title={title} headline={headline} context={context}>
     <Container>{children}</Container>
-  </LayoutBase>
+  </BaseLayout>
 );
 
 export default Layout;
