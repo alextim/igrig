@@ -94,6 +94,7 @@ function applyZoomEffect({ excludedSelector, includedSelector, ...options }) {
   }
 }
 
+// eslint-disable-next-line import/prefer-default-export
 export const onRouteUpdate = (_, pluginOptions) => {
   const options = { ...defaultOptions, ...pluginOptions };
   injectStyles(options);

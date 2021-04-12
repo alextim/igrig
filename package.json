@@ -49,7 +49,7 @@
     "@alextim/at-blog": "^0.2.2",
     "@alextim/at-seo": "^0.1.11",
     "@alextim/at-site-core": "^0.1.2",
-    "@alextim/at-sitemap": "^0.1.2",
+    "@alextim/at-sitemap": "^0.2.0",
     "@alextim/slugify": "^0.1.0",
     "@alextim/translit": "^0.1.1",
     "@alextim/utils": "^0.1.0",

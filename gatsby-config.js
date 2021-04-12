@@ -49,7 +49,7 @@ const pageSources = Object.keys(allDirs).map((name) => ({
   resolve: 'gatsby-source-filesystem',
   options: {
     name,
-    path: `${__dirname}/${contentDir}/${allDirs[name]}`,
+    path: path.join(__dirname, contentDir, allDirs[name]),
   },
 }));
 
@@ -65,7 +65,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'data',
-        path: `${__dirname}/${contentDir}/data`,
+        path: path.join(__dirname, contentDir, 'data'),
       },
     },
     ...pageSources,
@@ -277,10 +277,13 @@ module.exports = {
     },
     {
       resolve: '@alextim/at-sitemap',
+      // resolve: 'at-sitemap',
       options: {
         createRobotsTxt: true,
         noRobots,
         ignoreImagesWithoutAlt: false,
+        // lastmod: 2,
+        // lastmodDateOnly: true,
       },
     },
   ],
