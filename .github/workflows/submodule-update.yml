@@ -29,6 +29,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
 
       - name: submodule Update
+        run: |
           git submodule update --remote
           git add .
           git commit -m "remote data update"
