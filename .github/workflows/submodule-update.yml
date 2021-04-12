@@ -30,9 +30,8 @@ jobs:
         if: steps.changes.outputs.changed == 1
         run: |
           echo "Changes exist"
-          #git add .
-          #git commit -m "remote data update"
-          # git push
+          git add .
+          git commit -m "remote data update"
 
       - name: No Changes
         if: steps.changes.outputs.changed == 0
