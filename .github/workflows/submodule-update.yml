@@ -45,3 +45,8 @@ jobs:
           #git add .
           #git commit -m "remote data update"
           # git push
+
+      - name: No Changes
+        if: steps.changes.outputs.changed == 0
+        run: |
+          echo "No Changes"
