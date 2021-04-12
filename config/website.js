@@ -11,7 +11,7 @@ module.exports = {
   /**
    * name of content folder
    */
-  contentDir: 'content',
+  contentDir: 'igrig.content',
 
   /**
    * Schema org
