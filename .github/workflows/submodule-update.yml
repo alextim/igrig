@@ -10,34 +10,38 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - id: test
-        name: test
+      - name: test
         run: |
           echo "Submodule Update Remote Test"
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - id: usescheckout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
-      - id:  check
-        name: check for changes
+      - name: check for changes
         run: git status
 
-      - id: config
-        name: config
-        if: steps.check.conclusion == 'success'
+      - name: config
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
-      - id: smu
-        name: submodule Update
-        if: steps.config.conclusion == 'success'
+      - name: submodule Update
         run: |
           git submodule update --remote
-          git add .
-          git commit -m "remote data update"
+
+      # This step will evaluate the repo status and report the change
+      - name: Check if there are changes
+        id: changes
+        uses: UnicornGlobal/has-changes-action@v1.0.11
+
+      # You can now access a variable indicating if there have been changes
+      - name: Process changes
+        if: steps.changes.outputs.changed == 1
+        run: |
+          echo "Changes exist"
+          #git add .
+          #git commit -m "remote data update"
           # git push
