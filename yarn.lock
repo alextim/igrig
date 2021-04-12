@@ -17,10 +17,10 @@
   resolved "https://npm.pkg.github.com/download/@alextim/at-site-core/0.1.2/36f6536f9fc37d413db88fdec66c8dbfe3cdff5ef2e4471fba75e96095e07e0b#c6f6e39e004a13473c19e04f11211046bb961dd1"
   integrity sha512-wyq6VLQEjF/AoHKPgzxAvlz0I2DOAuJ0dkTxtnPQrC73LZkhQf4BfTy+WMNphLn8CuaGTUBhzsvGnvHMHnyK8w==
 
-"@alextim/at-sitemap@^0.2.0":
-  version "0.2.0"
-  resolved "https://npm.pkg.github.com/download/@alextim/at-sitemap/0.2.0/52aebdc3841abfc179061866eb7478bc696f7afa6883162a5c6e7cf29c4afcb9#bcfc02a6981d12c849360e768971dd7d181c7c7d"
-  integrity sha512-CrmrgL+Gx0DLiGRQlDFTUCGSubd0+eG7UCEmsR83eWtZM7wmw/+viECxKYOlXWMX1UC+nVAWExUO+xa3cFivJQ==
+"@alextim/at-sitemap@^0.2.1":
+  version "0.2.1"
+  resolved "https://npm.pkg.github.com/download/@alextim/at-sitemap/0.2.1/5365299d25aa4fe848b4f12169eca95be06231a45cf83ce602b23ce3afa90969#802dc6c2fa5de5e8d86b97c61ac2df91ca886b02"
+  integrity sha512-dVjUE2sLtYElqMENQr/ThLJN+t5s/JI/c2ZIMsdDprK76UvgmTEt002y5hAFy2X1GpT4ydYYozvB32mAbtHE+g==
   dependencies:
     sitemap "^6.4.0"
 
