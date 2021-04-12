@@ -10,25 +10,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: test
+      - id: test
+        name: test
         run: |
           echo "Submodule Update Remote Test"
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - id: usescheckout
+        uses: actions/checkout@v2
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
-      - name: check for changes
+      - id:  check
+        name: check for changes
         run: git status
 
-      - name: config
+      - id: config
+        name: config
+        if: steps.check.conclusion == 'success'
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
-      - name: submodule Update
+      - id: smu
+        name: submodule Update
+        if: steps.config.conclusion == 'success'
         run: |
           git submodule update --remote
           git add .
