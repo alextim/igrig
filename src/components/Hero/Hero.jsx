@@ -3,6 +3,7 @@ import { jsx } from '@emotion/react';
 
 import mq from '../../theme/media-queries';
 import fonts from '../../theme/fonts';
+import useAssets from '../../hooks/useAssets';
 
 const styleWrap = {
   display: 'grid',
@@ -68,6 +69,10 @@ const styleTextWrap = {
  *
  */
 const Hero = ({ alt, items }) => {
+  const images = useAssets().filter(({ node }) => node.relativePath.inndexOf('hero') > 0);
+  // eslint-disable-next-line no-console
+  console.log(images);
+
   return (
     <div css={styleWrap}>
       <picture css={styleImage}>
