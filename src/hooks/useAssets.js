@@ -6,8 +6,12 @@ const useAssets = () => {
       allFile(filter: { sourceInstanceName: { eq: "assets" } }) {
         edges {
           node {
-            relativePath
+            base
             extension
+            name
+            relativePath
+            relativeDirectory
+            publicURL
           }
         }
       }

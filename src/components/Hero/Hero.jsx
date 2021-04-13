@@ -69,28 +69,32 @@ const styleTextWrap = {
  *
  */
 const Hero = ({ alt, items }) => {
-  const images = useAssets().filter(({ node }) => node.relativePath.inndexOf('hero') > 0);
-  // eslint-disable-next-line no-console
-  console.log(images);
-
+  const images = useAssets();
+  const getImageURL = (name) => {
+    const edge = images.find(({ node: { base } }) => base === name);
+    if (!edge) {
+      return null;
+    }
+    return edge.node.publicURL;
+  };
+  const hero480webp = getImageURL('hero-480w.jpg');
+  const hero480jpg = getImageURL('hero-480w.jpg');
+  const hero1024webp = getImageURL('hero-1024w.webp');
+  const hero1024jpg = getImageURL('hero-1024w.jpg');
+  const hero1920webp = getImageURL('hero-1920w.webp');
+  const hero1920jpg = getImageURL('hero-1920w.jpg');
   return (
     <div css={styleWrap}>
       <picture css={styleImage}>
-        <source media="(min-width: 992px)" srcSet="/assets/images/hero/hero-1920w.webp" />
-        <source media="(min-width: 992px)" srcSet="/assets/images/hero/hero-1920w.jpg" />
-        <source
-          media="(orientation: landscape) and (min-width: 992px)"
-          srcSet="/assets/images/hero/hero-1024w.webp"
-        />
-        <source
-          media="(orientation: landscape) and (min-width: 992px)"
-          srcSet="/assets/images/hero/hero-1024w.jpg"
-        />
-        <source media="(min-width: 750px)" srcSet="/assets/images/hero/hero-1024w.webp" />
-        <source media="(min-width: 750px)" srcSet="/assets/images/hero/hero-1024w.jpg" />
-        <source media="(max-width: 480px)" srcSet="/assets/images/hero/hero-480w.webp" />
-        <source media="(max-width: 480px)" srcSet="/assets/images/hero/hero-480w.jpg" />
-        <img src="/assets/images/hero/hero-480w.jpg" alt={alt} />
+        <source media="(min-width: 992px)" srcSet={hero1920webp} />
+        <source media="(min-width: 992px)" srcSet={hero1920jpg} />
+        <source media="(orientation: landscape) and (min-width: 992px)" srcSet={hero1024webp} />
+        <source media="(orientation: landscape) and (min-width: 992px)" srcSet={hero1024jpg} />
+        <source media="(min-width: 750px)" srcSet={hero1024webp} />
+        <source media="(min-width: 750px)" srcSet={hero1024jpg} />
+        <source media="(max-width: 480px)" srcSet={hero480webp} />
+        <source media="(max-width: 480px)" srcSet={hero480jpg} />
+        <img src={hero480jpg} alt={alt} />
       </picture>
       <div css={styleTextWrap}>
         {items.map(({ node: { title: navItemTitle, to } }, i) => (
