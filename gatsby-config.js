@@ -11,10 +11,28 @@ const colors = require('./src/theme/colors');
 
 const manifestIconSrc = path.join(__dirname, 'src', 'assets', 'images', 'icon.png');
 
-const { contentDir, postDirs, pageDirs, cardsPerPage, noRobots } = config;
+const { contentDir, postDirs, pageDirs, cardsPerPage } = config;
 
-const headerForAll = [`Content-Security-Policy: ${getCSP(false, false, true)}`];
-if (config.noRobots) {
+const toBoolean = (x) => {
+  if (!x) {
+    return false;
+  }
+  if (typeof x === 'boolean') {
+    return x;
+  }
+  if (typeof x === 'number') {
+    return !!x;
+  }
+  return typeof x === 'string' && x.trim().toLowerCase() === 'true';
+};
+
+const noIndex = toBoolean(process.env.NO_INDEX);
+
+// eslint-disable-next-line no-console
+console.log(`Robots and indexing: ${noIndex ? 'DISABLED' : 'ENABLED'}`);
+
+const headerForAll = [`Content-Security-Policy: ${getCSP(!!config.googleAnalyticsID, true, true)}`];
+if (noIndex) {
   headerForAll.push('X-Robots-Tag: noindex, nofollow');
 }
 
@@ -231,6 +249,7 @@ const plugins = [
       templatesDir: path.join(__dirname, 'src', config.templatesDir),
       pageDirs,
       i18n,
+      noIndex,
     },
   },
   {
@@ -244,6 +263,7 @@ const plugins = [
       CREATE_CATEGORY_PAGES: false,
       CREATE_YEAR_PAGES: false,
       i18n,
+      noIndex,
     },
   },
   {
@@ -251,10 +271,8 @@ const plugins = [
     // resolve: 'at-sitemap',
     options: {
       createRobotsTxt: true,
-      noRobots,
       ignoreImagesWithoutAlt: false,
-      // lastmod: 2,
-      // lastmodDateOnly: true,
+      noIndex,
     },
   },
 ];

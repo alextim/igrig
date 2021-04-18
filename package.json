@@ -36,6 +36,7 @@
     "stylelint": "stylelint --syntax css-in-js src/**/*.{js,jsx,ts,tsx,css,scss}",
     "format": "prettier-eslint --write 'src/**/*.{js,jsx,json,md}'",
     "git:tracked": "git ls-tree -r master --name-only",
+    "git:log": "git log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short",
     "check:licenses": "license-checker --production --summary --failOn=GPLv3",
     "check:security": "audit-ci --critical",
     "test": "cross-env NODE_ENV=test yarn run eslint",
@@ -46,10 +47,10 @@
     "postinstall": "husky install"
   },
   "dependencies": {
-    "@alextim/at-blog": "^0.2.2",
-    "@alextim/at-seo": "^0.1.11",
-    "@alextim/at-site-core": "^0.1.2",
-    "@alextim/at-sitemap": "^0.2.6",
+    "@alextim/at-blog": "^0.2.7",
+    "@alextim/at-seo": "^0.1.12,
+    "@alextim/at-site-core": "^0.1.4",
+    "@alextim/at-sitemap": "^0.2.8",
     "@alextim/csp": "^0.0.1",
     "@alextim/slugify": "^0.1.0",
     "@alextim/translit": "^0.1.1",
