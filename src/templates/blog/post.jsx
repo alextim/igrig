@@ -4,7 +4,9 @@ import { graphql } from 'gatsby';
 
 import Post from '../../components/blog/Post';
 
-const PostTemplate = ({ data, location: { pathname } }) => <Post data={data} pathname={pathname} />;
+const PostTemplate = ({ data, location: { pathname }, pageContext: { locale } }) => (
+  <Post data={data} pathname={pathname} locale={locale} />
+);
 
 export default PostTemplate;
 

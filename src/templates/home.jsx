@@ -7,14 +7,14 @@ import HomeLayout from '../components/Layout/HomeLayout';
 
 import Hero from '../components/Hero';
 
-const HomeTemplate = ({ data, location: { pathname } }) => {
+const HomeTemplate = ({ data, location: { pathname }, pageContext: { locale } }) => {
   const {
     translations,
     address,
     mainNav,
     socialLinks,
     // eslint-disable-next-line no-unused-vars
-    page: { cover, sections, metaTitle, metaDescription, noindex, locale },
+    page: { cover, sections, metaTitle, metaDescription, noindex },
   } = data;
 
   return (
@@ -58,7 +58,6 @@ export const pageQuery = graphql`
         }
       }
       noindex
-      locale
     }
     address: address(locale: { eq: $locale }) {
       ...AddressFragment

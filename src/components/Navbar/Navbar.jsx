@@ -49,7 +49,7 @@ const styleR = {
   display: 'inline-flex',
   alignItems: 'center',
   // fontFamily: fonts.heading,
-  fontSize: fontSizes[0],
+  fontSize: fontSizes[1],
 };
 
 const styleSlogan = {
@@ -101,7 +101,8 @@ const styleMenuWrap = {
   },
 };
 
-const styleMenuOpen = {
+const styleMenuWrapOpen = {
+  ...styleMenuWrap,
   pointerEvents: 'auto',
   visibility: 'visible',
   transform: 'unset',
@@ -161,7 +162,7 @@ const Navbar = () => {
             </div>
             <div css={styleSlogan}>{siteHeadline}</div>
           </div>
-          <div css={{ ...styleMenuWrap, ...(isMenuOpen ? styleMenuOpen : {}) }}>
+          <div css={isMenuOpen ? styleMenuWrapOpen : styleMenuWrap}>
             <Menu pathname={pathname} onClick={close} />
             <LanguageSwitch extraStyle={styleShowOnMob} closeMenu={close} />
           </div>

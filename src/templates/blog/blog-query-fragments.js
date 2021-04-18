@@ -30,7 +30,6 @@ export const mdPostFragment = graphql`
     noindex
     timeToRead
     excerpt
-    locale
     html
   }
 `;

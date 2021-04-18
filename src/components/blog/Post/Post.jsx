@@ -15,7 +15,7 @@ const styleHtml = {
   textAlign: 'justify',
 };
 
-const Post = ({ data, pathname, options = { showTimeToRead: true } }) => {
+const Post = ({ data, pathname, locale, options = { showTimeToRead: true } }) => {
   const {
     translations,
     address,
@@ -33,7 +33,6 @@ const Post = ({ data, pathname, options = { showTimeToRead: true } }) => {
       timeToRead,
       tags,
       html,
-      locale,
     },
   } = data;
   // cover={cover}

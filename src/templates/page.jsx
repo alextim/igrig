@@ -6,13 +6,13 @@ import SEO from '../components/SEO';
 import Layout from '../components/Layout';
 import Sections from '../components/Sections';
 
-const PageTemplate = ({ data, location: { pathname } }) => {
+const PageTemplate = ({ data, location: { pathname }, pageContext: { locale } }) => {
   const {
     translations,
     address,
     mainNav,
     socialLinks,
-    page: { title, metaTitle, headline, metaDescription, cover, noindex, sections, html, locale },
+    page: { title, metaTitle, headline, metaDescription, cover, noindex, sections, html },
   } = data;
 
   return (

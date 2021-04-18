@@ -89,7 +89,7 @@ const colors = {
         bg: grey05,
       },
       languageSwitch: {
-        selected: brand.main,
+        selected: 'rgba(250,250,250,.9)',
       },
     },
   },

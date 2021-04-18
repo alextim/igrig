@@ -7,13 +7,17 @@ import CategoryList from '../../components/blog/CategoryList';
 
 import styleHtml from '../../components/styles/styleHtml';
 
-const CategoryListTemplate = ({ data, location: { pathname }, pageContext: { categories } }) => {
+const CategoryListTemplate = ({
+  data,
+  location: { pathname },
+  pageContext: { categories, locale },
+}) => {
   const {
     translations,
     address,
     mainNav,
     socialLinks,
-    page: { html, title, metaTitle, headline, metaDescription, noindex, locale },
+    page: { html, title, metaTitle, headline, metaDescription, noindex },
   } = data;
 
   return (

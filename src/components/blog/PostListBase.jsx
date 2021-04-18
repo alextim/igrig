@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 
 import config from '../../../igrig.content/config/website';
 
-import { prevLink, nextLink, currentLink } from '../../helpers/pagination';
+import { prevLink, nextLink } from '../../helpers/pagination';
 import { useTranslation } from '../../i18n';
 
 import styleCardsWrap from '../styles/styleCardsWrap';
@@ -33,9 +33,9 @@ const PostListBase = ({
    * keep it for the future!
    */
   /*
-  pageContext: { locale, currentPage, numPages, categories, tags, years },
+  pageContext: { locale, to, currentPage, numPages, categories, tags, years },
   */
-  pageContext: { currentPage, numPages },
+  pageContext: { locale, to, currentPage, numPages },
   title,
   readMore,
   cardComponent,
@@ -45,16 +45,7 @@ const PostListBase = ({
     address,
     mainNav,
     socialLinks,
-    page: {
-      html,
-      cover,
-      title: defaultTitle,
-      metaTitle,
-      headline,
-      metaDescription,
-      noindex,
-      locale,
-    },
+    page: { html, cover, title: defaultTitle, metaTitle, headline, metaDescription, noindex },
     posts,
   } = data;
 
@@ -67,13 +58,13 @@ const PostListBase = ({
     if (!isFirst) {
       links.push({
         rel: 'prev',
-        href: config.siteUrl + prevLink(currentPage, pathname),
+        href: config.siteUrl + prevLink(currentPage, to),
       });
     }
     if (!isLast) {
       links.push({
         rel: 'next',
-        href: config.siteUrl + nextLink(currentPage, pathname),
+        href: config.siteUrl + nextLink(currentPage, to),
       });
     }
   }
@@ -89,7 +80,7 @@ const PostListBase = ({
         locale={locale}
         title={metaTitle}
         description={metaDescription}
-        pathname={currentLink(currentPage, pathname)}
+        pathname={pathname}
         noindex={noindex}
         pageType="Blog"
         links={links}
@@ -110,7 +101,7 @@ const PostListBase = ({
         <div css={styleCardsWrap}>
           <Cards posts={posts} readMore={readMore} cardComponent={cardComponent} />
         </div>
-        <PostPagination currentPage={currentPage} numPages={numPages} slug={pathname} />
+        <PostPagination currentPage={currentPage} numPages={numPages} slug={to} />
       </ContainerFullWidth>
     </BaseLayout>
   );

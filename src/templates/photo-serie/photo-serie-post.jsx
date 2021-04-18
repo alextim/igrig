@@ -4,8 +4,8 @@ import { graphql } from 'gatsby';
 
 import Post from '../../components/blog/Post';
 
-const PhotoSeriePostTemplate = ({ data, location: { pathname } }) => (
-  <Post data={data} pathname={pathname} options={{ showTimetoRead: false }} />
+const PhotoSeriePostTemplate = ({ data, location: { pathname }, pageContext: { locale } }) => (
+  <Post data={data} pathname={pathname} locale={locale} options={{ showTimetoRead: false }} />
 );
 
 export default PhotoSeriePostTemplate;

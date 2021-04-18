@@ -14,6 +14,16 @@ const wrapStyle = {
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
+  margin: 0,
+  padding: 0,
+  listStyle: 'none',
+  marginBlockStart: 0,
+  marginBlockEnd: 0,
+  paddingInlineStart: 0,
+  li: {
+    display: 'block',
+    marginBottom: 0,
+  },
 };
 
 const itemWrapStyle = {
@@ -42,6 +52,7 @@ const itemStyle = {
 };
 
 const activeItemStyle = {
+  ...itemStyle,
   color: colors.header.nav.languageSwitch.selected,
 };
 
@@ -78,26 +89,23 @@ const LanguageSwitch = ({ closeMenu, extraStyle = {} }) => {
   return (
     <Location>
       {({ location: { pathname } }) => (
-        <div css={{ ...wrapStyle, ...extraStyle }}>
+        <ul css={{ ...wrapStyle, ...extraStyle }}>
           {i18n.localeCodes.map((code) => {
             const { shortName } = i18n.locales[code];
             const isCurrent = locale === code;
             return (
-              <div key={code} className="lang-switch-item" css={itemWrapStyle}>
+              <li key={code} className="lang-switch-item" css={itemWrapStyle}>
                 <Link
-                  css={{
-                    ...itemStyle,
-                    ...(isCurrent ? activeItemStyle : {}),
-                  }}
+                  css={isCurrent ? activeItemStyle : itemStyle}
                   to={isCurrent ? pathname : getSafePath(pathname, code, allPathes)}
                   onClick={closeMenu}
                 >
                   {shortName}
                 </Link>
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
       )}
     </Location>
   );

@@ -7,10 +7,10 @@ import YearList from '../../components/blog/YearList';
 
 import styleHtml from '../../components/styles/styleHtml';
 
-const YearsListTemplate = ({ data, location: { pathname }, pageContext: { years } }) => {
+const YearsListTemplate = ({ data, location: { pathname }, pageContext: { locale, years } }) => {
   const { translations, address, mainNav, socialLinks, page } = data;
 
-  const { html, title, metaTitle, headline, metaDescription, noindex, locale } = page;
+  const { html, title, metaTitle, headline, metaDescription, noindex } = page;
 
   return (
     <Layout

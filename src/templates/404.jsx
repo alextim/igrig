@@ -16,13 +16,13 @@ const headingStyle = (t) => ({
 });
 // const htmlStyle = { textAlign: 'center' };
 
-const NotFoundTemplate = ({ data, location: { pathname } }) => {
+const NotFoundTemplate = ({ data, location: { pathname }, pageContext: { locale } }) => {
   const {
     translations,
     address,
     mainNav,
     socialLinks,
-    page: { title, metaTitle, metaDescription, html, locale },
+    page: { title, metaTitle, metaDescription, html },
   } = data;
 
   return (
