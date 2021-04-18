@@ -7,10 +7,10 @@ import YearList from '../../components/blog/YearList';
 
 import styleHtml from '../../components/styles/styleHtml';
 
-const YearsListTemplate = ({ data, pageContext: { years } }) => {
+const YearsListTemplate = ({ data, location: { pathname }, pageContext: { years } }) => {
   const { translations, address, mainNav, socialLinks, page } = data;
 
-  const { html, title, metaTitle, headline, metaDescription, noindex, locale, slug } = page;
+  const { html, title, metaTitle, headline, metaDescription, noindex, locale } = page;
 
   return (
     <Layout
@@ -22,7 +22,7 @@ const YearsListTemplate = ({ data, pageContext: { years } }) => {
         locale={locale}
         title={metaTitle}
         description={metaDescription}
-        pathname={slug}
+        pathname={pathname}
         noindex={noindex}
       />
       {html && <div css={styleHtml} dangerouslySetInnerHTML={{ __html: html }} />}

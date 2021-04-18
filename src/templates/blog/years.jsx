@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 
 import PostList from '../../components/blog/PostList';
 
-const YearTemplate = ({ data, pageContext }) => {
+const YearTemplate = ({ data, location: { pathname }, pageContext }) => {
   const { year } = pageContext;
   const {
     page: { title: defaultTitle },
@@ -11,7 +11,7 @@ const YearTemplate = ({ data, pageContext }) => {
 
   const title = `${defaultTitle} ${year}`;
 
-  return <PostList data={data} pageContext={pageContext} title={title} />;
+  return <PostList data={data} pathname={pathname} pageContext={pageContext} title={title} />;
 };
 
 export default YearTemplate;

@@ -6,9 +6,9 @@
  */
 const fs = require('fs');
 const path = require('path');
-const locales = require('../config/locales');
+const locales = require('../igrig.content/config/locales');
 
-const { contentDir } = require('../config/website');
+const { contentDir } = require('../igrig.content/config/website');
 
 const FILE_NAME = 'translations';
 

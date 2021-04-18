@@ -7,10 +7,10 @@ import TagList from '../../components/blog/TagList';
 
 import styleHtml from '../../components/styles/styleHtml';
 
-const TagListTemplate = ({ data, pageContext: { tags } }) => {
+const TagListTemplate = ({ data, location: { pathname }, pageContext: { tags } }) => {
   const { translations, address, mainNav, socialLinks, page } = data;
 
-  const { html, title, metaTitle, headline, metaDescription, noindex, slug, locale } = page;
+  const { html, title, metaTitle, headline, metaDescription, noindex, locale } = page;
 
   return (
     <Layout
@@ -22,7 +22,7 @@ const TagListTemplate = ({ data, pageContext: { tags } }) => {
         locale={locale}
         title={metaTitle}
         description={metaDescription}
-        pathname={slug}
+        pathname={pathname}
         noindex={noindex}
       />
       {html && <div css={styleHtml} dangerouslySetInnerHTML={{ __html: html }} />}

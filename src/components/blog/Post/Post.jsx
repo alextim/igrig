@@ -15,7 +15,7 @@ const styleHtml = {
   textAlign: 'justify',
 };
 
-const Post = ({ data, options = { showTimeToRead: true } }) => {
+const Post = ({ data, pathname, options = { showTimeToRead: true } }) => {
   const {
     translations,
     address,
@@ -34,7 +34,6 @@ const Post = ({ data, options = { showTimeToRead: true } }) => {
       tags,
       html,
       locale,
-      slug,
     },
   } = data;
   // cover={cover}
@@ -50,7 +49,7 @@ const Post = ({ data, options = { showTimeToRead: true } }) => {
         title={metaTitle}
         description={metaDescription}
         headline={headline}
-        pathname={slug}
+        pathname={pathname}
         noindex={noindex}
         datePublished={datePublished}
         dateModified={dateModified}

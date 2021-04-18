@@ -4,7 +4,9 @@ import { graphql } from 'gatsby';
 
 import Post from '../../components/blog/Post';
 
-const PhotoProjectPostTemplate = ({ data }) => <Post data={data} />;
+const PhotoProjectPostTemplate = ({ data, location: { pathname } }) => (
+  <Post data={data} pathname={pathname} />
+);
 
 export default PhotoProjectPostTemplate;
 

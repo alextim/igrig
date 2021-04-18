@@ -97,15 +97,17 @@ const Contacts = () => {
   );
 };
 
-const ContactsTemplate = ({ data }) => {
+const ContactsTemplate = ({ data, location: { pathname } }) => {
   const {
     translations,
     address,
     mainNav,
     socialLinks,
-    page: { cover, title, metaTitle, headline, metaDescription, noindex, locale, slug, html },
+    page: { cover, title, metaTitle, headline, metaDescription, noindex, locale, html },
   } = data;
 
+  // eslint-disable-next-line no-console
+  console.log(pathname);
   return (
     <Layout
       title={title}
@@ -116,7 +118,7 @@ const ContactsTemplate = ({ data }) => {
         locale={locale}
         title={metaTitle}
         description={metaDescription}
-        pathname={slug}
+        pathname={pathname}
         noindex={noindex}
       />
       <Section>

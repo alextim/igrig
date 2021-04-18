@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 
-import config from '../../../config/website';
+import config from '../../../igrig.content/config/website';
 
 import { prevLink, nextLink, currentLink } from '../../helpers/pagination';
 import { useTranslation } from '../../i18n';
@@ -28,13 +28,14 @@ const Cards = ({ posts, readMore, cardComponent }) => {
 
 const PostListBase = ({
   data,
+  pathname,
   /**
    * keep it for the future!
    */
   /*
   pageContext: { locale, currentPage, numPages, categories, tags, years },
   */
-  pageContext: { to, currentPage, numPages },
+  pageContext: { currentPage, numPages },
   title,
   readMore,
   cardComponent,
@@ -66,13 +67,13 @@ const PostListBase = ({
     if (!isFirst) {
       links.push({
         rel: 'prev',
-        href: config.siteUrl + prevLink(currentPage, to),
+        href: config.siteUrl + prevLink(currentPage, pathname),
       });
     }
     if (!isLast) {
       links.push({
         rel: 'next',
-        href: config.siteUrl + nextLink(currentPage, to),
+        href: config.siteUrl + nextLink(currentPage, pathname),
       });
     }
   }
@@ -88,7 +89,7 @@ const PostListBase = ({
         locale={locale}
         title={metaTitle}
         description={metaDescription}
-        pathname={currentLink(currentPage, to)}
+        pathname={currentLink(currentPage, pathname)}
         noindex={noindex}
         pageType="Blog"
         links={links}
@@ -109,7 +110,7 @@ const PostListBase = ({
         <div css={styleCardsWrap}>
           <Cards posts={posts} readMore={readMore} cardComponent={cardComponent} />
         </div>
-        <PostPagination currentPage={currentPage} numPages={numPages} slug={to} />
+        <PostPagination currentPage={currentPage} numPages={numPages} slug={pathname} />
       </ContainerFullWidth>
     </BaseLayout>
   );

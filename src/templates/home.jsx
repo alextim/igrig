@@ -7,14 +7,14 @@ import HomeLayout from '../components/Layout/HomeLayout';
 
 import Hero from '../components/Hero';
 
-const HomeTemplate = ({ data }) => {
+const HomeTemplate = ({ data, location: { pathname } }) => {
   const {
     translations,
     address,
     mainNav,
     socialLinks,
     // eslint-disable-next-line no-unused-vars
-    page: { cover, sections, metaTitle, metaDescription, noindex, locale, slug },
+    page: { cover, sections, metaTitle, metaDescription, noindex, locale },
   } = data;
 
   return (
@@ -23,7 +23,7 @@ const HomeTemplate = ({ data }) => {
         locale={locale}
         title={metaTitle}
         description={metaDescription}
-        pathname={slug}
+        pathname={pathname}
         noindex={noindex}
         article={false}
       />
@@ -58,7 +58,6 @@ export const pageQuery = graphql`
         }
       }
       noindex
-      slug
       locale
     }
     address: address(locale: { eq: $locale }) {

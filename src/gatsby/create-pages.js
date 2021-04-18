@@ -3,7 +3,7 @@ const path = require('path');
 const { createPages } = require('@alextim/at-blog');
 // const { createPages } = require('../../plugins/at-blog');
 
-const { cardsPerPage, templatesDir } = require('../../config/website');
+const { cardsPerPage, templatesDir } = require('../../igrig.content/config/website');
 const i18n = require('../i18n/i18n');
 
 module.exports = async ({ graphql, actions, reporter }) => {

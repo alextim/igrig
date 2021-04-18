@@ -266,7 +266,7 @@ Netlify отслеживает эти измения, сам cкомпилиру
 :bulb: Для полей **metaTitle** и **metaDescription** не пользуйтесь всеми заглавными буквами, т.к. они хуже читаются и занимают больше места при выводе на странице SERP (Search Engine Result Page).
 
 
-:warning: В случае, если отсутствуют и **metaDescription** и **headline**, то будет использовано соответствующее языку страницы содержимое поля **siteDescription** из файла конфигурации `[PROJECT_DIR]/config/locales.js`.
+:warning: В случае, если отсутствуют и **metaDescription** и **headline**, то будет использовано соответствующее языку страницы содержимое поля **siteDescription** из файла конфигурации `[CONTENT_DIR]/config/locales.js`.
 
 ### Карта сайта (**Sitemap**)
 
@@ -319,7 +319,7 @@ Netlify отслеживает эти измения, сам cкомпилиру
 |  9 | webmanifest | icon.png              | src/assets/images/                | 1 : 1   | > 512 x 512 | 1
 
 
-*Установите, если надо, свои размеры изображений для Twitter и Facebook OpenGraph и в файле `[PROJECT_DIR]/config/website.js`.*
+*Установите, если надо, свои размеры изображений для Twitter и Facebook OpenGraph и в файле `[CONTENT_DIR]/config/website.js`.*
 
 *Для Twitter и Facebook OpenGraph рекомендуется любое красивое фото с наложенным поверх лого.*
 
@@ -431,14 +431,14 @@ Markdown позволяет вставлять ссылки в формате HT
 
 Настройки сайта находятся в двух JavaScript-файлах:
 
-- `[PROJECT_DIR]/config/locales.js`
-- `[PROJECT_DIR]/config/website.js`
+- `[CONTENT_DIR]/config/locales.js`
+- `[CONTENT_DIR]/config/website.js`
 
 :bulb: Если необходима настройка, то рекомендуется привлечение :sunglasses: программиста!
 
 ### Общие
 
-Файл: `[PROJECT_DIR]/config/website.js`
+Файл: `[CONTENT_DIR]/config/website.js`
 
 Обязательные поля:
 

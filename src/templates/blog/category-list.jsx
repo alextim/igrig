@@ -7,13 +7,13 @@ import CategoryList from '../../components/blog/CategoryList';
 
 import styleHtml from '../../components/styles/styleHtml';
 
-const CategoryListTemplate = ({ data, pageContext: { categories } }) => {
+const CategoryListTemplate = ({ data, location: { pathname }, pageContext: { categories } }) => {
   const {
     translations,
     address,
     mainNav,
     socialLinks,
-    page: { html, title, metaTitle, headline, metaDescription, noindex, slug, locale },
+    page: { html, title, metaTitle, headline, metaDescription, noindex, locale },
   } = data;
 
   return (
@@ -26,7 +26,7 @@ const CategoryListTemplate = ({ data, pageContext: { categories } }) => {
         locale={locale}
         title={metaTitle}
         description={metaDescription}
-        pathname={slug}
+        pathname={pathname}
         noindex={noindex}
       />
       {html && <div css={styleHtml} dangerouslySetInnerHTML={{ __html: html }} />}

@@ -17,7 +17,7 @@ const PostTags = ({ tags }) => {
   return (
     <div css={styleWrap}>
       {tags.map(({ to, title }) => (
-        <Tag key={to} href={to}>
+        <Tag key={to} to={to}>
           {title}
         </Tag>
       ))}
