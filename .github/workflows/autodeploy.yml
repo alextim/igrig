@@ -37,9 +37,6 @@ jobs:
         run:  yarn run gatsby build
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
-          SENDGRID_SINGLE_SENDER: ${{ secrets.SENDGRID_SINGLE_SENDER }}
-          TO_EMAIL: ${{ secrets.TO_EMAIL }}
           WARNINGS: ${{ secrets.WARNINGS }}
           NO_INDEX: ${{ secrets.NO_INDEX }}
           #- run: npm run test:unit # run the tests

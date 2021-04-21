@@ -24,7 +24,6 @@ for images
 the BEST!!!!!
 https://www.dareboost.com/
 
-
 https://ogp.me/#types
 ## TO-DO
 
