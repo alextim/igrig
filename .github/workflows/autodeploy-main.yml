@@ -44,7 +44,7 @@ jobs:
       # deploy site to netlify using secrets created on repository
       - uses: netlify/actions/cli@master
         env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_IGRIG }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_IGRIG }}
         with:
           args: deploy --dir=public --prod
