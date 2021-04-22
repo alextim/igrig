@@ -1,4 +1,4 @@
-name: Auto Deploy
+name: "Auto Deploy - branch: main"
 on:
   push:
     branches: [main]
