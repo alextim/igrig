@@ -66,11 +66,13 @@ export const addressFragment = graphql`
       addressRegion
       postalCode
       addressCountry
+      addressCountryName
     }
     contactPoint {
       name
       description
       contactType
+      contactTypeName
       areaServed
       telephone
       email
