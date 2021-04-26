@@ -14,8 +14,13 @@ const HomeTemplate = ({ data, location: { pathname }, pageContext: { locale } })
     mainNav,
     socialLinks,
     // eslint-disable-next-line no-unused-vars
-    page: { cover, sections, metaTitle, metaDescription, noindex },
+    page: { sections, metaTitle, metaDescription, noindex },
   } = data;
+
+  let heroImages;
+  if (sections) {
+    heroImages = sections[0].items;
+  }
 
   return (
     <HomeLayout context={{ translations, address, mainNav, socialLinks }}>
@@ -27,7 +32,7 @@ const HomeTemplate = ({ data, location: { pathname }, pageContext: { locale } })
         noindex={noindex}
         article={false}
       />
-      <Hero alt={cover?.alt} items={mainNav.edges} />
+      <Hero navEdges={mainNav.edges} images={heroImages} />
     </HomeLayout>
   );
 };
@@ -41,23 +46,23 @@ export const pageQuery = graphql`
       headline
       metaTitle
       metaDescription
-      cover {
-        alt
-        title
-        sm {
-          publicURL
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
-          }
-        }
-        xl {
-          publicURL
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+      noindex
+      sections {
+        items {
+          image {
+            alt
+            title
+            sm {
+              childImageSharp {
+                fixed {
+                  srcWebp
+                  src
+                }
+              }
+            }
           }
         }
       }
-      noindex
     }
     address: address(locale: { eq: $locale }) {
       ...AddressFragment

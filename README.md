@@ -824,20 +824,40 @@ featured: false
 
 Файлы: `home.en.md`, `home.uk.md` и `home.ru.md`
 
-На этой странице выводятся в качестве фона разные сери изображения в зависимости от разрешения экрана и ссылки из Главного меню.
+На этой странице фоновое изображение перегружается в зависимости от разрешения экрана.
 
-| Имя файла       | Соотношение Ш : В | Размер, px  | Комментарий
-|---              |  ---:             |   ---:      | ---
-| hero-480w.jpg   | 9 : 16            |  480 x  853 | Mobile
-| hero-480w.webp  |                   |             |
-| hero-1024.jpg   | 4 : 3             | 1024 x  768 | Tablet
-| hero-1024.webp  |                   |             |
-| hero-1920w.jpg  | 16 : 9            | 1920 x 1080 | Desktop
-| hero-1920w.webp |                   |             |
+Пример содержимого файла.
 
-*Нужно по 2 файла: тип `jpg` - для совместимости со старыми браузерами, тип `webp` - для современных. `Webp` - лучше сжимает изображения, что ускоряет их загрузку.*
+```yaml
+---
+title: Inna Grygorashchenko
+headline: Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+metaTitle: 
+metaDescription: 
+template: home
+sections:
+  - items:
+      - image:
+          # mobile
+          sm: ./images/hero-mobile.jpg
+          alt: alt text 1
+      - image:
+          # tablet
+          sm: ./images/hero-tablet.jpg
+          alt: alt text 2
+      - image:
+          # desktop
+          sm: ./images/hero-desktop.jpg
+          alt: alt text 3
+---
+```
 
-Файлы надо поместить в папку `[CONTENT_DIR]/assets/hero/`.
+| Имя файла        | Соотношение Ш : В | Размер, px  
+|---               |  ---:             |   ---:
+| hero-mobile.jpg  | 9 : 16            |  480 x  853
+| hero-tablet.jpg  | 4 : 3             | 1024 x  768
+| hero-desktop.jpg | 16 : 9            | 1920 x 1080
+
 
 #### Cтраница "Блог"
 

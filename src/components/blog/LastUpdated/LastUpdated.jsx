@@ -20,9 +20,6 @@ const LastUpdated = ({ date }) => {
   const { formatLocale } = useLocaleData();
   const { t } = useTranslation();
 
-  if (!date) {
-    return null;
-  }
   const options = { year: 'numeric', month: 'short', day: 'numeric' };
 
   return (

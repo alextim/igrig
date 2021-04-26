@@ -62,7 +62,9 @@ const Post = ({ data, pathname, locale, options = { showTimeToRead: true } }) =>
       />
       {html && <div css={styleHtml} dangerouslySetInnerHTML={{ __html: html }} />}
       <PostTags tags={tags} />
-      <LastUpdated date={dateModified} />
+      {dateModified && ((datePublished && dateModified !== datePublished) || !datePublished) && (
+        <LastUpdated date={dateModified} />
+      )}
     </Layout>
   );
 };

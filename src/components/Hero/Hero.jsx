@@ -3,7 +3,6 @@ import { jsx } from '@emotion/react';
 
 import mq from '../../theme/media-queries';
 import fonts from '../../theme/fonts';
-import useAssets from '../../hooks/useAssets';
 
 const styleWrap = {
   display: 'grid',
@@ -39,25 +38,30 @@ const styleTextWrap = {
   fontFamily: fonts.logo,
   fontSize: '2.3rem',
   lineHeight: 1.5,
+
   '@media (orientation: landscape)': {
     fontSize: '2rem',
     lineHeight: 1.25,
   },
+
   '@media screen and (max-width: 280px)': {
     fontSize: '1.5rem',
   },
+
   '@media screen and (min-width: 281px) and (max-width: 320px)': {
     fontSize: '2rem',
   },
+
   '@media screen and (min-width: 750px)': {
     fontSize: '3rem',
     paddingRight: '11rem',
   },
+
   '@media screen and (orientation: landscape) and (min-width: 750px)': {
-    color: 'green',
     fontSize: '2.5rem',
     paddingRight: '11rem',
   },
+
   [mq.lg]: {
     display: 'none',
   },
@@ -68,36 +72,27 @@ const styleTextWrap = {
  *
  *
  */
-const Hero = ({ alt, items }) => {
-  const images = useAssets();
-  const getImageURL = (name) => {
-    const edge = images.find(({ node: { base } }) => base === name);
-    if (!edge) {
-      return null;
-    }
-    return edge.node.publicURL;
-  };
-  const hero480webp = getImageURL('hero-480w.jpg');
-  const hero480jpg = getImageURL('hero-480w.jpg');
-  const hero1024webp = getImageURL('hero-1024w.webp');
-  const hero1024jpg = getImageURL('hero-1024w.jpg');
-  const hero1920webp = getImageURL('hero-1920w.webp');
-  const hero1920jpg = getImageURL('hero-1920w.jpg');
+const Hero = ({ navEdges, images }) => {
+  const alt = images[0].image.alt;
+  const heroMobile = images[0].image.sm.childImageSharp.fixed;
+  const heroTablet = images[1].image.sm.childImageSharp.fixed;
+  const heroDesktop = images[2].image.sm.childImageSharp.fixed;
+
   return (
     <div css={styleWrap}>
       <picture css={styleImage}>
-        <source media="(min-width: 992px)" srcSet={hero1920webp} />
-        <source media="(min-width: 992px)" srcSet={hero1920jpg} />
-        <source media="(orientation: landscape) and (min-width: 992px)" srcSet={hero1024webp} />
-        <source media="(orientation: landscape) and (min-width: 992px)" srcSet={hero1024jpg} />
-        <source media="(min-width: 750px)" srcSet={hero1024webp} />
-        <source media="(min-width: 750px)" srcSet={hero1024jpg} />
-        <source media="(max-width: 480px)" srcSet={hero480webp} />
-        <source media="(max-width: 480px)" srcSet={hero480jpg} />
-        <img src={hero480jpg} alt={alt} />
+        <source media="(min-width: 992px)" srcSet={heroDesktop.srcWebp} />
+        <source media="(min-width: 992px)" srcSet={heroDesktop.src} />
+        <source media="(orientation: landscape) and (min-width: 992px)" srcSet={heroTablet.srcWebp} />
+        <source media="(orientation: landscape) and (min-width: 992px)" srcSet={heroTablet.src} />
+        <source media="(min-width: 750px)" srcSet={heroTablet.srcWebp} />
+        <source media="(min-width: 750px)" srcSet={heroTablet.src} />
+        <source media="(max-width: 480px)" srcSet={heroMobile.srcWebp} />
+        <source media="(max-width: 480px)" srcSet={heroMobile.src} />
+        <img src={heroMobile.src} alt={alt} />
       </picture>
       <div css={styleTextWrap}>
-        {items.map(({ node: { title: navItemTitle, to } }, i) => (
+        {navEdges.map(({ node: { title: navItemTitle, to } }, i) => (
           <a
             key={to}
             href={to}
