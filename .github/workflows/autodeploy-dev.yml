@@ -1,5 +1,6 @@
 name: "Auto Deploy - branch: dev"
 on:
+  workflow_dispatch:
   push:
     branches: [dev]
 jobs:
