@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
+import { getImage } from 'gatsby-plugin-image';
 
 import mq from '../../theme/media-queries';
 import fonts from '../../theme/fonts';
@@ -67,30 +68,52 @@ const styleTextWrap = {
   },
 };
 
+const getImages = (item) => {
+  if (!item || !item.image || !item.image.sm) {
+    return [];
+  }
+  const img = getImage(item.image.sm);
+  if (!img) {
+    return [];
+  }
+  return [
+    img.images.fallback.src,
+    img.images.sources[0].srcSet,
+  ];
+};
+
 /**
  * https://cloudfour.com/thinks/responsive-images-101-part-2-img-required/
  *
  *
  */
-const Hero = ({ navEdges, images }) => {
-  const alt = images[0].image.alt;
-  const heroMobile = images[0].image.sm.childImageSharp.fixed;
-  const heroTablet = images[1].image.sm.childImageSharp.fixed;
-  const heroDesktop = images[2].image.sm.childImageSharp.fixed;
+const Hero = ({ navEdges, heroImages }) => {
+  let heroMobile;
+  let heroMobileWebp;
+  let heroTablet;
+  let heroTabletWebp;
+  let heroDesktop;
+  let heroDesktopWebp;
+
+  if (heroImages && heroImages[0] && heroImages[0].image && heroImages[0].image.sm) {
+    [heroMobile, heroMobileWebp] = getImages(heroImages[0]);
+    [heroTablet, heroTabletWebp] = getImages(heroImages[1]);
+    [heroDesktop, heroDesktopWebp] = getImages(heroImages[2]);
+  }
 
   return (
     <div css={styleWrap}>
-      <picture css={styleImage}>
-        <source media="(min-width: 992px)" srcSet={heroDesktop.srcWebp} />
-        <source media="(min-width: 992px)" srcSet={heroDesktop.src} />
-        <source media="(orientation: landscape) and (min-width: 992px)" srcSet={heroTablet.srcWebp} />
-        <source media="(orientation: landscape) and (min-width: 992px)" srcSet={heroTablet.src} />
-        <source media="(min-width: 750px)" srcSet={heroTablet.srcWebp} />
-        <source media="(min-width: 750px)" srcSet={heroTablet.src} />
-        <source media="(max-width: 480px)" srcSet={heroMobile.srcWebp} />
-        <source media="(max-width: 480px)" srcSet={heroMobile.src} />
-        <img src={heroMobile.src} alt={alt} />
-      </picture>
+      {heroMobile && <picture css={styleImage}>
+        <source media="(min-width: 992px)" srcSet={heroDesktopWebp} />
+        <source media="(min-width: 992px)" srcSet={heroDesktop} />
+        <source media="(orientation: landscape) and (min-width: 992px)" srcSet={heroTabletWebp} />
+        <source media="(orientation: landscape) and (min-width: 992px)" srcSet={heroTablet} />
+        <source media="(min-width: 750px)" srcSet={heroTabletWebp} />
+        <source media="(min-width: 750px)" srcSet={heroTablet} />
+        <source media="(max-width: 480px)" srcSet={heroMobileWebp} />
+        <source media="(max-width: 480px)" srcSet={heroMobile} />
+        <img src={heroMobile} alt={heroImages[0].image.alt} />
+      </picture>}
       <div css={styleTextWrap}>
         {navEdges.map(({ node: { title: navItemTitle, to } }, i) => (
           <a

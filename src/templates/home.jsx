@@ -32,7 +32,7 @@ const HomeTemplate = ({ data, location: { pathname }, pageContext: { locale } })
         noindex={noindex}
         article={false}
       />
-      <Hero navEdges={mainNav.edges} images={heroImages} />
+      <Hero navEdges={mainNav.edges} heroImages={heroImages} />
     </HomeLayout>
   );
 };
@@ -54,10 +54,7 @@ export const pageQuery = graphql`
             title
             sm {
               childImageSharp {
-                fixed {
-                  srcWebp
-                  src
-                }
+                gatsbyImageData(layout: FIXED, formats: [AUTO, WEBP], quality: 100)
               }
             }
           }

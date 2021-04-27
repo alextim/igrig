@@ -1,2 +1,4 @@
+http://igryg.netlify.app/*   https://igryg.com/:splat  301!
+https://igryg.netlify.app/*  https://igryg.com/:splat  301!
 /uk/*                   /uk/404      404
 /ru/*                   /ru/404      404
