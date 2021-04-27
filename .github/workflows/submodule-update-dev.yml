@@ -1,4 +1,4 @@
-name: Submodule Update Remote
+name: "Submodule Update Remote - branch: dev"
 
 on:
   workflow_dispatch:
@@ -16,6 +16,7 @@ jobs:
 
       - name: submodule Update
         run: |
+          git switch dev
           git submodule sync
           git submodule update --remote
           # --init --recursive
@@ -28,6 +29,7 @@ jobs:
         if: steps.changes.outputs.changed == 1
         run: |
           echo "Changes exist"
+          git switch dev
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .
