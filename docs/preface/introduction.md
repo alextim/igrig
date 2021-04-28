@@ -31,7 +31,7 @@
 
 Создайте <a href="https://github.com/alextim/igrig/issues" target="_blank" rel="noopener">GitHub issue</a> для выявленных ошибок, пожеланий или вопросов.
 
-## Лицезия
+## Лицензия
 
 Этот проект Open Source и доступен под лицезией [MIT](https://github.com/alextim/igrig/blob/main/LICENSE).
 
