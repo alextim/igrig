@@ -5,7 +5,7 @@
 
 :bulb: Если необходима настройка, то рекомендуется привлечение :sunglasses: программиста!
 
-### Общие
+## Общие
 
 Файл: `[CONTENT_DIR]/config/website.js`
 
@@ -35,7 +35,7 @@
 - **twitterSite**
 - **twitterCreator**
 
-### Языки
+## Языки
 
 `en`, `uk` и `ru`
 
@@ -44,4 +44,63 @@
 
 По этому файлу во время компиляции сайта добавляется префикс языка к адресам страниц и создается переключатель языка.
 
-Назначение переменных описано в комментариях в самом файле.
+По содержимому этого файла во время компиляции сайта добавляется префикс языка к адресам страниц, создается переключатель языков, SEO и многое другое.
+
+Пример содержимого
+
+```js
+module.exports = {
+  // входит в имя файла
+  // например: index.uk.md
+  uk: {
+    // язык сайта по умолчанию
+    default: true,
+
+    // язык страницы
+    // 1. тег <html>
+    // 2. <meta>
+    // 3. sitemap.xml
+    // 4. structured data  "@type": "WebSite" - inLanguage
+    // 5. structured data  "@type": "WebPage", "Blog", "Article", "BlogPosting" - inLanguage
+    htmlLang: 'en', 
+
+    // формат вывода дат и чисел
+    formatLocale: 'en-UK',
+
+    // 1. manifest.webmanifest - lang
+    // 2. <meta> - язык OpenGraph
+    ogLocale: 'en_UA',
+
+    name: 'English',
+
+    // 1. пепеключатеь языков
+    shortName: 'En',
+
+    localName: 'English',
+    shortLocalName: 'Eng',
+
+    dateFormat: 'dd/MM/yyyy',
+
+    // 1. manifest.webmanifest - name
+    // 2. alt для лого в хедере
+    // 3. тег <title>, если поля title и metaTitle не заполнены
+    // 4. structured data  "@type": "WebSite" - name
+    siteTitle: 'Inna Grygoraschenko',
+
+    // 1. manifest.webmanifest - description
+    // 2. <meta> - если не заполнены поля headline, metaDescription
+    // 3. structured data "@type": "Organization" - description
+    // 4. structured data  "@type": "WebSite" - description
+    siteDescription: 'Adventurer, photographer, inspirer, extreme sportswoman',
+    
+    siteHeadline: 'Where`s there`s a will, there`s a way…',
+
+    // 1. manifest.webmanifest - short_name
+    // 2. выводится рядом с лого в хедере
+    siteShortName: 'IGRIG',
+  },
+
+  // второй языык сайта
+  // будет добавлен в URL
+  ru: {
+```
