@@ -1,4 +1,4 @@
-name: "Submodule Update Remote - branch: dev"
+name: "Submodule Update - branch: dev"
 
 on:
   workflow_dispatch:
