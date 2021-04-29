@@ -33,16 +33,16 @@ jobs:
       id: deploy
       if: ${{ failure() }}
       run: |
-        echo "::set-output name=status::failure"
+        echo "AT_DEPLOY_STATUS=failed" >> $GITHUB_ENV
 
     - name: test
       id: test
       run: |
         echo Test
-        echo "::set-output name=status::ok"
+        echo "AT_DEPLOY_STATUS=Ok" >> $GITHUB_ENV
 
     - name: echo
       if: ${{ always() }}
       run: |
-        echo ${{ failure() }}, ${{ success() }}
+        echo "Deploy: ${{ env.AT_DEPLOY_STATUS }}"
 
