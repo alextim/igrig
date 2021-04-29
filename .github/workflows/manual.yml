@@ -28,13 +28,21 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ github.event.inputs.name }}"
+
     - name: Check Deploy
       id: deploy
       if: ${{ failure() }}
-      run: echo "::set-output name=status::failure"
-    - name: send custom message with args
-      uses: appleboy/telegram-action@master
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        args: "Deloy:${{ steps.deploy.outputs.status }}"
+      run: |
+        echo "::set-output name=status::failure"
+
+    - name: test
+      id: test
+      run: |
+        echo Test
+        echo "::set-output name=status::ok"
+
+    - name: echo
+      if: ${{ always() }}
+      run: |
+        echo ${{ failure() }}, ${{ success() }}
+
