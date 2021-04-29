@@ -2,12 +2,10 @@
 
 # igryg.com
 
-> Стек используемых технологий
+> Стек технологий
 
 - Gatsby
 - Markdown & YAML
 - React
 - GitHub Actions
 - Netlify
-
-
