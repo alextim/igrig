@@ -31,7 +31,6 @@ jobs:
 
     - name: Check Deploy
       id: deploy
-      if: ${{ failure() }}
       run: |
         echo "AT_DEPLOY_STATUS=failed" >> $GITHUB_ENV
 
