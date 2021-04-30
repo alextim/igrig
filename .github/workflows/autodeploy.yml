@@ -30,12 +30,12 @@ jobs:
           restore-keys: ${{ runner.os }}-yarn-
 
       - name: Bootstraping packages
-          id: install
-          # if: steps.yarn-cache.outputs.cache-hit != 'true'
-          run: |
-            yarn install --prefer-offline
-          env:
-            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        id: install
+        # if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: |
+          yarn install --prefer-offline
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Check Install
         if: ${{ failure() }}
