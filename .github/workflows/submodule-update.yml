@@ -16,7 +16,6 @@ jobs:
 
       - name: submodule Update
         run: |
-          git switch main
           git submodule sync
           git submodule update --remote
           # --init --recursive
@@ -29,22 +28,21 @@ jobs:
         if: steps.changes.outputs.changed == 1
         run: |
           echo "Changes exist"
-          git switch main
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .
           git commit -m "remote data update"
           git push
 
-      - name: Trigger deploy
-        if: steps.changes.outputs.changed == 1
-        run: |
-          curl \
-            -X POST \
-            -H "Accept: application/vnd.github.v3+json" \
-            -u ${{ secrets.API_TOKEN }} \
-            https://api.github.com/repos/alextim/igrig/actions/workflows/autodeploy.yml/dispatches \
-            -d '{"ref":"main"}'
+      #- name: Trigger deploy
+      #  if: steps.changes.outputs.changed == 1
+      #  run: |
+      #    curl \
+      #      -X POST \
+      #      -H "Accept: application/vnd.github.v3+json" \
+      #      -u ${{ secrets.API_TOKEN }} \
+      #      https://api.github.com/repos/alextim/igrig/actions/workflows/autodeploy.yml/dispatches \
+      #      -d '{"ref":"main"}'
 
       - name: No Changes
         if: steps.changes.outputs.changed == 0

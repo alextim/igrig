@@ -4,8 +4,9 @@
 
 > Стек технологий
 
+- React
 - Gatsby
 - Markdown & YAML
-- React
 - GitHub Actions
 - Netlify
+- Telegram

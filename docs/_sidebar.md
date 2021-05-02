@@ -3,7 +3,8 @@
 - [Лимиты бесплатных сервисов](preface/free-tier-limits.md)
 - [Требования к владельцу сайта](preface/site-owner-skills.md)
 - [Защита данных пользователя](preface/user-data-protection.md)
-  
+
+- [Инсталляция](preface/install.md)  
 - [Настройки](preface/site-settings.md)
 
 - Принципы организации данных
