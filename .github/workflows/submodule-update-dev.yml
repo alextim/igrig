@@ -16,10 +16,7 @@ jobs:
 
       - name: submodule Update
         run: |
-          git switch dev
-          git submodule sync
           git submodule update --remote
-          # --init --recursive
 
       - name: Check if there are changes
         id: changes
@@ -34,7 +31,13 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add .
           git commit -m "remote data update"
-          git push
+
+      - name: Push changes
+        if: steps.changes.outputs.changed == 1
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
 
       - name: No Changes
         if: steps.changes.outputs.changed == 0
