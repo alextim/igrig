@@ -1,21 +1,37 @@
-name: "Auto Deploy - branch: main"
+name: Auto Deploy
 on:
-  workflow_dispatch:
   push:
-    branches: [main]
+    branches:
+      - dev
+      - main
     paths-ignore:
       - 'docs/**/*.*'
       - '.github/**/*.*'
       - '.gitignore'
       - '.vscode/**/*.*'
       - 'README.md'
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
+      - name: set development env
+        if: ${{ github.ref == 'refs/heads/dev' }}
+        run: |
+          echo "BRANCH_NAME=dev" >> $GITHUB_ENV
+          echo "NO_INDEX=${{ secrets.NO_INDEX }}" >> $GITHUB_ENV
+          echo "NETLIFY_AUTH_TOKEN=${{ secrets.NETLIFY_AUTH_TOKEN }}" >> $GITHUB_ENV
+          echo "NETLIFY_SITE_ID=${{ secrets.NETLIFY_SITE_ID }}" >> $GITHUB_ENV
+
+      - name: set production env
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: |
+          echo "BRANCH_NAME=main" >> $GITHUB_ENV
+          echo "NO_INDEX=${{ secrets.NO_INDEX_IGRIG }}" >> $GITHUB_ENV
+          echo "NETLIFY_AUTH_TOKEN=${{ secrets.NETLIFY_AUTH_TOKEN_IGRIG }}" >> $GITHUB_ENV
+          echo "NETLIFY_SITE_ID=${{ secrets.NETLIFY_SITE_ID_IGRIG }}" >> $GITHUB_ENV
       - uses: actions/checkout@v2
         with:
-          ref: main
           submodules: recursive
           # token: ${{ secrets.ACCESS_TOKEN }}
 
@@ -46,21 +62,19 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           WARNINGS: ${{ secrets.WARNINGS }}
-          NO_INDEX: ${{ secrets.NO_INDEX }}
-          #- run: npm run test:unit # run the tests
+          NO_INDEX: ${{ env.NO_INDEX }}
 
       - name: Check build
         if: ${{ failure() }}
         run: |
           echo "AT_STATE=Build: failed" >> $GITHUB_ENV
 
-      # deploy site to netlify using secrets created on repository
       - name: Deploy site
         if: ${{ success() }}
         uses: netlify/actions/cli@master
         env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_IGRIG }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_IGRIG }}
+          NETLIFY_AUTH_TOKEN: ${{ env.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ env.NETLIFY_SITE_ID }}
         with:
           args: deploy --dir=public --prod
 
@@ -80,4 +94,4 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          args: ${{ env.AT_STATE }}
+          args: "${{ env.AT_STATE }}, branch: ${{ env.BRANCH_NAME }}"
