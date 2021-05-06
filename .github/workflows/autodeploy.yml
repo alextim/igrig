@@ -12,10 +12,10 @@ on:
       - 'README.md'
 
 jobs:
-  build-and-test:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: set development env
+      - name: Set development env
         if: ${{ github.ref == 'refs/heads/dev' }}
         run: |
           echo "BRANCH_NAME=dev" >> $GITHUB_ENV
@@ -23,22 +23,24 @@ jobs:
           echo "NETLIFY_AUTH_TOKEN=${{ secrets.NETLIFY_AUTH_TOKEN }}" >> $GITHUB_ENV
           echo "NETLIFY_SITE_ID=${{ secrets.NETLIFY_SITE_ID }}" >> $GITHUB_ENV
 
-      - name: set production env
+      - name: Set production env
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           echo "BRANCH_NAME=main" >> $GITHUB_ENV
           echo "NO_INDEX=${{ secrets.NO_INDEX_IGRIG }}" >> $GITHUB_ENV
           echo "NETLIFY_AUTH_TOKEN=${{ secrets.NETLIFY_AUTH_TOKEN_IGRIG }}" >> $GITHUB_ENV
           echo "NETLIFY_SITE_ID=${{ secrets.NETLIFY_SITE_ID_IGRIG }}" >> $GITHUB_ENV
-      - uses: actions/checkout@v2
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
         with:
           submodules: recursive
           # token: ${{ secrets.ACCESS_TOKEN }}
 
-      - name: Setup Node.js
+      - name: Setup Node environment
         uses: actions/setup-node@v2
         with:
-          node-version: 14.x
+          node-version: 15.x
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -51,7 +53,7 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: ${{ runner.os }}-yarn-
 
-      - name: Bootstraping packages
+      - name: Installing dependencies
         # if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn install --prefer-offline
         env:
@@ -69,7 +71,7 @@ jobs:
         run: |
           echo "AT_STATE=Build: failed" >> $GITHUB_ENV
 
-      - name: Deploy site
+      - name: Deploy to Netlify
         if: ${{ success() }}
         uses: netlify/actions/cli@master
         env:
@@ -78,12 +80,12 @@ jobs:
         with:
           args: deploy --dir=public --prod
 
-      - name: Check Deploy
+      - name: Check deploy
         if: ${{ failure() && env.AT_STATE == ''}}
         run: |
           echo "AT_STATE=Deploy: failed" >> $GITHUB_ENV
 
-      - name: msg
+      - name: Set message on success
         if: ${{ success() }}
         run: |
           echo "AT_STATE=Deploy: OK" >> $GITHUB_ENV
@@ -94,4 +96,4 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          args: "${{ env.AT_STATE }}, branch: ${{ env.BRANCH_NAME }}"
+          args: "${{ env.AT_STATE }}, branch: ${{ env.BRANCH_NAME }}, ${{ github.event.head_commit.message }}"
