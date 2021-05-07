@@ -13,6 +13,7 @@ const styleWrap = {
   alignItems: 'center',
   justifyContent: 'space-between',
   marging: '0.2rem 0',
+
   [mq.lg]: {
     gridArea: 'aside',
     justifyContent: 'space-evenly',
