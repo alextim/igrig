@@ -21,6 +21,7 @@ const styleTitle = {
 const styleContentWrap = {
   display: 'flex',
   flexDirection: 'column',
+
   a: {
     fontSize: fontSizes[1],
   },
