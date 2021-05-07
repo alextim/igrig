@@ -93,7 +93,7 @@ jobs:
       - name: Build the project
         run: |
           npm i -g gatsby-cli
-          yarn build
+          yarn run gatsby build
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           WARNINGS: ${{ secrets.WARNINGS }}
