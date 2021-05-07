@@ -15,19 +15,6 @@ on:
         required: true
         default: remote data update
 jobs:
-  setup-commit-message:
-    runs-on: ubuntu-latest
-    steps:
-      - if: github.event_name == 'workflow_dispatch'
-        run: echo "COMMIT_MESSAGE=${{ github.event.inputs.commit_message }}" >> $GITHUB_ENV
-      - if: github.event_name == 'push'
-        run: echo "COMMIT_MESSAGE=${{ github.event.head_commit.message }}" >> $GITHUB_ENV
-
-  test-message:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ${{ env.COMMIT_MESSAGE }}
-
   submodule-update:
     if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
@@ -134,10 +121,15 @@ jobs:
         run: |
           echo "AT_STATE=Deploy: OK" >> $GITHUB_ENV
 
+      - if: github.event_name == 'workflow_dispatch'
+        run: echo "COMMIT_MESSAGE=${{ github.event.inputs.commit_message }}" >> $GITHUB_ENV
+      - if: github.event_name == 'push'
+        run: echo "COMMIT_MESSAGE=${{ github.event.head_commit.message }}" >> $GITHUB_ENV
+
       - name: Send to Telegram
         if: ${{ always() }}
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          args: "${{ env.AT_STATE }}, branch: ${{ env.BRANCH_NAME }}, ${{ github.event.head_commit.message }}"
+          args: "${{ env.AT_STATE }}, branch: ${{ env.BRANCH_NAME }}, ${{ env.COMMIT_MESSAGE }}"
