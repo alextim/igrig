@@ -1,17 +1,25 @@
 name: Auto Deploy
 on:
-  push:
-    paths-ignore:
-      - 'docs/**/*.*'
-      - '.github/**/*.*'
-      - '.gitignore'
-      - '.vscode/**/*.*'
-      - 'README.md'
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - run: echo ${{ github.event.ref }}
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+          ref: ${{ github.event.ref }}
+          # token: ${{ secrets.ACCESS_TOKEN }}
+
+      - name: Setup Node environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+
       - name: Set development env
         if: ${{ github.ref == 'refs/heads/dev' }}
         run: |
@@ -27,17 +35,6 @@ jobs:
           echo "NO_INDEX=${{ secrets.NO_INDEX_IGRIG }}" >> $GITHUB_ENV
           echo "NETLIFY_AUTH_TOKEN=${{ secrets.NETLIFY_AUTH_TOKEN_IGRIG }}" >> $GITHUB_ENV
           echo "NETLIFY_SITE_ID=${{ secrets.NETLIFY_SITE_ID_IGRIG }}" >> $GITHUB_ENV
-
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          submodules: recursive
-          # token: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Setup Node environment
-        uses: actions/setup-node@v2
-        with:
-          node-version: 15.x
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
