@@ -15,12 +15,20 @@ on:
         required: true
         default: remote data update
 jobs:
-  test:
+  setup-commit-message:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.event.ref }}
-        
-  submodule-uodate:
+      - if: github.event_name == 'workflow_dispatch'
+        run: echo "COMMIT_MESSAGE=${{ github.event.inputs.commit_message }}" >> $GITHUB_ENV
+      - if: github.event_name == 'push'
+        run: echo "COMMIT_MESSAGE=${{ github.event.head_commit.message }}" >> $GITHUB_ENV
+
+  test-message:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ env.COMMIT_MESSAGE }}
+
+  submodule-update:
     if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
@@ -31,12 +39,11 @@ jobs:
           ref: ${{ github.event.ref }}
           # token: ${{ secrets.ACCESS_TOKEN }}
 
-      - name: Submodule Update
+      - name: Submodule update
         run: git submodule update --remote
 
       - name: Process changes
         run: |
-          echo "Changes exist"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .
@@ -134,4 +141,3 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           args: "${{ env.AT_STATE }}, branch: ${{ env.BRANCH_NAME }}, ${{ github.event.head_commit.message }}"
-
