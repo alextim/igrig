@@ -1,4 +1,4 @@
-name: Submodule Update
+name: Auto Deploy
 
 on:
   push:
@@ -8,12 +8,14 @@ on:
       - '.gitignore'
       - '.vscode/**/*.*'
       - 'README.md'
+
   workflow_dispatch:
     inputs:
       commit_message:
         description: commit message
         required: true
         default: remote data update
+
 jobs:
   submodule-update:
     if: github.event_name == 'workflow_dispatch'
@@ -40,7 +42,6 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # branch: ${{ github.ref }}
 
   build-and-deploy:
     runs-on: ubuntu-latest
