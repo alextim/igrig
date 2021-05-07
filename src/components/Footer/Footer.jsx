@@ -25,6 +25,7 @@ const footerStyle = {
   backgroundColor: colors.footer.bg,
   fontSize: fontSizes[0],
   padding: `0 ${container.p.sm}`,
+
   [mq.lg]: {
     height: sizes.footer.lg,
     gridTemplateColumns: `${sizes.aside} 1fr auto auto 1fr`,
