@@ -1,9 +1,6 @@
 name: Auto Deploy
 on:
   push:
-    branches:
-      - dev
-      - main
     paths-ignore:
       - 'docs/**/*.*'
       - '.github/**/*.*'

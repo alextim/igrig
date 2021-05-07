@@ -12,13 +12,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout for main
+        uses: actions/checkout@v2
         if: ${{ github.event.ref == 'refs/heads/main'}}
         with:
           submodules: recursive
           ref: main
 
-      - uses: actions/checkout@v2
+      - name: Checkout for dev
+        uses: actions/checkout@v2
         if: ${{ github.event.ref == 'refs/heads/dev'}}
         with:
           submodules: recursive
@@ -45,7 +47,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          # branch: ${{ github.ref }}
 
       - name: No Changes
         if: steps.changes.outputs.changed == 0
