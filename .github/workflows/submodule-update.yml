@@ -4,18 +4,25 @@ on:
   workflow_dispatch:
     inputs:
       commit_message:
-        description: "commit message"
+        description: commit message
         required: true
-        default: "remote data update"
+        default: remote data update
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
+        if: ${{ github.event.ref == 'refs/heads/main'}}
         with:
           submodules: recursive
-          ref: ${{ github.event.ref }}
+          ref: main
+
+      - uses: actions/checkout@v2
+        if: ${{ github.event.ref == 'refs/heads/dev'}}
+        with:
+          submodules: recursive
+          ref: dev
 
       - name: Submodule Update
         run: git submodule update --remote
