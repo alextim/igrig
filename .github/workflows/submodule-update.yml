@@ -2,12 +2,19 @@ name: "Submodule Update - branch: main"
 
 on:
   workflow_dispatch:
-
+    inputs:
+      commit_message:
+        description: 'commit message'
+        required: true
+        default: 'remote data update'
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+      - name: test
+        run: |
+          echo ${{ github.event.inputs.commit_message }}
       - uses: actions/checkout@v2
         with:
           submodules: recursive
@@ -29,7 +36,7 @@ jobs:
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .
-          git commit -m "remote data update"
+          git commit -m "${{ github.event.inputs.commit_message }}"
 
       #- name: Trigger deploy
       #  if: steps.changes.outputs.changed == 1
