@@ -121,9 +121,12 @@ jobs:
         run: |
           echo "AT_STATE=Deploy: OK" >> $GITHUB_ENV
 
-      - if: github.event_name == 'workflow_dispatch'
+      - name: "Get commit message for 'workflow_dispatch' event"
+        if: github.event_name == 'workflow_dispatch'
         run: echo "COMMIT_MESSAGE=${{ github.event.inputs.commit_message }}" >> $GITHUB_ENV
-      - if: github.event_name == 'push'
+
+      - name: "Get commit message for 'push' event"
+        if: github.event_name == 'push'
         run: echo "COMMIT_MESSAGE=${{ github.event.head_commit.message }}" >> $GITHUB_ENV
 
       - name: Send to Telegram

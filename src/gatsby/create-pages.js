@@ -38,6 +38,7 @@ module.exports = async ({ graphql, actions, reporter }) => {
     reporter.panic(result.errors);
     return;
   }
+
   ['photo-serie', 'photo-project'].forEach((type) => {
     const edges = result.data.posts.edges.filter(({ node }) => node.type === type);
     createPages({
