@@ -91,7 +91,9 @@ jobs:
           echo "NETLIFY_SITE_ID=${{ secrets.NETLIFY_SITE_ID_IGRIG }}" >> $GITHUB_ENV
 
       - name: Build the project
-        run: yarn run gatsby build
+        run: |
+          npm i -g gatsby-cli
+          yarn build
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           WARNINGS: ${{ secrets.WARNINGS }}
