@@ -1,12 +1,12 @@
-name: "Submodule Update"
+name: Submodule Update
 
 on:
   workflow_dispatch:
     inputs:
       commit_message:
-        description: 'commit message'
+        description: "commit message"
         required: true
-        default: 'remote data update'
+        default: "remote data update"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,14 +22,9 @@ jobs:
         with:
           submodules: recursive
           ref: ${{ github.event.ref }}
-          # token: ${{ secrets.ACCESS_TOKEN }}
-      - run: |
-          echo ${{ github.event.ref }}
-          echo ${{ github.ref }}
 
       - name: Submodule Update
-        run: |
-          git submodule update --remote
+        run: git submodule update --remote
 
       - name: Check if there are changes
         id: changes
@@ -44,15 +39,6 @@ jobs:
           git add .
           git commit -m "${{ github.event.inputs.commit_message }}"
 
-      #- name: Trigger deploy
-      #  if: steps.changes.outputs.changed == 1
-      #  run: |
-      #    curl \
-      #      -X POST \
-      #      -H "Accept: application/vnd.github.v3+json" \
-      #      -u ${{ secrets.API_TOKEN }} \
-      #      https://api.github.com/repos/alextim/igrig/actions/workflows/autodeploy.yml/dispatches \
-      #      -d '{"ref":"main"}'
       - name: Push changes
         if: steps.changes.outputs.changed == 1
         uses: ad-m/github-push-action@master
@@ -62,5 +48,4 @@ jobs:
 
       - name: No Changes
         if: steps.changes.outputs.changed == 0
-        run: |
-          echo "No Changes"
+        run:  echo "No Changes"
