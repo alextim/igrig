@@ -12,12 +12,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: test
-        run: |
-          echo ${{ github.event.inputs.commit_message }}
-      - run: |
-          echo "github.event: ${{ toJson(github.event) }}"
-
       - uses: actions/checkout@v2
         with:
           submodules: recursive
