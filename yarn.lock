@@ -401,7 +401,7 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/parser@^7.10.5", "@babel/parser@^7.12.13", "@babel/parser@^7.12.5", "@babel/parser@^7.14.2", "@babel/parser@^7.14.3", "@babel/parser@^7.14.4", "@babel/parser@^7.7.0":
+"@babel/parser@^7.10.5", "@babel/parser@^7.12.13", "@babel/parser@^7.14.2", "@babel/parser@^7.14.3", "@babel/parser@^7.14.4", "@babel/parser@^7.7.0":
   version "7.14.4"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.14.4.tgz#a5c560d6db6cd8e6ed342368dea8039232cbab18"
   integrity sha512-ArliyUsWDUqEGfWcmzpGUzNfLxTdTp6WU4IuP6QFSp9gGfWS6boxFCkJSJ/L4+RG8z/FnIU3WxCk6hPL9SSWeA==
@@ -1140,7 +1140,7 @@
     "@babel/parser" "^7.12.13"
     "@babel/types" "^7.12.13"
 
-"@babel/traverse@^7.10.5", "@babel/traverse@^7.12.5", "@babel/traverse@^7.13.0", "@babel/traverse@^7.14.0", "@babel/traverse@^7.14.2", "@babel/traverse@^7.7.0":
+"@babel/traverse@^7.10.5", "@babel/traverse@^7.13.0", "@babel/traverse@^7.14.0", "@babel/traverse@^7.14.2", "@babel/traverse@^7.7.0":
   version "7.14.2"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.14.2.tgz#9201a8d912723a831c2679c7ebbf2fe1416d765b"
   integrity sha512-TsdRgvBFHMyHOOzcP9S6QU0QQtjxlRpEYOy3mcCO5RgmC305ki42aSAmfZEMSSYBla2oZ9BMqYlncBaKmD/7iA==
@@ -3124,7 +3124,7 @@ babel-plugin-preval@^5.0.0:
     babel-plugin-macros "^2.8.0"
     require-from-string "^2.0.2"
 
-babel-plugin-remove-graphql-queries@^3.6.0, babel-plugin-remove-graphql-queries@^3.7.0:
+babel-plugin-remove-graphql-queries@^3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-3.7.0.tgz#3276313d176eaf2aaa58d1d580227cdaf811ab45"
   integrity sha512-1MrP3pT5diFM7AlwbfGY2qbr5E8XHm9vLdHSkaaxXrnHHUCoffjWfQquEGaQ08GRogEhdb3R00wd8iLKylmEfQ==
@@ -6893,15 +6893,15 @@ gatsby-recipes@^0.18.0:
     xstate "^4.9.1"
     yoga-layout-prebuilt "^1.9.6"
 
-gatsby-remark-images@^5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-5.3.0.tgz#06736580accb8b53bcca89d631840b568fac9737"
-  integrity sha512-AeTZrkbynn65+ZMzqKrSml/17VeRBe6bChHzwciVi8YIJMyLDLekpslYo4VrXR1YsR9WwcdWIlLEf3Lhb2UXyg==
+gatsby-remark-images@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-5.4.0.tgz#3d21587f93321dba1185611564306f25cef05150"
+  integrity sha512-cngmZVPc/hc0E9oeYCHgUrPm0tPoJaMisvJNyUjrOyaP/GoakMl9GFU4jNw+I8bBaKsHa0qhJPkYFQQupfkgpg==
   dependencies:
-    "@babel/runtime" "^7.12.5"
+    "@babel/runtime" "^7.14.0"
     chalk "^4.1.0"
     cheerio "^1.0.0-rc.9"
-    gatsby-core-utils "^2.6.0"
+    gatsby-core-utils "^2.7.0"
     is-relative-url "^3.0.0"
     lodash "^4.17.21"
     mdast-util-definitions "^4.0.0"
@@ -6940,7 +6940,7 @@ gatsby-source-filesystem@^3.7.0:
     valid-url "^1.0.9"
     xstate "^4.14.0"
 
-gatsby-telemetry@^2.6.0, gatsby-telemetry@^2.7.0:
+gatsby-telemetry@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-2.7.0.tgz#99b99e29780b59bd8129c75968ae35b769de3728"
   integrity sha512-pn1YciVYTRaoMtir13Cgk3pNH/cw3QzEyQNC4WGT3/0doJsxLN8dNToY9INMpNYGFnkAIvg8uRDOXyaCUtjamw==
