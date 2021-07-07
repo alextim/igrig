@@ -3143,7 +3143,7 @@ babel-plugin-preval@^5.0.0:
     babel-plugin-macros "^2.8.0"
     require-from-string "^2.0.2"
 
-babel-plugin-remove-graphql-queries@^3.8.0, babel-plugin-remove-graphql-queries@^3.9.0:
+babel-plugin-remove-graphql-queries@^3.9.0:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-3.9.0.tgz#73732b5632a944ad4d623a30b8dca69c529ffceb"
   integrity sha512-gr7n6Ytoyp6Ix7XX071oVPynC+jfesYH05fzg8Ih8yKQsBxmqWiMxAUIHuD70ieZJ94TxlXQQbHYi6oibmlx7w==
@@ -6953,7 +6953,7 @@ gatsby-source-filesystem@^3.9.0:
     valid-url "^1.0.9"
     xstate "^4.14.0"
 
-gatsby-telemetry@^2.8.0, gatsby-telemetry@^2.9.0:
+gatsby-telemetry@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-2.9.0.tgz#d6763b278bee601dd007a84427bac52e57a28d79"
   integrity sha512-Ji40by9qHm9Zz2vKIBACT77awt0FpqKES9uT9nLmaqyiOZ/7Hs1dKwMrZ2yCkHNBh6S9RplcgfUQLq2LE4oeaA==
@@ -7015,10 +7015,10 @@ gatsby-transformer-sharp@^3.9.0:
     semver "^7.3.4"
     sharp "^0.28.0"
 
-gatsby-transformer-yaml@^3.8.0:
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-yaml/-/gatsby-transformer-yaml-3.8.0.tgz#864b65515cef468e7a50d2d2b9b0246ad898025e"
-  integrity sha512-rixj0gYoS8QmZ/VTknVGVUHevGKP4btOVxpma6PCjICvAXIYCzLf/qVZWhygzKahUXU1BV42aURW8ctT5qoWSQ==
+gatsby-transformer-yaml@^3.9.0:
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-yaml/-/gatsby-transformer-yaml-3.9.0.tgz#313819d185ab31c20465068297d94b5f403327c3"
+  integrity sha512-m0+rB8jF8nAmSGWhO8CGyI0fjqaQikgwpY6TZ2GvWX7m5hhs45vyx6fTyJsbiJfAJ5FA3I03T6a2r4JM6PJvcg==
   dependencies:
     "@babel/runtime" "^7.14.0"
     js-yaml "^3.14.1"
