@@ -24,7 +24,7 @@ on:
 
 jobs:
   submodule-update:
-    if: github.event_name == 'workflow_dispatch'
+    if: ${{ github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -102,18 +102,18 @@ jobs:
           npm i -g gatsby-cli
           yarn build
         env:
+          GATSBY_TELEMETRY_DISABLED: 1
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           WARNINGS: ${{ secrets.WARNINGS }}
           NO_INDEX: ${{ env.NO_INDEX }}
-          GATSBY_TELEMETRY_DISABLED: 1
 
       - name: Check build
-        if: ${{ failure() }}
+        if: failure()
         run: |
           echo "AT_STATE=Build: failed" >> $GITHUB_ENV
 
       - name: Deploy to Netlify
-        if: ${{ success() }}
+        if: success()
         uses: netlify/actions/cli@master
         env:
           NETLIFY_AUTH_TOKEN: ${{ env.NETLIFY_AUTH_TOKEN }}
@@ -122,32 +122,32 @@ jobs:
           args: deploy --dir=public --prod
 
       - name: Check deploy
-        if: ${{ failure() && env.AT_STATE == ''}}
+        if: ${{ failure() && env.AT_STATE == '' }}
         run: |
           echo "AT_STATE=Deploy: failed" >> $GITHUB_ENV
 
       - name: Set message on success
-        if: ${{ success() }}
+        if: success()
         run: |
           echo "AT_STATE=Deploy: OK" >> $GITHUB_ENV
 
       - name: "Get commit message for 'workflow_dispatch' event"
-        if: github.event_name == 'workflow_dispatch'
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         run: echo "COMMIT_MESSAGE=${{ github.event.inputs.commit_message }}" >> $GITHUB_ENV
 
       # https://acdcjunior.dev/git-get-first-line-commit-message-shell.html
       # git log --oneline --format=%B -n 1 HEAD | head -n 1
       - name: "Extract first line from commit message of 'push' event"
-        if: github.event_name == 'push'
+        if: ${{ github.event_name == 'push' }}
         id: get_push_msg
         run: echo "::set-output name=commit_msg::${{ github.event.head_commit.message }}"
 
       - name: "Get commit message for 'push' event"
-        if: github.event_name == 'push'
+        if: ${{ github.event_name == 'push' }}
         run: echo "COMMIT_MESSAGE=${{ steps.get_push_msg.outputs.commit_msg }}" >> $GITHUB_ENV
 
       - name: Send to Telegram
-        if: ${{ always() }}
+        if: ${{ always() && !(env.AT_STATE == format('Deploy{0} OK', ':') && startsWith(env.COMMIT_MESSAGE, 'Bump ')) }}
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
