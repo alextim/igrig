@@ -59,7 +59,7 @@
     "@fastly/performance-observer-polyfill": "^2.0.0",
     "dotenv": "^10.0.0",
     "emotion-theming": "^11.0.0",
-    "gatsby": "^3.9.1",
+    "gatsby": "^3.10.0",
     "gatsby-plugin-emotion": "^6.10.0",
     "gatsby-plugin-feed": "^3.10.0",
     "gatsby-plugin-image": "^1.10.0",
