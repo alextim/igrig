@@ -27,5 +27,5 @@ updates:
       - "@alextim/at-sitemap"
     directory: "/"
     schedule:
-      interval: daily
+      interval: weekly
     versioning-strategy: increase
