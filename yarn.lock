@@ -7,10 +7,10 @@
   resolved "https://npm.pkg.github.com/download/@alextim/at-blog/0.3.1/31d5a8cee15dbf09feb5701a6acaaf2d4c05d355b233014f8b94e864752eac84#a4be1ec46cbfa7a85a9f0569ee28fd3806f3fc5c"
   integrity sha512-P85FKr+mg/Q7os/BAS00PxegStXTTGxeVl/lo+CbGlqEvNwHs7lVgtJnylr4JL5pmrNcPaz+7cfC6OhmeXeU6Q==
 
-"@alextim/at-seo@^0.3.0":
-  version "0.3.0"
-  resolved "https://npm.pkg.github.com/download/@alextim/at-seo/0.3.0/8d4af31451b58595d4e6c763a1efd48315e6b32ead13ee96ffef02ed6cf2e0ab#378f39089d4df078f4423be5e2b6f7d0e76b191b"
-  integrity sha512-FYzWraMBaBgHZJNgJhfBYIRb50Bjo4A/se54qF6bt7kvIa8aJo6BYReo1puqpblOIbmPfgZZlVJ1sKVmEaKK0A==
+"@alextim/at-seo@^0.4.0":
+  version "0.4.0"
+  resolved "https://npm.pkg.github.com/download/@alextim/at-seo/0.4.0/9ac01b6c13008e21cc140290e1134fce84eb5a76b267854a24cfa65fe7ec4e18#88a1d7cf242622612d17c3868a4044b6170a41c3"
+  integrity sha512-cl+701+dRPZi/C6CJF1sOOI1CSrTUleLryIgvpaPumik0U/sw1iAajCRLneqplalDEc63+RRL7lULZzmLnWThA==
 
 "@alextim/at-site-core@^0.3.1":
   version "0.3.1"
