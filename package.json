@@ -2,7 +2,7 @@
   "name": "igrig",
   "description": "Static website for `IGRIG`",
   "private": true,
-  "version": "0.0.3",
+  "version": "0.1.0",
   "license": "MIT",
   "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
   "keywords": [

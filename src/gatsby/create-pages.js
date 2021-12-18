@@ -8,6 +8,7 @@ const i18n = require('../i18n/i18n');
 
 module.exports = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
+  const { locales, defaultLang } = i18n;
 
   console.log('=====createPosts=====');
   const result = await graphql(`
@@ -42,7 +43,6 @@ module.exports = async ({ graphql, actions, reporter }) => {
   ['photo-serie', 'photo-project'].forEach((type) => {
     const edges = result.data.posts.edges.filter(({ node }) => node.type === type);
     createPages({
-      locales: result.data.site.siteMetadata.locales,
       edges,
 
       type,
@@ -55,7 +55,8 @@ module.exports = async ({ graphql, actions, reporter }) => {
 
       templatesDir: path.join(__dirname, '..', templatesDir, type),
 
-      i18n,
+      locales,
+      defaultLang,
 
       postListTemplateName: `${type}-list`,
       postDefaultTemplateName: `${type}-post`,
