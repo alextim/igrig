@@ -10,7 +10,7 @@ import React from 'react';
           crossOrigin="anonymous"
         />
 */
-export default function HTML(props) {
+const HTML = (props) => {
   const {
     htmlAttributes,
     headComponents,
@@ -49,4 +49,6 @@ export default function HTML(props) {
       </body>
     </html>
   );
-}
+};
+
+export default HTML;

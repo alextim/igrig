@@ -76,10 +76,7 @@ const getImages = (item) => {
   if (!img) {
     return [];
   }
-  return [
-    img.images.fallback.src,
-    img.images.sources[0].srcSet,
-  ];
+  return [img.images.fallback.src, img.images.sources[0].srcSet];
 };
 
 /**
@@ -103,17 +100,19 @@ const Hero = ({ navEdges, heroImages }) => {
 
   return (
     <div css={styleWrap}>
-      {heroMobile && <picture css={styleImage}>
-        <source media="(min-width: 992px)" srcSet={heroDesktopWebp} />
-        <source media="(min-width: 992px)" srcSet={heroDesktop} />
-        <source media="(orientation: landscape) and (min-width: 992px)" srcSet={heroTabletWebp} />
-        <source media="(orientation: landscape) and (min-width: 992px)" srcSet={heroTablet} />
-        <source media="(min-width: 750px)" srcSet={heroTabletWebp} />
-        <source media="(min-width: 750px)" srcSet={heroTablet} />
-        <source media="(max-width: 480px)" srcSet={heroMobileWebp} />
-        <source media="(max-width: 480px)" srcSet={heroMobile} />
-        <img src={heroMobile} alt={heroImages[0].image.alt} />
-      </picture>}
+      {heroMobile && (
+        <picture css={styleImage}>
+          <source media="(min-width: 992px)" srcSet={heroDesktopWebp} />
+          <source media="(min-width: 992px)" srcSet={heroDesktop} />
+          <source media="(orientation: landscape) and (min-width: 992px)" srcSet={heroTabletWebp} />
+          <source media="(orientation: landscape) and (min-width: 992px)" srcSet={heroTablet} />
+          <source media="(min-width: 750px)" srcSet={heroTabletWebp} />
+          <source media="(min-width: 750px)" srcSet={heroTablet} />
+          <source media="(max-width: 480px)" srcSet={heroMobileWebp} />
+          <source media="(max-width: 480px)" srcSet={heroMobile} />
+          <img src={heroMobile} alt={heroImages[0].image.alt} />
+        </picture>
+      )}
       <div css={styleTextWrap}>
         {navEdges.map(({ node: { title: navItemTitle, to } }, i) => (
           <a

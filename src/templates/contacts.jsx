@@ -63,13 +63,14 @@ const ContactItems = ({ icon, items, formatTitle, formatTo }) => {
     <div css={styleItemWrap}>
       <Icon name={icon} css={styleIcon} />
       {items.map((el) => (
-        <a key={el} href={formatTo(el)} target="_blank" rel="noindex noopener noreferrer">
+        <a key={el} href={formatTo(el)} target="_blank" rel="nofollow noopener noreferrer">
           {formatTitle(el)}
         </a>
       ))}
     </div>
   );
 };
+
 const Contacts = () => {
   const { email, voice } = useOrgContacts();
   const { whatsapp, telegram } = voice || {};
@@ -105,6 +106,7 @@ const ContactsTemplate = ({ data, location: { pathname }, pageContext: { locale 
     socialLinks,
     page: { cover, title, metaTitle, headline, metaDescription, noindex, html },
   } = data;
+
   return (
     <Layout
       title={title}

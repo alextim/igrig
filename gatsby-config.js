@@ -52,7 +52,7 @@ const pageSources = Object.keys(allDirs).map((name) => ({
   resolve: 'gatsby-source-filesystem',
   options: {
     name,
-    path: path.join(__dirname, contentDir, allDirs[name]),
+    path: path.join(__dirname, contentDir, allDirs[name].folder),
   },
 }));
 
@@ -251,7 +251,8 @@ const plugins = [
     options: {
       templatesDir: path.join(__dirname, 'src', config.templatesDir),
       pageDirs,
-      i18n,
+      locales: i18n.locales,
+      defaultLang: i18n.defaultLang,
       noIndex,
     },
   },
@@ -265,7 +266,8 @@ const plugins = [
       CREATE_TAG_PAGES: true,
       CREATE_CATEGORY_PAGES: false,
       CREATE_YEAR_PAGES: false,
-      i18n,
+      locales: i18n.locales,
+      defaultLang: i18n.defaultLang,
       noIndex,
     },
   },

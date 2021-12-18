@@ -10,25 +10,10 @@
 git diff --diff-filter=d --cached --name-only | grep "\.js.\?$" | xargs ./node_modules/.bin/eslint
 */
 module.exports = {
-  parser: '@babel/eslint-parser',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
     ecmaVersion: 2020,
-    sourceType: 'module',
-    allowImportExportEverywhere: true,
-    requireConfigFile: false,
-    babelOptions: {
-      // plugins: ['@babel/plugin-proposal-class-properties'],
-      presets: ['babel-preset-gatsby'],
-    },
   },
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
+
   env: {
     browser: true,
     commonjs: true,
@@ -66,5 +51,7 @@ module.exports = {
     'react/no-danger': 0,
     'react/jsx-props-no-spreading': 0,
     'react/prop-types': 'off',
+    'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
+    'no-restricted-exports': 'off',
   },
 };
