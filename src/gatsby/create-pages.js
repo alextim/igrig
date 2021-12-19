@@ -16,9 +16,6 @@ module.exports = async ({ graphql, actions, reporter }) => {
       site {
         siteMetadata {
           siteUrl
-          locales {
-            code
-          }
         }
       }
       posts: allMdPost(limit: 1000, sort: { fields: [datePublished], order: DESC }) {

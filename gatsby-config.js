@@ -6,7 +6,6 @@ const getCSP = require('@alextim/csp');
 
 const i18n = require('./src/i18n/i18n');
 const config = require('./igrig.content/config/website');
-const locales = require('./igrig.content/config/locales');
 const colors = require('./src/theme/colors');
 
 const manifestIconSrc = path.join(__dirname, 'src', 'assets', 'images', 'icon.png');
@@ -277,6 +276,8 @@ const plugins = [
     options: {
       createRobotsTxt: true,
       ignoreImagesWithoutAlt: false,
+      locales: i18n.locales,
+      defaultLang: i18n.defaultLang,
       noIndex,
     },
   },
@@ -298,8 +299,6 @@ if (config.googleAnalyticsID) {
 module.exports = {
   siteMetadata: {
     siteUrl: config.siteUrl,
-    locales: i18n.localeCodes.map((code) => ({ code, ...locales[code] })),
-    defaultLang: i18n.defaultLang,
   },
   plugins,
 };
