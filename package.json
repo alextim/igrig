@@ -49,7 +49,7 @@
   "dependencies": {
     "@alextim/at-blog": "^0.7.5",
     "@alextim/at-seo": "^0.4.5",
-    "@alextim/at-site-core": "^0.6.1",
+    "@alextim/at-site-core": "^0.7.0",
     "@alextim/at-sitemap": "^0.4.0",
     "@alextim/csp": "^0.1.2",
     "@alextim/i18n-utils": "^0.1.0",
@@ -96,7 +96,7 @@
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "7.27.1",
+    "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
     "eslint-webpack-plugin": "^3.1.1",
     "gatsby-plugin-eslint": "^4.0.2",
@@ -107,7 +107,7 @@
     "prettier-eslint": "^13.0.0",
     "prettier-eslint-cli": "^5.0.1",
     "preval.macro": "^5.0.0",
-    "stylelint": "^14.1.0",
+    "stylelint": "^14.2.0",
     "stylelint-config-standard": "^24.0.0"
   },
   "comments": {
