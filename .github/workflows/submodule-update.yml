@@ -10,7 +10,7 @@ on:
       - '.github/**/*.*'
       - '.gitignore'
       - '.vscode/**/*.*'
-      - 'README.md'
+      - '**.md'
 
   workflow_dispatch:
     branches:
@@ -21,6 +21,11 @@ on:
         description: commit message
         required: true
         default: remote data update
+
+concurrency:
+  # Ensures that only one deploy task per branch/environment will run at a time.
+  group: environment-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   submodule-update:
@@ -59,27 +64,18 @@ jobs:
           ref: ${{ github.event.ref }}
           # token: ${{ secrets.ACCESS_TOKEN }}
 
-      - name: Setup Node environment
+      - name: Setup Node
         uses: actions/setup-node@v2.5.1
         with:
-          node-version: 14.x
+          node-version: 16
+          cache: 'yarn'
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - uses: actions/cache@v2.1.7
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn-
-
-      - name: Installing dependencies
-        # if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn install --prefer-offline
+      - name: Installing NPM dependencies
+        if: steps.cache-npm.outputs.cache-hit != 'true'
+        run: yarn install --prefer-offline --frozen-lockfile --ignore-engines --registry https://registry.npmjs.org --network-timeout 300000
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          CI: true
 
       - name: Set development env
         if: ${{ github.ref == 'refs/heads/dev' }}
@@ -114,16 +110,12 @@ jobs:
 
       - name: Deploy to Netlify
         if: success()
-        #uses: netlify/actions/cli@master
-        #env:
-        #  NETLIFY_AUTH_TOKEN: ${{ env.NETLIFY_AUTH_TOKEN }}
-        #  NETLIFY_SITE_ID: ${{ env.NETLIFY_SITE_ID }}
-        #with:
-        #  args: deploy --dir=public --prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ env.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ env.NETLIFY_SITE_ID }}
         run: |
           npm i -g netlify-cli
-          netlify deploy --prod --dir=public --auth ${{ env.NETLIFY_AUTH_TOKEN }} --site ${{ env.NETLIFY_SITE_ID }}
-
+          netlify deploy --prod --dir=public --telemetry-disable
 
       - name: Check deploy
         if: ${{ failure() && env.AT_STATE == '' }}
@@ -152,8 +144,6 @@ jobs:
 
       - name: Send to Telegram
         if: ${{ always() && !(env.AT_STATE == format('Deploy{0} OK', ':') && startsWith(env.COMMIT_MESSAGE, 'Bump ')) }}
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          args: "${{ env.AT_STATE }}, branch: ${{ env.BRANCH_NAME }}, ${{ env.COMMIT_MESSAGE }}"
+        run: |
+          T_MESSAGE="${{ env.AT_STATE }}, branch: ${{ env.BRANCH_NAME }}, ${{ env.COMMIT_MESSAGE }}"
+          curl "https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage?text=$T_MESSAGE&chat_id=${{ secrets.TELEGRAM_TO }}"
