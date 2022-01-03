@@ -1,41 +1,29 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/react';
 import { graphql } from 'gatsby';
 
-import PostList from '../../components/blog/PostList';
+import PostList from '../components/blog/PostList';
 
-const CategoryTemplate = ({ data, location: { pathname }, pageContext }) => {
-  const { category } = pageContext;
-  const {
-    page: { title: defaultTitle },
-  } = data;
+const PostListTemplate = ({ data, location: { pathname }, pageContext }) => (
+  <PostList data={data} pathname={pathname} pageContext={pageContext} />
+);
 
-  const title = `${defaultTitle} ${category}`;
-
-  return <PostList data={data} pathname={pathname} pageContext={pageContext} title={title} />;
-};
-
-export default CategoryTemplate;
+export default PostListTemplate;
 
 export const pageQuery = graphql`
-  query categoryQuery(
-    $locale: String!
-    $category: String
-    $skip: Int!
-    $limit: Int!
-    $type: String!
-  ) {
-    page: mdPage(slug: { regex: "//category//" }, locale: { eq: $locale }) {
+  query PostListQuery($locale: String!, $skip: Int!, $limit: Int!, $type: String!) {
+    #
+    # blogPath
+    # regex: "//blog//"
+    #
+    page: mdPage(slug: { regex: "//blog//" }, locale: { eq: $locale }) {
       ...MdPageFragment
     }
     posts: allMdPost(
+      sort: { fields: [featured, datePublished], order: [ASC, DESC] }
       limit: $limit
       skip: $skip
-      sort: { fields: [featured, datePublished], order: [ASC, DESC] }
-      filter: {
-        category: { elemMatch: { title: { in: [$category] } } }
-        locale: { eq: $locale }
-        type: { eq: $type }
-      }
+      filter: { locale: { eq: $locale }, type: { eq: $type } }
     ) {
       edges {
         node {

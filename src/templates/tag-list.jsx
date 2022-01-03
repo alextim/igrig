@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../../components/Layout';
-import SEO from '../../components/SEO';
-import TagList from '../../components/blog/TagList';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
+import TagList from '../components/blog/TagList';
 
-import styleHtml from '../../components/styles/styleHtml';
+import styleHtml from '../components/styles/styleHtml';
 
 const TagListTemplate = ({ data, location: { pathname }, pageContext: { tags, locale } }) => {
   const { translations, address, mainNav, socialLinks, page } = data;

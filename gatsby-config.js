@@ -250,21 +250,13 @@ const plugins = [
     options: {
       templatesDir: path.join(__dirname, 'src', config.templatesDir),
       pageDirs,
-      locales: i18n.locales,
-      defaultLang: i18n.defaultLang,
-      noIndex,
-    },
-  },
-  {
-    resolve: '@alextim/at-blog',
-    // resolve: 'at-blog',
-    options: {
-      templatesDir: path.join(__dirname, 'src', config.templatesDir, 'blog'),
+
       cardsPerPage,
       postDirs,
       CREATE_TAG_PAGES: true,
       CREATE_CATEGORY_PAGES: false,
       CREATE_YEAR_PAGES: false,
+
       locales: i18n.locales,
       defaultLang: i18n.defaultLang,
       noIndex,

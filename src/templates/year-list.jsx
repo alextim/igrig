@@ -1,24 +1,16 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../../components/Layout';
-import SEO from '../../components/SEO';
-import CategoryList from '../../components/blog/CategoryList';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
+import YearList from '../components/blog/YearList';
 
-import styleHtml from '../../components/styles/styleHtml';
+import styleHtml from '../components/styles/styleHtml';
 
-const CategoryListTemplate = ({
-  data,
-  location: { pathname },
-  pageContext: { categories, locale },
-}) => {
-  const {
-    translations,
-    address,
-    mainNav,
-    socialLinks,
-    page: { html, title, metaTitle, headline, metaDescription, noindex },
-  } = data;
+const YearsListTemplate = ({ data, location: { pathname }, pageContext: { locale, years } }) => {
+  const { translations, address, mainNav, socialLinks, page } = data;
+
+  const { html, title, metaTitle, headline, metaDescription, noindex } = page;
 
   return (
     <Layout
@@ -34,16 +26,16 @@ const CategoryListTemplate = ({
         noindex={noindex}
       />
       {html && <div css={styleHtml} dangerouslySetInnerHTML={{ __html: html }} />}
-      <CategoryList categories={categories} count />
+      <YearList years={years} count />
     </Layout>
   );
 };
 
-export default CategoryListTemplate;
+export default YearsListTemplate;
 
 export const pageQuery = graphql`
-  query categoryListQuery($locale: String!) {
-    page: mdPage(slug: { regex: "//category-list//" }, locale: { eq: $locale }) {
+  query yearListQuery($locale: String!) {
+    page: mdPage(slug: { regex: "//year-list//" }, locale: { eq: $locale }) {
       ...MdPageFragment
     }
     address: address(locale: { eq: $locale }) {

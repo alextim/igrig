@@ -1,24 +1,30 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import PostList from '../../components/blog/PostList';
+import PostList from '../components/blog/PostList';
 
-const TagTemplate = ({ data, location: { pathname }, pageContext }) => {
-  const { tag } = pageContext;
+const CategoryTemplate = ({ data, location: { pathname }, pageContext }) => {
+  const { category } = pageContext;
   const {
     page: { title: defaultTitle },
   } = data;
 
-  const title = `${defaultTitle} ${tag}`;
+  const title = `${defaultTitle} ${category}`;
 
   return <PostList data={data} pathname={pathname} pageContext={pageContext} title={title} />;
 };
 
-export default TagTemplate;
+export default CategoryTemplate;
 
 export const pageQuery = graphql`
-  query tagQuery($locale: String!, $tag: String, $skip: Int!, $limit: Int!, $type: String!) {
-    page: mdPage(slug: { regex: "//tags//" }, locale: { eq: $locale }) {
+  query categoryQuery(
+    $locale: String!
+    $category: String
+    $skip: Int!
+    $limit: Int!
+    $type: String!
+  ) {
+    page: mdPage(slug: { regex: "//category//" }, locale: { eq: $locale }) {
       ...MdPageFragment
     }
     posts: allMdPost(
@@ -26,9 +32,9 @@ export const pageQuery = graphql`
       skip: $skip
       sort: { fields: [featured, datePublished], order: [ASC, DESC] }
       filter: {
-        type: { eq: $type }
+        category: { elemMatch: { title: { in: [$category] } } }
         locale: { eq: $locale }
-        tags: { elemMatch: { title: { in: [$tag] } } }
+        type: { eq: $type }
       }
     ) {
       edges {

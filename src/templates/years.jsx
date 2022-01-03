@@ -1,29 +1,31 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
+import React from 'react';
 import { graphql } from 'gatsby';
 
-import PostList from '../../components/blog/PostList';
+import PostList from '../components/blog/PostList';
 
-const PostListTemplate = ({ data, location: { pathname }, pageContext }) => (
-  <PostList data={data} pathname={pathname} pageContext={pageContext} />
-);
+const YearTemplate = ({ data, location: { pathname }, pageContext }) => {
+  const { year } = pageContext;
+  const {
+    page: { title: defaultTitle },
+  } = data;
 
-export default PostListTemplate;
+  const title = `${defaultTitle} ${year}`;
+
+  return <PostList data={data} pathname={pathname} pageContext={pageContext} title={title} />;
+};
+
+export default YearTemplate;
 
 export const pageQuery = graphql`
-  query PostListQuery($locale: String!, $skip: Int!, $limit: Int!, $type: String!) {
-    #
-    # blogPath
-    # regex: "//blog//"
-    #
-    page: mdPage(slug: { regex: "//blog//" }, locale: { eq: $locale }) {
+  query yearQuery($locale: String!, $year: Int, $skip: Int!, $limit: Int!, $type: String!) {
+    page: mdPage(slug: { regex: "//years//" }, locale: { eq: $locale }) {
       ...MdPageFragment
     }
     posts: allMdPost(
-      sort: { fields: [featured, datePublished], order: [ASC, DESC] }
       limit: $limit
       skip: $skip
-      filter: { locale: { eq: $locale }, type: { eq: $type } }
+      sort: { fields: [featured, datePublished], order: [ASC, DESC] }
+      filter: { year: { eq: $year }, locale: { eq: $locale }, type: { eq: $type } }
     ) {
       edges {
         node {

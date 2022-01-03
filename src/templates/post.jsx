@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/react';
 import { graphql } from 'gatsby';
 
-import Post from '../../components/blog/Post';
+import Post from '../components/blog/Post';
 
 const PostTemplate = ({ data, location: { pathname }, pageContext: { locale } }) => (
   <Post data={data} pathname={pathname} locale={locale} />
