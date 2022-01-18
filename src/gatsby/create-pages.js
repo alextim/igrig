@@ -1,6 +1,6 @@
+/* eslint-disable no-console */
 const path = require('path');
 const { createBlogPages } = require('@alextim/at-site-core');
-
 
 const { cardsPerPage, templatesDir } = require('../../igrig.content/config/website');
 const i18n = require('../i18n/i18n');
