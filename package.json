@@ -104,7 +104,7 @@
     "prettier": "^2.5.1",
     "prettier-eslint": "^13.0.0",
     "preval.macro": "^5.0.0",
-    "stylelint": "^14.2.0",
+    "stylelint": "^14.3.0",
     "stylelint-config-standard": "^24.0.0"
   },
   "comments": {
