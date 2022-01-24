@@ -79,7 +79,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.7",
+    "@babel/core": "^7.16.12",
     "@babel/eslint-parser": "^7.16.5",
     "dotenv": "^14.2.0",
     "@emotion/eslint-plugin": "^11.7.0",
