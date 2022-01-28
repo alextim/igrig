@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 // const rootPath = `${__PATH_PREFIX__}/`;
 //   if (location.pathname === rootPath) {
 

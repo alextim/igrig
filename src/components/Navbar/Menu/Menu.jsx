@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import MenuItem from './MenuItem';
 import useMainNavItems from '../../../hooks/useMainNavtems';
 

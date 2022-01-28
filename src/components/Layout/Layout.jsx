@@ -1,5 +1,3 @@
-/* @jsx jsx */
-import { jsx } from '@emotion/react';
 import BaseLayout from './BaseLayout';
 
 import Container from '../Container';

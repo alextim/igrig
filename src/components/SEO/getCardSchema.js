@@ -7,15 +7,7 @@ import { locales } from '../../i18n/i18n';
 import { useLocale } from '../../i18n/i18n-context';
 import useOrgAddress from '../../hooks/useOrgAddress';
 
-const getCardSchema = ({
-  to,
-  title,
-  headline,
-  cover,
-  datePublished,
-  dateModified,
-  pageType = 'Article',
-}) => {
+const getCardSchema = ({ to, title, headline, cover, datePublished, dateModified, pageType = 'Article' }) => {
   const { locale } = useLocale();
   const { name: organizationName } = useOrgAddress();
 

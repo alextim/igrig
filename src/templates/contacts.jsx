@@ -1,18 +1,16 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import utils from '@alextim/utils';
 
-import useOrgContacts from '../hooks/useOrgContacts';
+import useOrgContacts from '@/hooks/useOrgContacts';
 
-import SEO from '../components/SEO';
-import Layout from '../components/Layout/FullWidthLayout';
+import SEO from '@/components/SEO';
+import Layout from '@/components/Layout/FullWidthLayout';
 
-import mq from '../theme/media-queries';
-import Section from '../components/Section';
-import Icon from '../components/Icon';
-import styleHtmlDef from '../components/styles/styleHtml';
+import mq from '@/theme/media-queries';
+import Section from '@/components/Section';
+import Icon from '@/components/Icon';
+import styleHtmlDef from './styles/styleHtml';
 // import sizes from '../../../theme/sizes';
 
 const styleHtml = (t) => ({

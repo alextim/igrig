@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import { styleWrap, styleTitle, styleSubtitle, styleImg, styleText } from './item-default-styles';
 
@@ -13,7 +11,7 @@ const SectionItem = ({ data }) => {
       {image && image.sm && (
         <GatsbyImage
           css={styleImg}
-          image={image.sm.childImageSharp.gatsbyImageData}
+          image={getImage(image.sm)}
           alt={image.alt}
           title={image.title}
         />

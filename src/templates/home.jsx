@@ -1,11 +1,10 @@
-import React from 'react';
 import { graphql } from 'gatsby';
 
-import SEO from '../components/SEO';
+import SEO from '@/components/SEO';
 
-import HomeLayout from '../components/Layout/HomeLayout';
+import HomeLayout from '@/components/Layout/HomeLayout';
 
-import Hero from '../components/Hero';
+import Hero from '@/components/Hero';
 
 const HomeTemplate = ({ data, location: { pathname }, pageContext: { locale } }) => {
   const {

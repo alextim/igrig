@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import mq from '../../../theme/media-queries';
 import colors from '../../../theme/colors';
 import LocalizedAnchor from '../../LocalizedAnchor';

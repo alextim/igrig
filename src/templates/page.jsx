@@ -1,10 +1,9 @@
-import React from 'react';
 import { graphql } from 'gatsby';
 
-import SEO from '../components/SEO';
+import SEO from '@/components/SEO';
 
-import Layout from '../components/Layout';
-import Sections from '../components/Sections';
+import Layout from '@/components/Layout';
+import Sections from '@/components/Sections';
 
 const PageTemplate = ({ data, location: { pathname }, pageContext: { locale } }) => {
   const {

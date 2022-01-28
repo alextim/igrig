@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'gatsby';
 
 import { useLocale } from '../../i18n/i18n-context';

@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import { space } from '../../theme/space';
 import fonts from '../../theme/fonts';
 import { fontSizes } from '../../theme/font-sizes';

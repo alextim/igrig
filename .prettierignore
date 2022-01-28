@@ -1,8 +1,11 @@
-.git
-.vscode
 .cache
+.git
+.husky
 .netlify
+.vscode
 node_modules
 public
 package.json
 package-lock.json
+igrig.content
+yarn.lock

@@ -49,7 +49,7 @@ module.exports = async ({ graphql, actions, reporter }) => {
 
       blogPath: `/${type}s/`,
 
-      templatesDir: path.join(__dirname, '..', templatesDir, type),
+      templatesDir: path.join(__dirname, '..', templatesDir),
 
       locales,
       defaultLang,

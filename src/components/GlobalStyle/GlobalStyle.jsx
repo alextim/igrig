@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable @emotion/syntax-preference */
 import { Global, css } from '@emotion/react';
 
 import BODY_PREVENT_SCROLLING from '../../constants/body-prevent-scrolling';

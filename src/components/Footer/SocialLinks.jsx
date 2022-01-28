@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
 import utils from '@alextim/utils';
 
 import mq from '../../theme/media-queries';

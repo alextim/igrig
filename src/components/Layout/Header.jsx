@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import colors from '../../theme/colors';
 import sizes from '../../theme/sizes';
 import mq from '../../theme/media-queries';

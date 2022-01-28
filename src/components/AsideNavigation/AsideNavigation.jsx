@@ -1,6 +1,4 @@
 /* eslint-disable import/no-unresolved */
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
 import { Location } from '@reach/router';
 
 import NavItem from './NavItem';

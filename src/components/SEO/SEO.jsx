@@ -1,4 +1,3 @@
-import React from 'react';
 import { SeoBase } from '@alextim/at-seo';
 
 import config from '../../../igrig.content/config/website';

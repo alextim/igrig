@@ -1,5 +1,4 @@
-/* @jsx jsx */
-import { jsx, ThemeProvider } from '@emotion/react';
+import { ThemeProvider } from '@emotion/react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import theme from '../../theme';

@@ -1,9 +1,7 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
 import { graphql } from 'gatsby';
 
-import SEO from '../components/SEO';
-import Layout from '../components/Layout';
+import SEO from '@/components/SEO';
+import Layout from '@/components/Layout';
 
 const wrapStyle = (t) => ({
   textAlign: 'center',

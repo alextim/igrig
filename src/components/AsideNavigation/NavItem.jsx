@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
 import { Link } from 'gatsby';
 
 import colors from '../../theme/colors';

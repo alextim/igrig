@@ -1,6 +1,3 @@
-/* @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import BaseLayout from './BaseLayout';
 import { ContainerFullWidth } from '../Container';
 

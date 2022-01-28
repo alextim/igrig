@@ -1,9 +1,5 @@
 version: 2
 registries:
-  "@alextim/at-blog":
-    type: npm-registry
-    url: https://npm.pkg.github.com
-    token: ${{secrets.NPM_TOKEN}}
   "@alextim/at-site-core":
     type: npm-registry
     url: https://npm.pkg.github.com
@@ -22,10 +18,11 @@ updates:
   - package-ecosystem: npm
     open-pull-requests-limit: 10
     registries:
-      - "@alextim/at-blog"
       - "@alextim/at-site-core"
       - "@alextim/at-sitemap"
     directory: "/"
     schedule:
       interval: weekly
     versioning-strategy: increase
+    ignore:
+      - dependency-name: gatsby

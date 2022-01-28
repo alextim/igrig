@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import Fa500px from '../assets/fa/brand/f500px.svg';
 import FaFacebookF from '../assets/fa/brand/facebook-f.svg';
 import FaInstagram from '../assets/fa/brand/instagram.svg';

@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 // import { space } from '../../theme/space';
 import colors from '../../theme/colors';
 

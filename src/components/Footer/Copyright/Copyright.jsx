@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
 import { useAppContext } from '../../../context';
 import useOrganizationContacts from '../../../hooks/useOrgContacts';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 /**
  *
  * <svg aria-hidden="true" class="test"><use xlink:href="#icon__article1"></use></svg>

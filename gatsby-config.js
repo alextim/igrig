@@ -89,9 +89,11 @@ const plugins = [
          * gatsby-remark-relative-images must go before gatsby-remark-images
          *
          *  */
+        /*
         {
           resolve: 'gatsby-remark-relative-images',
         },
+        */
         {
           resolve: 'gatsby-remark-images',
           options: {
@@ -154,16 +156,6 @@ const plugins = [
       },
     },
   },
-  {
-    resolve: 'gatsby-plugin-eslint',
-    options: {
-      stages: ['develop'],
-      extensions: ['js', 'jsx'],
-      exclude: ['node_modules', '.cache', 'public', '.netlify', '.vscode', '.husky'],
-      // Any eslint-webpack-plugin options below
-    },
-  },
-
   // this (optional) plugin enables Progressive Web App + Offline functionality
   // To learn more, visit: https://gatsby.dev/offline
   // 'gatsby-plugin-offline',

@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-
+/* eslint-disable react/button-has-type */
 import colors from '../../theme/colors';
 import { space } from '../../theme/space';
 import transition from '../../theme/transition';

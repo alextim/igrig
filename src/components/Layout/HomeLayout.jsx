@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, ThemeProvider } from '@emotion/react';
+import { ThemeProvider } from '@emotion/react';
 
 import theme from '../../theme';
 import mq from '../../theme/media-queries';

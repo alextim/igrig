@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
 // eslint-disable-next-line import/no-unresolved
 import { Location } from '@reach/router';
 import { Link } from 'gatsby';
