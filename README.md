@@ -4,5 +4,4 @@
 
 [Документация к сайту](https://alextim.github.io/igrig.docs/)
 
-
 Этот проект Open Source и доступен под лицезией [MIT](https://github.com/alextim/igrig/blob/main/LICENSE)
