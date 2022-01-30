@@ -1,9 +1,9 @@
-import mq from '../../theme/media-queries';
-import { space } from '../../theme/space';
-import sizes from '../../theme/sizes';
-import container from '../../theme/container';
+import mq from '@/theme/media-queries';
+import { space } from '@/theme/space';
+import sizes from '@/theme/sizes';
+import container from '@/theme/container';
 
-import useSiteDescription from '../../hooks/useSiteDescription';
+import useSiteDescription from '@/hooks/useSiteDescription';
 
 import AsideNavigation from '../AsideNavigation';
 

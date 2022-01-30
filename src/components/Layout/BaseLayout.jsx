@@ -1,9 +1,9 @@
 import { ThemeProvider } from '@emotion/react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-import theme from '../../theme';
+import theme from '@/theme';
 
-import AppContextProvider from '../../context';
+import AppContextProvider from '@/context';
 import GlobalStyle from '../GlobalStyle';
 
 import PageHeader from '../PageHeader';
@@ -26,14 +26,7 @@ const BaseLayout = ({ cover, title, headline, context, children }) => (
       <Root>
         <Header />
         <Main>
-          {cover && (
-            <GatsbyImage
-              image={getImage(cover.sm)}
-              layout="fullWidth"
-              alt={cover.alt}
-              css={styleImage}
-            />
-          )}
+          {cover && <GatsbyImage image={getImage(cover.sm)} layout="fullWidth" alt={cover.alt} css={styleImage} />}
           <PageHeader title={title} headline={headline} />
           {children}
         </Main>

@@ -1,10 +1,9 @@
 import utils from '@alextim/utils';
 
-import mq from '../../theme/media-queries';
-import SocialLink from './SocialLink';
-import useSocialLinks from '../../hooks/useSocialLinks';
-
+import mq from '@/theme/media-queries';
+import useSocialLinks from '@/hooks/useSocialLinks';
 import Icon from '../Icon';
+import SocialLink from './SocialLink';
 
 const styleWrap = {
   display: 'flex',

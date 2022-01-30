@@ -1,10 +1,10 @@
 import { ThemeProvider } from '@emotion/react';
 
-import theme from '../../theme';
-import mq from '../../theme/media-queries';
-import sizes from '../../theme/sizes';
+import theme from '@/theme';
+import mq from '@/theme/media-queries';
+import sizes from '@/theme/sizes';
 
-import AppContextProvider from '../../context';
+import AppContextProvider from '@/context';
 import GlobalStyle from '../GlobalStyle';
 
 import Footer from '../Footer';
@@ -50,7 +50,7 @@ const styleFooterWrap = {
   width: '100%',
 };
 
-const HomeLayout = ({ context, children }) => {
+const HomeLayout = ({ context, children }) => (
   /**
    * The trick to viewport units on mobile
    * https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
@@ -73,20 +73,19 @@ const HomeLayout = ({ context, children }) => {
     };
   }, []);
   */
-  return (
-    <AppContextProvider value={context}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <div css={styleRoot}>
-          <Header />
-          <div css={styleMain}>{children}</div>
-          <Aside />
-          <div css={styleFooterWrap}>
-            <Footer />
-          </div>
+  <AppContextProvider value={context}>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <div css={styleRoot}>
+        <Header />
+        <div css={styleMain}>{children}</div>
+        <Aside />
+        <div css={styleFooterWrap}>
+          <Footer />
         </div>
-      </ThemeProvider>
-    </AppContextProvider>
-  );
-};
+      </div>
+    </ThemeProvider>
+  </AppContextProvider>
+);
+
 export default HomeLayout;

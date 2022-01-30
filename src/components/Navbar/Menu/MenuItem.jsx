@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 
-import colors from '../../../theme/colors';
-import fontWeights from '../../../theme/font-weights';
+import colors from '@/theme/colors';
+import fontWeights from '@/theme/font-weights';
 
 const activeStyle = {
   boxShadow: `0 -2px 0 ${colors.header.nav.item.boxShadowColor} inset`,

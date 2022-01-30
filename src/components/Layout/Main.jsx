@@ -1,5 +1,5 @@
-import mq from '../../theme/media-queries';
-import sizes from '../../theme/sizes';
+import mq from '@/theme/media-queries';
+import sizes from '@/theme/sizes';
 
 const styleMain = {
   flex: '1 1 auto',

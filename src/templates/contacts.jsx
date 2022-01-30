@@ -11,7 +11,6 @@ import mq from '@/theme/media-queries';
 import Section from '@/components/Section';
 import Icon from '@/components/Icon';
 import styleHtmlDef from './styles/styleHtml';
-// import sizes from '../../../theme/sizes';
 
 const styleHtml = (t) => ({
   ...styleHtmlDef,

@@ -1,5 +1,5 @@
+import useMainNavItems from '@/hooks/useMainNavtems';
 import MenuItem from './MenuItem';
-import useMainNavItems from '../../../hooks/useMainNavtems';
 
 const styleWrap = {
   display: 'flex',

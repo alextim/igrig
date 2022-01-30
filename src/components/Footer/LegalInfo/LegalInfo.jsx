@@ -1,7 +1,7 @@
-import mq from '../../../theme/media-queries';
-import colors from '../../../theme/colors';
-import LocalizedAnchor from '../../LocalizedAnchor';
-import { useTranslation } from '../../../i18n';
+import mq from '@/theme/media-queries';
+import colors from '@/theme/colors';
+import { useTranslation } from '@/i18n';
+import LocalizedAnchor from '@/components/LocalizedAnchor';
 
 const style = {
   gridArea: 'legal',

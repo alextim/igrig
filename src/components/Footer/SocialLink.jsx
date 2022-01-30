@@ -1,5 +1,4 @@
-// import { space } from '../../theme/space';
-import colors from '../../theme/colors';
+import colors from '@/theme/colors';
 
 const style = {
   display: 'flex',

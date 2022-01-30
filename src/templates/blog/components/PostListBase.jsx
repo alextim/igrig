@@ -12,8 +12,6 @@ import { prevLink, nextLink } from './helpers/pagination';
 import styleCardsWrap from '../../styles/styleCardsWrap';
 import styleHtml from '../../styles/styleHtml';
 
-// import loadable from '@loadable/component';
-
 import PostPagination from './PostPagination';
 // import { CategoryWidget, TagsWidget, YearsWidget } from '../components/post-widgets';
 
@@ -67,12 +65,7 @@ const PostListBase = ({
   }
 
   return (
-    <BaseLayout
-      cover={cover}
-      title={title || defaultTitle}
-      headline={headline}
-      context={{ translations, address, mainNav, socialLinks }}
-    >
+    <BaseLayout cover={cover} title={title || defaultTitle} headline={headline} context={{ translations, address, mainNav, socialLinks }}>
       <SEO
         locale={locale}
         title={metaTitle}

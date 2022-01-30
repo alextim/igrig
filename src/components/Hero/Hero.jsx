@@ -1,7 +1,7 @@
 import { getImage } from 'gatsby-plugin-image';
 
-import mq from '../../theme/media-queries';
-import fonts from '../../theme/fonts';
+import mq from '@/theme/media-queries';
+import fonts from '@/theme/fonts';
 
 const styleWrap = {
   display: 'grid',

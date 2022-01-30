@@ -1,5 +1,5 @@
-import { useAppContext } from '../../../context';
-import useOrganizationContacts from '../../../hooks/useOrgContacts';
+import { useAppContext } from '@/context';
+import useOrganizationContacts from '@/hooks/useOrgContacts';
 
 const style = {
   gridArea: 'c',

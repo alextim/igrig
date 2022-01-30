@@ -1,11 +1,11 @@
 /* eslint-disable react/button-has-type */
-import colors from '../../theme/colors';
-import { space } from '../../theme/space';
-import transition from '../../theme/transition';
-import fonts from '../../theme/fonts';
-import { fontSizes } from '../../theme/font-sizes';
-import fontWeights from '../../theme/font-weights';
-import buttons from '../../theme/buttons';
+import colors from '@/theme/colors';
+import { space } from '@/theme/space';
+import transition from '@/theme/transition';
+import fonts from '@/theme/fonts';
+import { fontSizes } from '@/theme/font-sizes';
+import fontWeights from '@/theme/font-weights';
+import buttons from '@/theme/buttons';
 
 const focusStyle = {
   outline: 'none',
@@ -85,18 +85,7 @@ const buttonStyles = {
   },
 };
 
-const ButtonBase = ({
-  to,
-  overrideCSS,
-  icon,
-  children,
-  linkComponent,
-  tag,
-  secondary,
-  tracking,
-  variant,
-  ...rest
-}) => {
+const ButtonBase = ({ to, overrideCSS, icon, children, linkComponent, tag, secondary, tracking, variant, ...rest }) => {
   if (tag === 'link') {
     components.link = linkComponent;
   }

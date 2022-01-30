@@ -1,12 +1,12 @@
 import { Link } from 'gatsby';
 
-import i18n from '../../i18n';
-import { useLocale } from '../../i18n/i18n-context';
+import i18n from '@/i18n';
+import { useLocale } from '@/i18n/i18n-context';
 
-import mq from '../../theme/media-queries';
-import colors from '../../theme/colors';
-import fonts from '../../theme/fonts';
-import { space } from '../../theme/space';
+import mq from '@/theme/media-queries';
+import colors from '@/theme/colors';
+import fonts from '@/theme/fonts';
+import { space } from '@/theme/space';
 
 const SITE_LOGO = '/assets/images/logo.png';
 
@@ -68,13 +68,7 @@ const Logo = ({ onClick }) => {
   const to = i18n.localizePath('/', locale);
   return (
     <Link css={styleWrap} to={to} onClick={onClick}>
-      <img
-        src={SITE_LOGO}
-        alt={i18n.locales[locale].siteTitle}
-        height="26"
-        width="29"
-        css={styleImg}
-      />
+      <img src={SITE_LOGO} alt={i18n.locales[locale].siteTitle} height="26" width="29" css={styleImg} />
       <div css={styleTextWrap}>
         {i18n.locales[locale].siteTitle.split(' ').map((w) => (
           <span key={w} css={styleWord}>

@@ -1,5 +1,5 @@
-import mq from '../../theme/media-queries';
-import container from '../../theme/container';
+import mq from '@/theme/media-queries';
+import container from '@/theme/container';
 
 export const ContainerHero = ({ children }) => children;
 

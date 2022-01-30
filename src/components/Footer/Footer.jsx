@@ -1,8 +1,8 @@
-import colors from '../../theme/colors';
-import { fontSizes } from '../../theme/font-sizes';
-import mq from '../../theme/media-queries';
-import sizes from '../../theme/sizes';
-import container from '../../theme/container';
+import colors from '@/theme/colors';
+import { fontSizes } from '@/theme/font-sizes';
+import mq from '@/theme/media-queries';
+import sizes from '@/theme/sizes';
+import container from '@/theme/container';
 
 import LegalInfo from './LegalInfo';
 import SocialLinks from './SocialLinks';

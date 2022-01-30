@@ -1,8 +1,8 @@
 /* eslint-disable import/no-unresolved */
 import { Location } from '@reach/router';
 
+import useMainNavItems from '@/hooks/useMainNavtems';
 import NavItem from './NavItem';
-import useMainNavItems from '../../hooks/useMainNavtems';
 
 const styleWrap = {
   gridArea: 'nav',

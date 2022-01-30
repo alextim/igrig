@@ -5,11 +5,7 @@
  */
 const IconDefinitions = () => (
   <div aria-hidden="true">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      style={{ position: 'absolute', width: 0, height: 0 }}
-      overflow="hidden"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', width: 0, height: 0 }} overflow="hidden">
       <defs>
         <symbol id="icon__article4" viewBox="0 0 30 30">
           <path d="M6.25 5.25h17.51v1.5H6.25zM6.25 11.25h17.51v1.5H6.25zM6.25 17.25h17.51v1.5H6.25zM6.25 23.25h17.51v1.5H6.25z" />

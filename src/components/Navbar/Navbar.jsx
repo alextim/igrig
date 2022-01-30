@@ -2,21 +2,21 @@ import React, { useState } from 'react';
 // eslint-disable-next-line import/no-unresolved
 import { Location } from '@reach/router';
 
-import BODY_PREVENT_SCROLLING from '../../constants/body-prevent-scrolling';
+import BODY_PREVENT_SCROLLING from '@/constants/body-prevent-scrolling';
 
-import mq from '../../theme/media-queries';
-import sizes from '../../theme/sizes';
-import { space } from '../../theme/space';
-import fonts from '../../theme/fonts';
+import mq from '@/theme/media-queries';
+import sizes from '@/theme/sizes';
+import { space } from '@/theme/space';
+import fonts from '@/theme/fonts';
+import { fontSizes } from '@/theme/font-sizes';
 
-import useSiteHeadline from '../../hooks/useSiteHeadline';
+import useSiteHeadline from '@/hooks/useSiteHeadline';
 
 import Logo from '../Logo';
 import LanguageSwitch from '../LanguageSwitch';
 import Hamburger from '../Hamburger';
 
 import Menu from './Menu';
-import { fontSizes } from '../../theme/font-sizes';
 
 const styleWrap = {
   display: 'grid',
@@ -151,12 +151,7 @@ const Navbar = () => {
             </div>
             <div css={styleR}>
               <LanguageSwitch extraStyle={styleShowOnDesktop} closeMenu={close} />
-              <Hamburger
-                open={isMenuOpen}
-                bp={mq.lg}
-                m={`0 -0.75rem 0 ${space[4]}`}
-                onClick={toggleOpen}
-              />
+              <Hamburger open={isMenuOpen} bp={mq.lg} m={`0 -0.75rem 0 ${space[4]}`} onClick={toggleOpen} />
             </div>
             <div css={styleSlogan}>{siteHeadline}</div>
           </div>

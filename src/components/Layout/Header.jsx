@@ -1,8 +1,8 @@
-import colors from '../../theme/colors';
-import sizes from '../../theme/sizes';
-import mq from '../../theme/media-queries';
-import shadows from '../../theme/shadows';
-import container from '../../theme/container';
+import colors from '@/theme/colors';
+import sizes from '@/theme/sizes';
+import mq from '@/theme/media-queries';
+import shadows from '@/theme/shadows';
+import container from '@/theme/container';
 
 // const rootPath = `${__PATH_PREFIX__}/`;
 //   if (location.pathname === rootPath) {

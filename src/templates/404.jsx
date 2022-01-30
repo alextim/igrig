@@ -12,7 +12,6 @@ const headingStyle = (t) => ({
   fontFamily: 'monospace',
   fontSize: t.fontSizes[12],
 });
-// const htmlStyle = { textAlign: 'center' };
 
 const NotFoundTemplate = ({ data, location: { pathname }, pageContext: { locale } }) => {
   const {

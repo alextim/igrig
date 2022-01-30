@@ -1,5 +1,5 @@
-import mq from '../../theme/media-queries';
-import { space } from '../../theme/space';
+import mq from '@/theme/media-queries';
+import { space } from '@/theme/space';
 
 import { ContainerHeading } from '../Container';
 

@@ -1,11 +1,12 @@
 import { SeoBase } from '@alextim/at-seo';
 
-import config from '../../../igrig.content/config/website';
-import i18n from '../../i18n';
+import i18n from '@/i18n';
 
-import useSocialLinks from '../../hooks/useSocialLinks';
-import useOrgContacts from '../../hooks/useOrgContacts';
-import useOrgAddress from '../../hooks/useOrgAddress';
+import useSocialLinks from '@/hooks/useSocialLinks';
+import useOrgContacts from '@/hooks/useOrgContacts';
+import useOrgAddress from '@/hooks/useOrgAddress';
+
+import config from '../../../igrig.content/config/website';
 
 const SEO = ({
   title,
