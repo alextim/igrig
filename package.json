@@ -47,9 +47,9 @@
   },
   "dependencies": {
     "@alextim/at-seo": "^0.4.5",
-    "@alextim/at-site-core": "^0.8.13",
-    "@alextim/at-sitemap": "^0.4.0",
     "@alextim/csp": "^0.1.2",
+    "@alextim/gatsby-plugin-blogcore": "^0.8.20",
+    "@alextim/gatsby-plugin-sitemap": "^0.4.8",
     "@alextim/i18n-utils": "^0.1.0",
     "@alextim/slugify": "^0.1.0",
     "@alextim/translit": "^0.1.1",

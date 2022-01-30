@@ -7,22 +7,22 @@
   resolved "https://npm.pkg.github.com/download/@alextim/at-seo/0.4.5/1e6b9a6523237ca7a2e5aceafb4b7ebfc875f7bf2eb26e5702105d75783ab957#4b4423a56201bfd3f01a260127720aaad84e729d"
   integrity sha512-rKK6yes9JIcUUcBHCSsih9RO2bq3xX6Ht+ddY1effcglG0kYzc4536ed0FJgN8/lqr+2R2v3K6eCMpV6bp2aFA==
 
-"@alextim/at-site-core@^0.8.13":
-  version "0.8.13"
-  resolved "https://npm.pkg.github.com/download/@alextim/at-site-core/0.8.13/315f4e85e6f7c123a56c33252c1eaa21a270c59f54e3259e92258b5f25ae1582#673955798223a421109324a63bb96070e74297ba"
-  integrity sha512-99tkClpEIFnRbouht610YOHsxoauBc5BhKFXJbi5t6bMXBzp4O63ldyXhumCTYTPy3v53+BtbkEfNIYmD14JEQ==
-
-"@alextim/at-sitemap@^0.4.0":
-  version "0.4.0"
-  resolved "https://npm.pkg.github.com/download/@alextim/at-sitemap/0.4.0/12f65ff9af9993397e44577e4123fae8a5425508d5dadad2bd5e0912e63cc0b7#1fa123432fb41b10a3940311743f3f1a11bf3c59"
-  integrity sha512-TBZHFa8VoxNvFrz51kZuBi7lAS+3uSFsIhigWR1VZ2lEH1gnzMP/eq8ujNET9DIAIw39Fd/FeMC1FrnFzPUmFw==
-  dependencies:
-    sitemap "^7.0.0"
-
 "@alextim/csp@^0.1.2":
   version "0.1.2"
   resolved "https://npm.pkg.github.com/download/@alextim/csp/0.1.2/a644759c628528cb1a18d3a75fdc696024fd7c7cdd8b630a1726306c2bf196a0#a410d66abdaf001f752d0b5f482992fc860b28ae"
   integrity sha512-O/812uKIF8kLfiEiADtPaZgdEb2NteeDdcGnGrAIBJz//gsYQVG6liExiACjTd5TKaiEU2X2uLixKZvROxZ3EQ==
+
+"@alextim/gatsby-plugin-blogcore@^0.8.20":
+  version "0.8.20"
+  resolved "https://npm.pkg.github.com/download/@alextim/gatsby-plugin-blogcore/0.8.20/59e3ee0d4cd665e362df4d136b092be53d44cfefc412b87c6387b82e5ab0122a#9690e0ec974bb1cb39f543e38687ac9b6e8127a7"
+  integrity sha512-9BaXMRcvPPRddT/gvKVCBYlCxyBThPUGYPQMmID8JpEYBoS8YStvCaRIku9fE+WmuEGGDmTCk76zZiMrPF4Htw==
+
+"@alextim/gatsby-plugin-sitemap@^0.4.8":
+  version "0.4.8"
+  resolved "https://npm.pkg.github.com/download/@alextim/gatsby-plugin-sitemap/0.4.8/c27b5c6d703719acca7691a889621cc665975f6d6b76d9774141a372d7194cbe#db7648ad2b9e356e35e9b7791dc10acae03c9793"
+  integrity sha512-K2572IUJfhNiFKdaSksEJeeE3rybobb1zTGx8Jqc0XvuWkhOqa8UiBIYR/2pZUaGXdDBu6V0UGzBIkpHETEg/Q==
+  dependencies:
+    sitemap "^7.1.1"
 
 "@alextim/i18n-utils@^0.1.0":
   version "0.1.0"
@@ -10089,10 +10089,10 @@ sisteransi@^1.0.5:
   resolved "https://registry.yarnpkg.com/sisteransi/-/sisteransi-1.0.5.tgz#134d681297756437cc05ca01370d3a7a571075ed"
   integrity sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==
 
-sitemap@^7.0.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/sitemap/-/sitemap-7.1.0.tgz#300cd8b3fa9d45fb63f9b56d962785c3cd799362"
-  integrity sha512-OctwI2RYFj3Lnoutix0Qhow3AvDoUQ7rsSyzrY8wFKHqXYvmCJXFOBZyVU4/DDtsQ2KnEWY4j4j80hBHBOVEWQ==
+sitemap@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/sitemap/-/sitemap-7.1.1.tgz#eeed9ad6d95499161a3eadc60f8c6dce4bea2bef"
+  integrity sha512-mK3aFtjz4VdJN0igpIJrinf3EO8U8mxOPsTBzSsy06UtjZQJ3YY3o3Xa7zSc5nMqcMrRwlChHZ18Kxg0caiPBg==
   dependencies:
     "@types/node" "^17.0.5"
     "@types/sax" "^1.2.1"
