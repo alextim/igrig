@@ -78,7 +78,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.0",
-    "@babel/eslint-parser": "^7.16.5",
+    "@babel/eslint-parser": "^7.17.0",
     "@babel/preset-react": "^7.16.7",
     "@emotion/eslint-plugin": "^11.7.0",
     "@testing-library/react-hooks": "^7.0.2",
