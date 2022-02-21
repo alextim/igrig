@@ -54,7 +54,7 @@
     "@alextim/slugify": "^0.1.14",
     "@alextim/translit": "^0.1.15",
     "@alextim/utils": "^0.1.23",
-    "@emotion/react": "^11.7.1",
+    "@emotion/react": "^11.8.1",
     "@fastly/performance-observer-polyfill": "^2.0.0",
     "dotenv": "^16.0.0",
     "gatsby": "4.6.2",
