@@ -69,7 +69,7 @@
     "gatsby-remark-images": "^6.8.1",
     "gatsby-source-filesystem": "^4.8.1",
     "gatsby-transformer-remark": "^5.9.0",
-    "gatsby-transformer-sharp": "^4.8.0",
+    "gatsby-transformer-sharp": "^4.9.0",
     "gatsby-transformer-yaml": "^4.9.0",
     "medium-zoom": "^1.0.6",
     "react": "^17.0.2",
