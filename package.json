@@ -81,7 +81,7 @@
     "@babel/eslint-parser": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "@emotion/eslint-plugin": "^11.7.0",
-    "@testing-library/react-hooks": "^8.0.0",
+    "@testing-library/react-hooks": "^8.0.1",
     "babel-preset-gatsby": "^2.15.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.16.0",
