@@ -6329,7 +6329,7 @@ gatsby-cli@^4.17.1:
     yoga-layout-prebuilt "^1.10.0"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^3.15.0, gatsby-core-utils@^3.17.0, gatsby-core-utils@^3.5.2:
+gatsby-core-utils@^3.17.0, gatsby-core-utils@^3.5.2:
   version "3.17.0"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.17.0.tgz#5fe33c4267a3d0a7439b8065ee9c16f5cc2aead1"
   integrity sha512-1e0YaqTAEpSSBkpWkY703lu+Bl76ASXUvUcpnNO3CavCYZsRQxAXtMXIKIEvhm1z6zWJmY9HILo6/DjP+PHeyw==
@@ -6512,10 +6512,10 @@ gatsby-plugin-remove-generator@^1.2.0:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-remove-generator/-/gatsby-plugin-remove-generator-1.2.0.tgz#28037a7c8bbdf2303d7011389ecf7b56d0eabe92"
   integrity sha512-49s6QSVQ7Q7o1xBgboawlscfbRXbhhzCn2UqxlyyiVTeRZ/F3AyghOV7Yrmz/u4+7ubOXXzdgl40I0qim4EPyw==
 
-gatsby-plugin-sharp@^4.15.0:
-  version "4.15.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.15.0.tgz#7acc1ecf8dbdf22c170a4eef439e9f28e9b3d343"
-  integrity sha512-jnzFbQBuuKG3AxFgaxCgn9r3R3vToSsgpq/HzRvIxK1o1gh7z2gHCTnvquz1RhMGr3qjZGXlZe8mlAfhk3a/rQ==
+gatsby-plugin-sharp@^4.17.0:
+  version "4.17.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.17.0.tgz#157901c4e3ac728f562d08d4a846fa1bd888a81c"
+  integrity sha512-+wP4hskMBSNgPYqBX2uqoqb5JUtMMvaZTzYNkZmnKkg85rHeDpUy+eMoCqrhh8wpW/NgcbQ9o6uK43jj2qv0xQ==
   dependencies:
     "@babel/runtime" "^7.15.4"
     "@gatsbyjs/potrace" "^2.2.0"
@@ -6524,9 +6524,9 @@ gatsby-plugin-sharp@^4.15.0:
     debug "^4.3.4"
     filenamify "^4.3.0"
     fs-extra "^10.1.0"
-    gatsby-core-utils "^3.15.0"
-    gatsby-plugin-utils "^3.9.0"
-    gatsby-telemetry "^3.15.0"
+    gatsby-core-utils "^3.17.0"
+    gatsby-plugin-utils "^3.11.0"
+    gatsby-telemetry "^3.17.0"
     got "^11.8.3"
     lodash "^4.17.21"
     mini-svg-data-uri "^1.4.4"
@@ -6549,7 +6549,7 @@ gatsby-plugin-typescript@^4.17.0:
     "@babel/runtime" "^7.15.4"
     babel-plugin-remove-graphql-queries "^4.17.0"
 
-gatsby-plugin-utils@^3.11.0, gatsby-plugin-utils@^3.9.0:
+gatsby-plugin-utils@^3.11.0:
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-3.11.0.tgz#cffbd98ab0cafe2ff9b8eb513c980024605dcadf"
   integrity sha512-v2D6O2aME9p7tqlGykq5mgtj7Jqp/CWatgo0zJ7bFWSYPPUpQ7jRVAph1PIgFTAV/CaUrrvt9sxdRaZrglJyug==
@@ -6622,7 +6622,7 @@ gatsby-source-filesystem@^4.17.0:
     valid-url "^1.0.9"
     xstate "^4.26.1"
 
-gatsby-telemetry@^3.15.0, gatsby-telemetry@^3.17.0:
+gatsby-telemetry@^3.17.0:
   version "3.17.0"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-3.17.0.tgz#de5b094340d714969ac5a5f01ed19999d3b9557e"
   integrity sha512-1N4uKj2Yj7AykLmwjsdOmNirf3UmP8CBXjj/LmWf5cLDVbdPqkirAlyD6uTeEliG5UFHPTlBsRi26v558mFYJQ==
