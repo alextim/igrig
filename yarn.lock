@@ -5770,10 +5770,10 @@ gatsby-cli@^4.22.0:
     yoga-layout-prebuilt "^1.10.0"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^3.22.0, gatsby-core-utils@^3.5.2:
-  version "3.22.0"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.22.0.tgz#5d7c15722961ba8c97507a42841e95ea2622e730"
-  integrity sha512-/0FEKdnNCSn/f7dapxmBFxdFCWhteEZcsrwg/jxtXzSWRzs/7mzG8tyPCVUFlCnw3lLPSfej/9KBlGjXTvIIkQ==
+gatsby-core-utils@^3.22.0, gatsby-core-utils@^3.24.0, gatsby-core-utils@^3.5.2:
+  version "3.24.0"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.24.0.tgz#0e757bac28ad953a929046138403b3663b733cf7"
+  integrity sha512-P4tbcYOJ1DSYKRP4gIAR9Xta/d/AzjmsK2C6PzX7sNcGnviDKtAIoeV9sE0kNXOqBfUCez25zmAi2cq8NlaxKw==
   dependencies:
     "@babel/runtime" "^7.15.4"
     ci-info "2.0.0"
@@ -6013,16 +6013,16 @@ gatsby-react-router-scroll@^5.22.0:
     "@babel/runtime" "^7.15.4"
     prop-types "^15.8.1"
 
-gatsby-remark-images@^6.22.0:
-  version "6.22.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-6.22.0.tgz#533d03b76e6a2a2decf57b9125be2af83637c5fd"
-  integrity sha512-4H/NTHaeika9ftDSQjEWvrlRhTSgHHVK07blqqQM1wsvknjphtjB5S4i6SuByYD8U+j8Lment5BEP9HJVNx+LA==
+gatsby-remark-images@^6.24.0:
+  version "6.24.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-6.24.0.tgz#e9d9058eee58548a33a2b514d92538b0dd59443b"
+  integrity sha512-NnKoPn9jo7ZQ3PqyCChmRlyfAahhNVDcO/I1+oyMocIKL1+GmTR00WkGLCzuw5rFIdCU9YkqJ8ouhAgb9DPWew==
   dependencies:
     "@babel/runtime" "^7.15.4"
     "@gatsbyjs/potrace" "^2.3.0"
     chalk "^4.1.2"
     cheerio "^1.0.0-rc.10"
-    gatsby-core-utils "^3.22.0"
+    gatsby-core-utils "^3.24.0"
     is-relative-url "^3.0.0"
     lodash "^4.17.21"
     mdast-util-definitions "^4.0.0"
