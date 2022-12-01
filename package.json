@@ -68,7 +68,7 @@
     "gatsby-plugin-sharp": "^5.2.0",
     "gatsby-remark-images": "^7.2.0",
     "gatsby-source-filesystem": "^5.2.0",
-    "gatsby-transformer-remark": "^5.24.0",
+    "gatsby-transformer-remark": "^6.2.0",
     "gatsby-transformer-sharp": "^5.2.0",
     "gatsby-transformer-yaml": "^5.2.0",
     "medium-zoom": "^1.0.8",
