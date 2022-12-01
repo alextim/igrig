@@ -3197,6 +3197,15 @@ babel-plugin-remove-graphql-queries@^4.24.0:
     "@babel/types" "^7.15.4"
     gatsby-core-utils "^3.24.0"
 
+babel-plugin-remove-graphql-queries@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-5.2.0.tgz#b4598550dd108717016c69863ca020d08418e1f8"
+  integrity sha512-u5wUtVanAljrLWBky3SGZdMVQg8oaSCYMEyv0SE69lSFnF5gICScGe5YqnAVhaUu5eaqml/hENKQ77/5quOUsA==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    "@babel/types" "^7.15.4"
+    gatsby-core-utils "^4.2.0"
+
 babel-plugin-syntax-trailing-function-commas@^7.0.0-beta.0:
   version "7.0.0-beta.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-trailing-function-commas/-/babel-plugin-syntax-trailing-function-commas-7.0.0-beta.0.tgz#aa213c1435e2bffeb6fca842287ef534ad05d5cf"
@@ -5877,23 +5886,23 @@ gatsby-plugin-feed@^5.2.0:
     lodash.merge "^4.6.2"
     rss "^1.2.2"
 
-gatsby-plugin-image@^2.24.0:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-image/-/gatsby-plugin-image-2.24.0.tgz#965b6c82359f3f51bd8dbf976648f6a81a2c3d03"
-  integrity sha512-btsUxoVX/tQM09LD36XM9kYNbzZzkfBb3qCiaA+w1dEoArKraUYtmcmoMXW4rep7z8Uo7CmutSRD2GHNF0abFg==
+gatsby-plugin-image@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-image/-/gatsby-plugin-image-3.2.0.tgz#722c47b217f0824dbfb0ed1b5823ae512b93d5b8"
+  integrity sha512-gmEnRiClpkeGskTGaHYlZIZDrGIJVM1TFKTg6gwva9Es4eLX8LN/eEgZh7DADL1KugseE304rd1pTcTP6SpyLA==
   dependencies:
     "@babel/code-frame" "^7.14.0"
     "@babel/parser" "^7.15.5"
     "@babel/runtime" "^7.15.4"
     "@babel/traverse" "^7.15.4"
     babel-jsx-utils "^1.1.0"
-    babel-plugin-remove-graphql-queries "^4.24.0"
+    babel-plugin-remove-graphql-queries "^5.2.0"
     camelcase "^5.3.1"
     chokidar "^3.5.3"
     common-tags "^1.8.2"
     fs-extra "^10.1.0"
-    gatsby-core-utils "^3.24.0"
-    gatsby-plugin-utils "^3.18.0"
+    gatsby-core-utils "^4.2.0"
+    gatsby-plugin-utils "^4.2.0"
     objectFitPolyfill "^2.3.5"
     prop-types "^15.8.1"
 
