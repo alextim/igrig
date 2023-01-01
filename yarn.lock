@@ -5824,16 +5824,16 @@ gatsby-plugin-image@^3.3.2:
     objectFitPolyfill "^2.3.5"
     prop-types "^15.8.1"
 
-gatsby-plugin-manifest@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-5.2.0.tgz#f060c0248a40e5f32c5ff88b493b1486122d7a26"
-  integrity sha512-epiBVvWg81n1zRezeVC1ZXQR2vBqrp+122ptK71uEQ61d4hoLqguJbcr8SvJYnMC2NSx4za8tO44kGtxQZkdaQ==
+gatsby-plugin-manifest@^5.3.1:
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-5.3.1.tgz#53f25ed5697c65c43fbc65c0392b9029cf7b9b76"
+  integrity sha512-zU82docfGeTyH5guPEUQet+IRAIOzOQxUY74cgG3cJlIrLuSOEc3B/wVbYhUWysO6tCaHOuP1BX+R5OUm5YX7A==
   dependencies:
     "@babel/runtime" "^7.15.4"
-    gatsby-core-utils "^4.2.0"
-    gatsby-plugin-utils "^4.2.0"
-    semver "^7.3.7"
-    sharp "^0.30.7"
+    gatsby-core-utils "^4.3.1"
+    gatsby-plugin-utils "^4.3.1"
+    semver "^7.3.8"
+    sharp "^0.31.2"
 
 gatsby-plugin-netlify@^5.1.0:
   version "5.1.0"
@@ -5915,7 +5915,7 @@ gatsby-plugin-typescript@^5.3.1:
     "@babel/runtime" "^7.15.4"
     babel-plugin-remove-graphql-queries "^5.3.1"
 
-gatsby-plugin-utils@^4.2.0, gatsby-plugin-utils@^4.3.1:
+gatsby-plugin-utils@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-4.3.1.tgz#a7d318130e6413aa4e7a039a26d2258dd49c1917"
   integrity sha512-9bR6/zEg8uUMqVW7+X58WfBj9JC6AZqi0Q4nZbK2aB2/SY4R+qloWi8Vc+4f0ja4Djc/OtMzo+dtJBhZvWMwTg==
@@ -10112,20 +10112,6 @@ shallow-compare@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/shallow-compare/-/shallow-compare-1.2.2.tgz#fa4794627bf455a47c4f56881d8a6132d581ffdb"
   integrity sha512-LUMFi+RppPlrHzbqmFnINTrazo0lPNwhcgzuAXVVcfy/mqPDrQmHAyz5bvV0gDAuRFrk804V0HpQ6u9sZ0tBeg==
-
-sharp@^0.30.7:
-  version "0.30.7"
-  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.30.7.tgz#7862bda98804fdd1f0d5659c85e3324b90d94c7c"
-  integrity sha512-G+MY2YW33jgflKPTXXptVO28HvNOo9G3j0MybYAHeEmby+QuD2U98dT6ueht9cv/XDqZspSpIhoSW+BAKJ7Hig==
-  dependencies:
-    color "^4.2.3"
-    detect-libc "^2.0.1"
-    node-addon-api "^5.0.0"
-    prebuild-install "^7.1.1"
-    semver "^7.3.7"
-    simple-get "^4.0.1"
-    tar-fs "^2.1.1"
-    tunnel-agent "^0.6.0"
 
 sharp@^0.31.2:
   version "0.31.3"
