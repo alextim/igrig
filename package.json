@@ -56,7 +56,7 @@
     "@alextim/utils": "^0.1.23",
     "@emotion/react": "^11.11.0",
     "@fastly/performance-observer-polyfill": "^2.0.0",
-    "dotenv": "^16.1.3",
+    "dotenv": "^16.3.1",
     "gatsby": "5.10.0",
     "gatsby-plugin-emotion": "^8.10.0",
     "gatsby-plugin-feed": "^5.10.0",
