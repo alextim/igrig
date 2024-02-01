@@ -59,7 +59,7 @@
     "dotenv": "^16.3.1",
     "gatsby": "5.13.3",
     "gatsby-plugin-emotion": "^8.13.1",
-    "gatsby-plugin-feed": "^5.12.3",
+    "gatsby-plugin-feed": "^5.13.1",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-netlify": "^5.1.1",
