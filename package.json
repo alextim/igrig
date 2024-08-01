@@ -57,7 +57,7 @@
     "@emotion/react": "^11.13.0",
     "@fastly/performance-observer-polyfill": "^2.0.0",
     "dotenv": "^16.4.5",
-    "gatsby": "5.13.6",
+    "gatsby": "5.13.7",
     "gatsby-plugin-emotion": "^8.13.1",
     "gatsby-plugin-feed": "^5.13.1",
     "gatsby-plugin-image": "^3.13.1",
