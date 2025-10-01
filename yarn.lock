@@ -6720,28 +6720,6 @@ gatsby-core-utils@^4.0.0, gatsby-core-utils@^4.14.0, gatsby-core-utils@^4.15.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
-gatsby-core-utils@^4.15.0:
-  version "4.15.0"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-4.15.0.tgz#7c644f1587a47b14a0209e7d2894451e14a7514c"
-  integrity sha512-fxzHbCvQm1u74DSjy7G4PVqEcWb7sOCFg3kFFVUqVKe3hDCm6s1M/gRSvpm3/3fm74HhgLsmQ54Qaf54Ckyn9w==
-  dependencies:
-    "@babel/runtime" "^7.20.13"
-    ci-info "2.0.0"
-    configstore "^5.0.1"
-    fastq "^1.15.0"
-    file-type "^16.5.4"
-    fs-extra "^11.2.0"
-    got "^11.8.6"
-    hash-wasm "^4.11.0"
-    import-from "^4.0.0"
-    lmdb "2.5.3"
-    lock "^1.1.0"
-    node-object-hash "^2.3.10"
-    proper-lockfile "^4.1.2"
-    resolve-from "^5.0.0"
-    tmp "^0.2.1"
-    xdg-basedir "^4.0.0"
-
 gatsby-graphiql-explorer@^3.14.1:
   version "3.14.1"
   resolved "https://registry.yarnpkg.com/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-3.14.1.tgz#592d81f64a17d429386b3dd21e026e22e7800d39"
@@ -7041,10 +7019,10 @@ gatsby-transformer-sharp@^5.15.0:
     semver "^7.5.3"
     sharp "^0.32.6"
 
-gatsby-transformer-yaml@^5.14.0:
-  version "5.14.0"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-yaml/-/gatsby-transformer-yaml-5.14.0.tgz#aa2a5e91d86316d010d588970dc7532899c41bc6"
-  integrity sha512-hd455kTUEh23eK2A6arQqOetoHr+1gy8ucrCIxnb6dQz/ow1KMx6S7GvgoMiwHZ3EKgB4dSONPhk93yfntvvdg==
+gatsby-transformer-yaml@^5.15.0:
+  version "5.15.0"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-yaml/-/gatsby-transformer-yaml-5.15.0.tgz#57b9be02261d3132a6c8849bffa77649be3f1996"
+  integrity sha512-gmqQr1LhlQQ2OpMt8VQfo6pzAuzpn+FzhCMc7Qk6WZvBBMnZYxM5ObWYtBnDP+MLEESFeeIon1oKt1/ZZVSE+Q==
   dependencies:
     "@babel/runtime" "^7.20.13"
     js-yaml "^4.1.0"
