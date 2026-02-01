@@ -6634,7 +6634,7 @@ gatsby-cli@^5.16.0:
     yoga-layout-prebuilt "^1.10.0"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^4.0.0, gatsby-core-utils@^4.15.0, gatsby-core-utils@^4.16.0:
+gatsby-core-utils@^4.0.0, gatsby-core-utils@^4.16.0:
   version "4.16.0"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-4.16.0.tgz#31ec88ab51272bb8a58535505633a57e8c069899"
   integrity sha512-QCZ9BmQp3YyYxH0Wf4bofayL3vJnayqSvsBUAhKXGh/Os0fn1KMNyAjPLnW+zrGFQaK05Vjdlp99I/Wnc3M33A==
@@ -6809,10 +6809,10 @@ gatsby-plugin-remove-generator@^1.3.0:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-remove-generator/-/gatsby-plugin-remove-generator-1.3.0.tgz#c03df368c6e7e3faa7c858657f42224b020ed5e4"
   integrity sha512-M6j5TpV2gS5Y2/PxU8jwfMnfEKbmAB1Vz6GsPyV2e2fm3nnj236cuQzJzI/21MkTMpINFy5tK90hcDSShZFeHQ==
 
-gatsby-plugin-sharp@^5.15.0:
-  version "5.15.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-5.15.0.tgz#01b137898be8ccf7dfce0663a4a80979bff6454e"
-  integrity sha512-FxwNZzug1lRimcubCKfqVc86BOwXPtYVA+Qp3XRoxPb38TJBIG+cFDMNhtJfzjUWyaDNb/hIyXf03bQsifhRDw==
+gatsby-plugin-sharp@^5.16.0:
+  version "5.16.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-5.16.0.tgz#730dfdff479ef46b6c7f8eee2cd372ea69f847de"
+  integrity sha512-MYcvpSKM39iVvagjqxCQCYEbhwv4Ql6REp93qFRxARCaDJ50tRSLvAz/i9iI4oZs0He+3AANYN2SK/GxqwV4eQ==
   dependencies:
     "@babel/runtime" "^7.20.13"
     async "^3.2.5"
@@ -6820,8 +6820,8 @@ gatsby-plugin-sharp@^5.15.0:
     debug "^4.3.4"
     filenamify "^4.3.0"
     fs-extra "^11.2.0"
-    gatsby-core-utils "^4.15.0"
-    gatsby-plugin-utils "^4.15.0"
+    gatsby-core-utils "^4.16.0"
+    gatsby-plugin-utils "^4.16.0"
     lodash "^4.17.21"
     probe-image-size "^7.2.3"
     semver "^7.5.3"
@@ -6840,7 +6840,7 @@ gatsby-plugin-typescript@^5.16.0:
     "@babel/runtime" "^7.20.13"
     babel-plugin-remove-graphql-queries "^5.16.0"
 
-gatsby-plugin-utils@^4.15.0, gatsby-plugin-utils@^4.16.0:
+gatsby-plugin-utils@^4.16.0:
   version "4.16.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-4.16.0.tgz#5d2a89cf0dd6e15779a73fba8899255cee526b02"
   integrity sha512-5a2ui0XQBNP8vln/UyfaGBYrVpZ0oeK3fY6LjL2zx9H6wVcO5HLdjmU9yDUwQJygi2GtYW7VGQVKHfBGXMHI6A==
